@@ -13,6 +13,13 @@
 		7AA44B7C1EFD127D006785D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA44B7A1EFD127D006785D1 /* Main.storyboard */; };
 		7AA44B7E1EFD127D006785D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA44B7D1EFD127D006785D1 /* Assets.xcassets */; };
 		7AA44B811EFD127D006785D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA44B7F1EFD127D006785D1 /* LaunchScreen.storyboard */; };
+		7AA44B991EFD1284006785D1 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B8B1EFD1284006785D1 /* UIImage+Color.m */; };
+		7AA44B9A1EFD1284006785D1 /* JXButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B8E1EFD1284006785D1 /* JXButton.m */; };
+		7AA44B9B1EFD1284006785D1 /* JXImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B901EFD1284006785D1 /* JXImageView.m */; };
+		7AA44B9C1EFD1284006785D1 /* JXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B921EFD1284006785D1 /* JXLabel.m */; };
+		7AA44B9D1EFD1284006785D1 /* JXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B941EFD1284006785D1 /* JXTextField.m */; };
+		7AA44B9E1EFD1284006785D1 /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B961EFD1284006785D1 /* JXTextView.m */; };
+		7AA44B9F1EFD1284006785D1 /* JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B981EFD1284006785D1 /* JXView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,20 @@
 		7AA44B7D1EFD127D006785D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AA44B801EFD127D006785D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AA44B821EFD127D006785D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA44B8A1EFD1284006785D1 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
+		7AA44B8B1EFD1284006785D1 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		7AA44B8D1EFD1284006785D1 /* JXButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXButton.h; sourceTree = "<group>"; };
+		7AA44B8E1EFD1284006785D1 /* JXButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXButton.m; sourceTree = "<group>"; };
+		7AA44B8F1EFD1284006785D1 /* JXImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageView.h; sourceTree = "<group>"; };
+		7AA44B901EFD1284006785D1 /* JXImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageView.m; sourceTree = "<group>"; };
+		7AA44B911EFD1284006785D1 /* JXLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLabel.h; sourceTree = "<group>"; };
+		7AA44B921EFD1284006785D1 /* JXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLabel.m; sourceTree = "<group>"; };
+		7AA44B931EFD1284006785D1 /* JXTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextField.h; sourceTree = "<group>"; };
+		7AA44B941EFD1284006785D1 /* JXTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextField.m; sourceTree = "<group>"; };
+		7AA44B951EFD1284006785D1 /* JXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTextView.h; sourceTree = "<group>"; };
+		7AA44B961EFD1284006785D1 /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
+		7AA44B971EFD1284006785D1 /* JXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXView.h; sourceTree = "<group>"; };
+		7AA44B981EFD1284006785D1 /* JXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 		7AA44B701EFD127D006785D1 /* JXExtension */ = {
 			isa = PBXGroup;
 			children = (
+				7AA44B881EFD1284006785D1 /* Common */,
 				7AA44B741EFD127D006785D1 /* AppDelegate.h */,
 				7AA44B751EFD127D006785D1 /* AppDelegate.m */,
 				7AA44B771EFD127D006785D1 /* ViewController.h */,
@@ -77,6 +99,43 @@
 				7AA44B721EFD127D006785D1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7AA44B881EFD1284006785D1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7AA44B891EFD1284006785D1 /* Category */,
+				7AA44B8C1EFD1284006785D1 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7AA44B891EFD1284006785D1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7AA44B8A1EFD1284006785D1 /* UIImage+Color.h */,
+				7AA44B8B1EFD1284006785D1 /* UIImage+Color.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		7AA44B8C1EFD1284006785D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AA44B8D1EFD1284006785D1 /* JXButton.h */,
+				7AA44B8E1EFD1284006785D1 /* JXButton.m */,
+				7AA44B8F1EFD1284006785D1 /* JXImageView.h */,
+				7AA44B901EFD1284006785D1 /* JXImageView.m */,
+				7AA44B911EFD1284006785D1 /* JXLabel.h */,
+				7AA44B921EFD1284006785D1 /* JXLabel.m */,
+				7AA44B931EFD1284006785D1 /* JXTextField.h */,
+				7AA44B941EFD1284006785D1 /* JXTextField.m */,
+				7AA44B951EFD1284006785D1 /* JXTextView.h */,
+				7AA44B961EFD1284006785D1 /* JXTextView.m */,
+				7AA44B971EFD1284006785D1 /* JXView.h */,
+				7AA44B981EFD1284006785D1 /* JXView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +209,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA44B9B1EFD1284006785D1 /* JXImageView.m in Sources */,
+				7AA44B9A1EFD1284006785D1 /* JXButton.m in Sources */,
+				7AA44B9C1EFD1284006785D1 /* JXLabel.m in Sources */,
+				7AA44B9D1EFD1284006785D1 /* JXTextField.m in Sources */,
+				7AA44B9F1EFD1284006785D1 /* JXView.m in Sources */,
+				7AA44B9E1EFD1284006785D1 /* JXTextView.m in Sources */,
 				7AA44B791EFD127D006785D1 /* ViewController.m in Sources */,
+				7AA44B991EFD1284006785D1 /* UIImage+Color.m in Sources */,
 				7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */,
 				7AA44B731EFD127D006785D1 /* main.m in Sources */,
 			);
