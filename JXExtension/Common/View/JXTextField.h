@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
 @interface JXTextField : UITextField
 
 @property (nonatomic) IBInspectable BOOL masksToBounds;

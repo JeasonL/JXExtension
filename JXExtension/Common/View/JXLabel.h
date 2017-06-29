@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
 @interface JXLabel : UILabel
 
 @property (nonatomic) IBInspectable CGFloat insetTop;

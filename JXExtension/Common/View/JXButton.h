@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
 @interface JXButton : UIButton
 
 @property (nonatomic) IBInspectable BOOL masksToBounds;

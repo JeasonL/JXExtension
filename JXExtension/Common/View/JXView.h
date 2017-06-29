@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-IB_DESIGNABLE
 @interface JXView : UIView
 
 @property (nonatomic) IBInspectable BOOL masksToBounds;
