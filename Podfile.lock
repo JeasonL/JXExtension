@@ -1,11 +1,11 @@
 PODS:
-  - JXExtension (0.0.1)
+  - JXExtension (0.1.0)
 
 DEPENDENCIES:
   - JXExtension
 
 SPEC CHECKSUMS:
-  JXExtension: ddd1bee8ab70df38384891fd6314a71569ceb0a9
+  JXExtension: bfebc7f1ab42923a90c236c867cb878e176895ae
 
 PODFILE CHECKSUM: 3cfcf58ec8f860710fe6db5744b542bfa6e1b04a
 
