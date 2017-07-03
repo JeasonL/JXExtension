@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A21B5A21F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21B5A11F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.m */; };
 		7AA44B731EFD127D006785D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B721EFD127D006785D1 /* main.m */; };
 		7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B751EFD127D006785D1 /* AppDelegate.m */; };
 		7AA44B791EFD127D006785D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B781EFD127D006785D1 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A21B5A01F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JXEmptyDataSet.h"; sourceTree = "<group>"; };
+		7A21B5A11F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JXEmptyDataSet.m"; sourceTree = "<group>"; };
 		7AA44B6E1EFD127D006785D1 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA44B721EFD127D006785D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AA44B741EFD127D006785D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 			children = (
 				7AA44B8A1EFD1284006785D1 /* UIImage+Color.h */,
 				7AA44B8B1EFD1284006785D1 /* UIImage+Color.m */,
+				7A21B5A01F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.h */,
+				7A21B5A11F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				7AA44B9F1EFD1284006785D1 /* JXView.m in Sources */,
 				7AA44B9E1EFD1284006785D1 /* JXTextView.m in Sources */,
 				7AA44B791EFD127D006785D1 /* ViewController.m in Sources */,
+				7A21B5A21F09DD8F000A3A94 /* UIScrollView+JXEmptyDataSet.m in Sources */,
 				7AA44B991EFD1284006785D1 /* UIImage+Color.m in Sources */,
 				7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */,
 				7AA44B731EFD127D006785D1 /* main.m in Sources */,
@@ -377,6 +383,7 @@
 				7AA44B871EFD127D006785D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
