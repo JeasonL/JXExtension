@@ -24,8 +24,7 @@
 
 @property (nonatomic, weak) IBOutlet id <JXEmptyDataSetDataSource> emptyDataSetDataSource;
 
-- (void)reloadEmptyDataSet;
-- (void)removeEmptyDataSet;
-
+- (void)jx_reloadEmptyDataSet;
+- (void)jx_removeEmptyDataSet;
 
 @end

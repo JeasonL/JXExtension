@@ -1,16 +1,16 @@
 //
-//  UIImage+Color.m
+//  UIImage+JXColor.m
 //  JXCommonExtension
 //
 //  Created by Jeason on 2017/6/15.
 //  Copyright © 2017年 JeasonLee. All rights reserved.
 //
 
-#import "UIImage+Color.h"
+#import "UIImage+JXColor.h"
 
-@implementation UIImage (Color)
+@implementation UIImage (JXColor)
 
-+ (UIImage *)imageWithColor:(UIColor *)color {
++ (UIImage *)jx_imageWithColor:(UIColor *)color {
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -24,7 +24,7 @@
     return image;
 }
 
-- (UIColor *)colorAtPixel:(CGPoint)point {
+- (UIColor *)jx_colorAtPixel:(CGPoint)point {
     // Cancel if point is outside image coordinates
     if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, self.size.width, self.size.height), point)) {
         return nil;
@@ -65,7 +65,7 @@
     return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
-- (BOOL)hasAlphaChannel {
+- (BOOL)jx_hasAlphaChannel {
     CGImageAlphaInfo alpha = CGImageGetAlphaInfo(self.CGImage);
     return (alpha == kCGImageAlphaFirst ||
             alpha == kCGImageAlphaLast ||

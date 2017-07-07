@@ -7,7 +7,7 @@
 //
 
 #import "JXButton.h"
-#import "UIImage+Color.h"
+#import "UIImage+JXColor.h"
 
 @implementation JXButton
 
@@ -80,24 +80,24 @@
 }
 
 - (UIColor *)normalBackgroundColor {
-    return [[self backgroundImageForState:UIControlStateNormal] colorAtPixel:CGPointMake(0, 0)];
+    return [[self backgroundImageForState:UIControlStateNormal] jx_colorAtPixel:CGPointMake(0, 0)];
 }
 
 - (void)setNormalBackgroundColor:(UIColor *)normalBackgroundColor {
     if (normalBackgroundColor) {
-        [self setBackgroundImage:[UIImage imageWithColor:normalBackgroundColor] forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage jx_imageWithColor:normalBackgroundColor] forState:UIControlStateNormal];
     } else {
         [self setBackgroundImage:nil forState:UIControlStateNormal];
     }
 }
 
 - (UIColor *)selectedBackgroundColor {
-    return [[self backgroundImageForState:UIControlStateSelected] colorAtPixel:CGPointMake(0, 0)];
+    return [[self backgroundImageForState:UIControlStateSelected] jx_colorAtPixel:CGPointMake(0, 0)];
 }
 
 - (void)setSelectedBackgroundColor:(UIColor *)selectedBackgroundColor {
     if (selectedBackgroundColor) {
-        [self setBackgroundImage:[UIImage imageWithColor:selectedBackgroundColor] forState:UIControlStateSelected];
+        [self setBackgroundImage:[UIImage jx_imageWithColor:selectedBackgroundColor] forState:UIControlStateSelected];
     } else {
         [self setBackgroundImage:nil forState:UIControlStateSelected];
     }

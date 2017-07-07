@@ -25,7 +25,7 @@ static NSString * const JXSwizzleInfoSelectorKey = @"JXSwizzleInfoSelectorKey";
 
 #pragma mark - Public method
 
-- (void)reloadEmptyDataSet {
+- (void)jx_reloadEmptyDataSet {
     
     if (![self canDisplay]) {
         return;
@@ -54,7 +54,7 @@ static NSString * const JXSwizzleInfoSelectorKey = @"JXSwizzleInfoSelectorKey";
     }
 }
 
-- (void)removeEmptyDataSet {
+- (void)jx_removeEmptyDataSet {
     [self.emptyDataSetView removeFromSuperview];
     self.emptyDataSetView = nil;
 }
@@ -72,7 +72,7 @@ void jx_original_implementation(id self, SEL _cmd) {
     
     // We then inject the additional implementation for reloading the empty dataset
     // Doing it before calling the original implementation does update the 'isEmptyDataSetVisible' flag on time.
-    [self reloadEmptyDataSet];
+    [self jx_reloadEmptyDataSet];
     
     // If found, call original implementation
     if (impPointer) {
