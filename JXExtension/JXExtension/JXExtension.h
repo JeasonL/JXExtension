@@ -21,5 +21,4 @@
 #import "UIImage+JXColor.h"
 #import "UIScrollView+JXEmptyDataSet.h"
 #import "UIScrollView+JXExtension.h"
-#import "UIView+JXFrame.h"
 #import "UIView+JXDesign.h"

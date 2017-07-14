@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGFloat witdh = 115.0;
 }
 
 

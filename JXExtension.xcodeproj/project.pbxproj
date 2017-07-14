@@ -25,7 +25,6 @@
 		7AA78DFC1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA78DFB1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m */; };
 		7AA78DFF1F0F30E30072786E /* UIScrollView+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA78DFE1F0F30E30072786E /* UIScrollView+JXExtension.m */; };
 		7AFE92ED1F185AB30077B406 /* UIView+JXDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */; };
-		7AFE92F01F185B6A0077B406 /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +61,6 @@
 		7AA78E061F0F59470072786E /* JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExtension.h; sourceTree = "<group>"; };
 		7AFE92EB1F185AB30077B406 /* UIView+JXDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXDesign.h"; sourceTree = "<group>"; };
 		7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXDesign.m"; sourceTree = "<group>"; };
-		7AFE92EE1F185B6A0077B406 /* UIView+JXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXFrame.h"; sourceTree = "<group>"; };
-		7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXFrame.m"; sourceTree = "<group>"; };
 		7D2A348869D02F93460007AF /* libPods-JXExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B770729DCB30718AE96749FA /* Pods-JXExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		CC9F17BE2BDE9F331D3A7344 /* Pods-JXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,8 +109,6 @@
 				7AA78DFE1F0F30E30072786E /* UIScrollView+JXExtension.m */,
 				7AFE92EB1F185AB30077B406 /* UIView+JXDesign.h */,
 				7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */,
-				7AFE92EE1F185B6A0077B406 /* UIView+JXFrame.h */,
-				7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -326,7 +321,6 @@
 				7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */,
 				7A21B5BA1F09E3E6000A3A94 /* JXLabel.m in Sources */,
 				7AA78DFC1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m in Sources */,
-				7AFE92F01F185B6A0077B406 /* UIView+JXFrame.m in Sources */,
 				7AFE92ED1F185AB30077B406 /* UIView+JXDesign.m in Sources */,
 				7AA44B731EFD127D006785D1 /* main.m in Sources */,
 			);
