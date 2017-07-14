@@ -24,6 +24,8 @@
 		7AA44B811EFD127D006785D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AA44B7F1EFD127D006785D1 /* LaunchScreen.storyboard */; };
 		7AA78DFC1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA78DFB1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m */; };
 		7AA78DFF1F0F30E30072786E /* UIScrollView+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA78DFE1F0F30E30072786E /* UIScrollView+JXExtension.m */; };
+		7AFE92ED1F185AB30077B406 /* UIView+JXDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */; };
+		7AFE92F01F185B6A0077B406 /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,10 @@
 		7AA78DFD1F0F30E30072786E /* UIScrollView+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JXExtension.h"; sourceTree = "<group>"; };
 		7AA78DFE1F0F30E30072786E /* UIScrollView+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JXExtension.m"; sourceTree = "<group>"; };
 		7AA78E061F0F59470072786E /* JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXExtension.h; sourceTree = "<group>"; };
+		7AFE92EB1F185AB30077B406 /* UIView+JXDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXDesign.h"; sourceTree = "<group>"; };
+		7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXDesign.m"; sourceTree = "<group>"; };
+		7AFE92EE1F185B6A0077B406 /* UIView+JXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXFrame.h"; sourceTree = "<group>"; };
+		7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXFrame.m"; sourceTree = "<group>"; };
 		7D2A348869D02F93460007AF /* libPods-JXExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B770729DCB30718AE96749FA /* Pods-JXExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		CC9F17BE2BDE9F331D3A7344 /* Pods-JXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +110,10 @@
 				7A21B5A81F09E3E6000A3A94 /* UIScrollView+JXEmptyDataSet.m */,
 				7AA78DFD1F0F30E30072786E /* UIScrollView+JXExtension.h */,
 				7AA78DFE1F0F30E30072786E /* UIScrollView+JXExtension.m */,
+				7AFE92EB1F185AB30077B406 /* UIView+JXDesign.h */,
+				7AFE92EC1F185AB30077B406 /* UIView+JXDesign.m */,
+				7AFE92EE1F185B6A0077B406 /* UIView+JXFrame.h */,
+				7AFE92EF1F185B6A0077B406 /* UIView+JXFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -264,7 +274,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B50D8DC73EFEE5B89C20D773 /* [CP] Embed Pods Frameworks */ = {
@@ -316,6 +326,8 @@
 				7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */,
 				7A21B5BA1F09E3E6000A3A94 /* JXLabel.m in Sources */,
 				7AA78DFC1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m in Sources */,
+				7AFE92F01F185B6A0077B406 /* UIView+JXFrame.m in Sources */,
+				7AFE92ED1F185AB30077B406 /* UIView+JXDesign.m in Sources */,
 				7AA44B731EFD127D006785D1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
