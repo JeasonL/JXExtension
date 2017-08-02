@@ -15,6 +15,7 @@
 #import "JXTextField.h"
 #import "JXTextView.h"
 #import "JXView.h"
+#import "JXAlertContainerView.h"
 
 //Category
 #import "NSString+JXDecimalCalculate.h"

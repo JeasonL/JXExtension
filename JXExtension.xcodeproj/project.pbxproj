@@ -16,6 +16,9 @@
 		7A21B5BB1F09E3E6000A3A94 /* JXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21B5B11F09E3E6000A3A94 /* JXTextField.m */; };
 		7A21B5BC1F09E3E6000A3A94 /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21B5B31F09E3E6000A3A94 /* JXTextView.m */; };
 		7A21B5BD1F09E3E6000A3A94 /* JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21B5B51F09E3E6000A3A94 /* JXView.m */; };
+		7A8CFC611F3169C600A10A7C /* JXAlertContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CFC601F3169C600A10A7C /* JXAlertContainerView.m */; };
+		7A8CFC651F316BA300A10A7C /* JXDemoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8CFC641F316BA300A10A7C /* JXDemoAlertView.m */; };
+		7A8CFC671F316BA900A10A7C /* JXDemoAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A8CFC661F316BA900A10A7C /* JXDemoAlertView.xib */; };
 		7AA44B731EFD127D006785D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B721EFD127D006785D1 /* main.m */; };
 		7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B751EFD127D006785D1 /* AppDelegate.m */; };
 		7AA44B791EFD127D006785D1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AA44B781EFD127D006785D1 /* ViewController.m */; };
@@ -44,6 +47,11 @@
 		7A21B5B31F09E3E6000A3A94 /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		7A21B5B41F09E3E6000A3A94 /* JXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXView.h; sourceTree = "<group>"; };
 		7A21B5B51F09E3E6000A3A94 /* JXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXView.m; sourceTree = "<group>"; };
+		7A8CFC5F1F3169C600A10A7C /* JXAlertContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXAlertContainerView.h; sourceTree = "<group>"; };
+		7A8CFC601F3169C600A10A7C /* JXAlertContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXAlertContainerView.m; sourceTree = "<group>"; };
+		7A8CFC631F316BA300A10A7C /* JXDemoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDemoAlertView.h; sourceTree = "<group>"; };
+		7A8CFC641F316BA300A10A7C /* JXDemoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDemoAlertView.m; sourceTree = "<group>"; };
+		7A8CFC661F316BA900A10A7C /* JXDemoAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JXDemoAlertView.xib; sourceTree = "<group>"; };
 		7AA44B6E1EFD127D006785D1 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA44B721EFD127D006785D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7AA44B741EFD127D006785D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,8 +136,20 @@
 				7A21B5B31F09E3E6000A3A94 /* JXTextView.m */,
 				7A21B5B41F09E3E6000A3A94 /* JXView.h */,
 				7A21B5B51F09E3E6000A3A94 /* JXView.m */,
+				7A8CFC5F1F3169C600A10A7C /* JXAlertContainerView.h */,
+				7A8CFC601F3169C600A10A7C /* JXAlertContainerView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		7A8CFC621F316B7E00A10A7C /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7A8CFC631F316BA300A10A7C /* JXDemoAlertView.h */,
+				7A8CFC641F316BA300A10A7C /* JXDemoAlertView.m */,
+				7A8CFC661F316BA900A10A7C /* JXDemoAlertView.xib */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 		7AA44B651EFD127D006785D1 = {
@@ -158,6 +178,7 @@
 				7AA44B751EFD127D006785D1 /* AppDelegate.m */,
 				7AA44B771EFD127D006785D1 /* ViewController.h */,
 				7AA44B781EFD127D006785D1 /* ViewController.m */,
+				7A8CFC621F316B7E00A10A7C /* Demo */,
 				7AA44B7A1EFD127D006785D1 /* Main.storyboard */,
 				7AA44B7D1EFD127D006785D1 /* Assets.xcassets */,
 				7AA44B7F1EFD127D006785D1 /* LaunchScreen.storyboard */,
@@ -247,6 +268,7 @@
 			files = (
 				7AA44B811EFD127D006785D1 /* LaunchScreen.storyboard in Resources */,
 				7AA44B7E1EFD127D006785D1 /* Assets.xcassets in Resources */,
+				7A8CFC671F316BA900A10A7C /* JXDemoAlertView.xib in Resources */,
 				7AA44B7C1EFD127D006785D1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,9 +337,11 @@
 				7A21B5B71F09E3E6000A3A94 /* UIScrollView+JXEmptyDataSet.m in Sources */,
 				7AA78DFF1F0F30E30072786E /* UIScrollView+JXExtension.m in Sources */,
 				7A21B5B81F09E3E6000A3A94 /* JXButton.m in Sources */,
+				7A8CFC651F316BA300A10A7C /* JXDemoAlertView.m in Sources */,
 				7A21B5BD1F09E3E6000A3A94 /* JXView.m in Sources */,
 				7AA44B791EFD127D006785D1 /* ViewController.m in Sources */,
 				7A21B5B61F09E3E6000A3A94 /* UIImage+JXColor.m in Sources */,
+				7A8CFC611F3169C600A10A7C /* JXAlertContainerView.m in Sources */,
 				7AA44B761EFD127D006785D1 /* AppDelegate.m in Sources */,
 				7A21B5BA1F09E3E6000A3A94 /* JXLabel.m in Sources */,
 				7AA78DFC1F0F2C6D0072786E /* NSString+JXDecimalCalculate.m in Sources */,

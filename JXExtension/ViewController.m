@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "JXExtension.h"
+#import "JXDemoAlertView.h"
 
 @interface ViewController ()
 
@@ -17,8 +18,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+ 
 }
 
+- (IBAction)showAlertAction:(id)sender {
+    JXDemoAlertView *view = [[JXDemoAlertView alloc] init];
+    [view show];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
