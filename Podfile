@@ -1,6 +1,6 @@
 platform :ios, '8.0'
 
-target ‘JXExtension’ do
+target ‘Example’ do
 
 #pod 'JXExtension'
 pod 'SDVersion'
