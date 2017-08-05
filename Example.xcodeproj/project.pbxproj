@@ -141,8 +141,8 @@
 		7ACD81691F35A6BD00021894 /* JXExtension */ = {
 			isa = PBXGroup;
 			children = (
-				7ACD816A1F35A6BD00021894 /* Category */,
 				7ACD81771F35A6BD00021894 /* JXExtension.h */,
+				7ACD816A1F35A6BD00021894 /* Category */,
 				7ACD81781F35A6BD00021894 /* View */,
 			);
 			path = JXExtension;

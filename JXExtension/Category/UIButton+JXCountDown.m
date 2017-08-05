@@ -13,25 +13,42 @@
 #pragma mark - Public Method
 
 - (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout {
-    [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@""];
+    [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:nil];
+}
+
+- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout complete:(void(^)())complete {
+    [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:complete];
 }
 
 - (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal complete:nil];
+}
+
+- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete {
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal complete:complete];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout {
-    [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@""];
+    [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:nil];
+}
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout complete:(void(^)())complete {
+    [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:complete];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected complete:nil];
+}
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete {
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected complete:complete];
 }
 
 #pragma mark - Private Method
 
-- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix forState:(UIControlState)state {
-    __block NSInteger timeOut = timeout; //倒计时时间
+- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix forState:(UIControlState)state complete:(void(^)())complete {
+    if (timeout <= 0) return;
+    __block NSInteger timeOut = timeout - 1; //倒计时时间
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0); //每秒执行
@@ -43,6 +60,7 @@
                 //设置界面的按钮显示
                 [self setTitle:title forState:UIControlStateNormal];
                 self.userInteractionEnabled = YES;
+                complete ? complete() : nil;
             });
         } else {
             int seconds = timeOut % 60;

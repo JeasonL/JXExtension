@@ -20,6 +20,8 @@
 @property (nonatomic) IBInspectable UIColor *shadowColor;
 
 @property (nonatomic) IBInspectable UIColor *normalBackgroundColor;
+@property (nonatomic) IBInspectable UIColor *highlightedBackgroundColor;
 @property (nonatomic) IBInspectable UIColor *selectedBackgroundColor;
+@property (nonatomic) IBInspectable UIColor *disabledBackgroundColor;
 
 @end

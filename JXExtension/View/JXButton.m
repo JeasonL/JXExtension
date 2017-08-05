@@ -91,6 +91,18 @@
     }
 }
 
+- (UIColor *)highlightedBackgroundColor {
+     return [[self backgroundImageForState:UIControlStateHighlighted] jx_colorAtPixel:CGPointMake(0, 0)];
+}
+
+- (void)setHighlightedBackgroundColor:(UIColor *)highlightedBackgroundColor {
+    if (highlightedBackgroundColor) {
+        [self setBackgroundImage:[UIImage jx_imageWithColor:highlightedBackgroundColor] forState:UIControlStateHighlighted];
+    } else {
+        [self setBackgroundImage:nil forState:UIControlStateHighlighted];
+    }
+}
+
 - (UIColor *)selectedBackgroundColor {
     return [[self backgroundImageForState:UIControlStateSelected] jx_colorAtPixel:CGPointMake(0, 0)];
 }
@@ -100,6 +112,18 @@
         [self setBackgroundImage:[UIImage jx_imageWithColor:selectedBackgroundColor] forState:UIControlStateSelected];
     } else {
         [self setBackgroundImage:nil forState:UIControlStateSelected];
+    }
+}
+
+- (UIColor *)disabledBackgroundColor {
+    return [[self backgroundImageForState:UIControlStateDisabled] jx_colorAtPixel:CGPointMake(0, 0)];
+}
+
+- (void)setDisabledBackgroundColor:(UIColor *)disabledBackgroundColor {
+    if (disabledBackgroundColor) {
+        [self setBackgroundImage:[UIImage jx_imageWithColor:disabledBackgroundColor] forState:UIControlStateDisabled];
+    } else {
+        [self setBackgroundImage:nil forState:UIControlStateDisabled];
     }
 }
 
