@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "JXExtension"
-  s.version      = "0.2.0"
+  s.version      = "0.2.1"
   s.summary      = "About UIKit Extension."
-  s.homepage     = "https://bitbucket.org/JeasonLee/jxextension"
+  s.homepage     = "https://gitlab.com/JeasonLee/JXExtension"
   s.license      = "MIT"
   s.author       = { "Jeason" => "jeason.l@qq.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://JeasonLee@bitbucket.org/JeasonLee/jxextension.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://JeasonLee@gitlab.com/JeasonLee/JXExtension.git", :tag => "#{s.version}" }
   
   s.public_header_files = 'JXExtension/JXExtension.h'
   s.source_files = 'JXExtension/JXExtension.h'
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     view.source_files = 'JXExtension/View/*.{h,m}'
     view.dependency 'JXExtension/Category'
   end
-  
+
   s.requires_arc = true
   s.dependency 'SDVersion'
   
