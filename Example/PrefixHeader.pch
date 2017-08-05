@@ -9,6 +9,6 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
-#import "JXExtension/JXExtension.h"
+#import "JXExtension.h"
 
 #endif /* PrefixHeader_pch */
