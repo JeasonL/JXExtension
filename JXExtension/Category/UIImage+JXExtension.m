@@ -1,26 +1,38 @@
 //
-//  UIImage+JXColor.m
-//  JXCommonExtension
+//  UIImage+JXExtension.m
+//  Example
 //
-//  Created by Jeason on 2017/6/15.
-//  Copyright © 2017年 JeasonLee. All rights reserved.
+//  Created by Jeason on 2017/8/11.
+//  Copyright © 2017年 Jeason.Lee. All rights reserved.
 //
 
-#import "UIImage+JXColor.h"
+#import "UIImage+JXExtension.h"
 
-@implementation UIImage (JXColor)
+@implementation UIImage (JXExtension)
+
++ (UIImage *)jx_imageWithView:(UIView *)view {
+    if (!view) {
+        return [[UIImage alloc] init];
+    }
+    CGSize size = view.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 + (UIImage *)jx_imageWithColor:(UIColor *)color {
+    if (!color) {
+        return [[UIImage alloc] init];
+    }
     CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
     return image;
 }
 

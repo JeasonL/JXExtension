@@ -1,6 +1,6 @@
 //
 //  JXLabel.m
-//  JXCommonExtension
+//  JXExtension
 //
 //  Created by Jeason on 2017/6/15.
 //  Copyright © 2017年 JeasonLee. All rights reserved.

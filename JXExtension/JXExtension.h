@@ -19,7 +19,7 @@
 
 //Category
 #import "NSString+JXDecimalCalculate.h"
-#import "UIImage+JXColor.h"
+#import "UIImage+JXExtension.h"
 #import "UIScrollView+JXEmptyDataSet.h"
 #import "UIScrollView+JXExtension.h"
 #import "UIView+JXDesign.h"

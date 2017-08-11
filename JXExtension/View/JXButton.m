@@ -1,13 +1,13 @@
 //
 //  JXButton.m
-//  JXCommonExtension
+//  JXExtension
 //
 //  Created by Jeason on 2017/6/15.
 //  Copyright © 2017年 JeasonLee. All rights reserved.
 //
 
 #import "JXButton.h"
-#import "UIImage+JXColor.h"
+#import "UIImage+JXExtension.h"
 
 @implementation JXButton
 
