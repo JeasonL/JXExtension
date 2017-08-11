@@ -1,6 +1,6 @@
 //
 //  UIImage+JXExtension.m
-//  Example
+//  JXExtension
 //
 //  Created by Jeason on 2017/8/11.
 //  Copyright © 2017年 Jeason.Lee. All rights reserved.

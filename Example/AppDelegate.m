@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  Example
+//  JXExtension
 //
 //  Created by Jeason on 2017/8/5.
 //  Copyright © 2017年 Jeason.Lee. All rights reserved.
