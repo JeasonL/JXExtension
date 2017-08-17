@@ -20,7 +20,7 @@
 }
 
 - (IBAction)selectedButtonAction:(UIButton *)sender {
-    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:15];
+    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:120];
     //    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:10 complete:^{
     //        NSLog(@"s结束");
     //    }];
@@ -31,7 +31,7 @@
 }
 
 - (IBAction)normalButtonAction:(UIButton *)sender {
-    [sender jx_normalTitleWithTitle:@"normal倒计时" startTime:15];
+    [sender jx_normalTitleWithTitle:@"normal倒计时" startTime:120];
     //    [sender jx_normalTitleWithTitle:@"normal倒计时" startTime:10 complete:^{
     //        NSLog(@"n结束");
     //    }];

@@ -63,7 +63,7 @@
                 complete ? complete() : nil;
             });
         } else {
-            int seconds = timeOut % 60;
+            int seconds = @(timeOut).intValue;
             NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.selected = YES;
