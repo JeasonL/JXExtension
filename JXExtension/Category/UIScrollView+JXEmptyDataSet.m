@@ -7,6 +7,7 @@
 //
 
 #import "UIScrollView+JXEmptyDataSet.h"
+#import <objc/runtime.h>
 
 static NSMutableDictionary *_impLookupTable;
 static NSString * const JXSwizzleInfoPointerKey = @"JXSwizzleInfoPointerKey";

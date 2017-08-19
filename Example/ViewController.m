@@ -16,10 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
 }
 
 - (IBAction)selectedButtonAction:(UIButton *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"BBBBBBBBBB" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"CCC" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alert addAction:action];
+    [alert setTitleColor:[UIColor orangeColor]];
+    [alert setTitleFont:[UIFont systemFontOfSize:20]];
+    [alert setMessageFont:[UIFont boldSystemFontOfSize:15]];
+    [alert setMessageColor:[UIColor greenColor]];
+    [self presentViewController:alert animated:YES completion:nil];
+    
     [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:120];
     //    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:10 complete:^{
     //        NSLog(@"s结束");

@@ -24,3 +24,4 @@
 #import "UIScrollView+JXExtension.h"
 #import "UIView+JXDesign.h"
 #import "UIButton+JXCountDown.h"
+#import "UIAlertController+JXExtension.h"

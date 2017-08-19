@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */; };
+		7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */; };
 		7ACD80D31F3578C200021894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D21F3578C200021894 /* main.m */; };
 		7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D51F3578C200021894 /* AppDelegate.m */; };
 		7ACD80D91F3578C200021894 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D81F3578C200021894 /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.release.xcconfig"; sourceTree = "<group>"; };
 		7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
 		7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
+		7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JXExtension.h"; sourceTree = "<group>"; };
+		7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JXExtension.m"; sourceTree = "<group>"; };
 		7ACD80CE1F3578C200021894 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACD80D21F3578C200021894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ACD80D41F3578C200021894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				7ACD81741F35A6BD00021894 /* UIScrollView+JXExtension.m */,
 				7ACD81751F35A6BD00021894 /* UIView+JXDesign.h */,
 				7ACD81761F35A6BD00021894 /* UIView+JXDesign.m */,
+				7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */,
+				7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */,
 				7ACD81911F35A6BD00021894 /* JXTextField.m in Sources */,
 				7ACD81871F35A6BD00021894 /* NSString+JXDecimalCalculate.m in Sources */,
+				7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
 				7ACD818B1F35A6BD00021894 /* UIScrollView+JXExtension.m in Sources */,
 				7ACD818D1F35A6BD00021894 /* JXAlertContainerView.m in Sources */,
