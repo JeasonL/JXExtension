@@ -54,11 +54,29 @@
                                     <action selector="selectedButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zLD-xJ-jLv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZU-vi-gJF" customClass="JXImageTextButton">
+                                <rect key="frame" x="87" y="368.5" width="200" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="8kU-4Z-dgt"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rightNormalStateImage" value="my_icon_gzgzh"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftNormalStateImage" value="my_icon_gzgzh"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="space">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YP9-tl-12J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IXO-5O-WtM"/>
                             <constraint firstItem="ohZ-ol-axA" firstAttribute="centerX" secondItem="YP9-tl-12J" secondAttribute="centerX" id="LBF-Tn-9IH"/>
+                            <constraint firstItem="QZU-vi-gJF" firstAttribute="top" secondItem="YP9-tl-12J" secondAttribute="bottom" constant="20" id="Qn4-BS-5XB"/>
+                            <constraint firstItem="QZU-vi-gJF" firstAttribute="centerX" secondItem="YP9-tl-12J" secondAttribute="centerX" id="Ssn-CH-c64"/>
                             <constraint firstItem="YP9-tl-12J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YLs-Pq-hlV"/>
                             <constraint firstItem="YP9-tl-12J" firstAttribute="top" secondItem="ohZ-ol-axA" secondAttribute="bottom" constant="30" id="j7i-VV-Rbn"/>
                         </constraints>
@@ -68,4 +86,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="my_icon_gzgzh" width="20" height="20"/>
+    </resources>
 </document>

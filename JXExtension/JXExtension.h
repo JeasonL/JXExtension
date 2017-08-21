@@ -16,6 +16,7 @@
 #import "JXTextView.h"
 #import "JXView.h"
 #import "JXAlertContainerView.h"
+#import "JXImageTextButton.h"
 
 //Category
 #import "NSString+JXDecimalCalculate.h"
@@ -25,3 +26,4 @@
 #import "UIView+JXDesign.h"
 #import "UIButton+JXCountDown.h"
 #import "UIAlertController+JXExtension.h"
+#import "UIView+JXFrame.h"
