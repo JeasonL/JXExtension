@@ -1,5 +1,5 @@
 //
-//  JXLeftAlignmentFlowLayout.h
+//  JXCollectionViewLeftAlignmentFlowLayout.h
 //  JXExtension
 //
 //  Created by Jeason on 2017/8/22.
