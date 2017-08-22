@@ -17,7 +17,7 @@
  *  @param font  字体(默认为系统字体)
  *  @param width 约束宽度
  */
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
+- (CGFloat)jx_heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
     UIFont *textFont = font ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
     CGSize textSize;
@@ -59,7 +59,7 @@
  *  @param font   字体(默认为系统字体)
  *  @param height 约束高度
  */
-- (CGFloat)widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height {
+- (CGFloat)jx_widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height {
     UIFont *textFont = font ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
     CGSize textSize;
@@ -101,7 +101,7 @@
  *  @param font  字体(默认为系统字体)
  *  @param width 约束宽度
  */
-- (CGSize)sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
+- (CGSize)jx_sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width {
     UIFont *textFont = font ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
     CGSize textSize;
@@ -143,7 +143,7 @@
  *  @param font   字体(默认为系统字体)
  *  @param height 约束高度
  */
-- (CGSize)sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height {
+- (CGSize)jx_sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height {
     UIFont *textFont = font ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
     
     CGSize textSize;
@@ -179,7 +179,7 @@
     return CGSizeMake(ceil(textSize.width), ceil(textSize.height));
 }
 
-+ (NSString *)reverseString:(NSString *)strSrc {
++ (NSString *)jx_reverseString:(NSString *)strSrc {
     NSMutableString *reverseString = [[NSMutableString alloc] init];
     NSInteger charIndex = [strSrc length];
     while (charIndex > 0) {

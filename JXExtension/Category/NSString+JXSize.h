@@ -10,12 +10,12 @@
 
 @interface NSString (JXSize)
 
-- (CGFloat)heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
-- (CGFloat)widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
+- (CGFloat)jx_heightWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
+- (CGFloat)jx_widthWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
 
-- (CGSize)sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
-- (CGSize)sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
+- (CGSize)jx_sizeWithFont:(UIFont *)font constrainedToWidth:(CGFloat)width;
+- (CGSize)jx_sizeWithFont:(UIFont *)font constrainedToHeight:(CGFloat)height;
 
-+ (NSString *)reverseString:(NSString *)strSrc;
++ (NSString *)jx_reverseString:(NSString *)strSrc;
 
 @end

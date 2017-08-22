@@ -20,7 +20,6 @@
 
 @interface JXCollectionViewLeftAlignmentFlowLayout ()
 
-@property (nonatomic, weak) id <UICollectionViewDelegateFlowLayout> delegate;
 @property (nonatomic, strong) NSMutableArray *itemAttributes;
 
 @end
