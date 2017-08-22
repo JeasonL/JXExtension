@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Jeason.Lee. All rights reserved.
 //
 
-#import "JXLeftAlignmentFlowLayout.h"
+#import "JXCollectionViewLeftAlignmentFlowLayout.h"
 
 @implementation UICollectionViewLayoutAttributes (LeftAlignment)
 
