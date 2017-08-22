@@ -29,6 +29,8 @@
 		7ACD81911F35A6BD00021894 /* JXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81821F35A6BD00021894 /* JXTextField.m */; };
 		7ACD81921F35A6BD00021894 /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81841F35A6BD00021894 /* JXTextView.m */; };
 		7ACD81931F35A6BD00021894 /* JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81861F35A6BD00021894 /* JXView.m */; };
+		7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456B81F4C38710068FD48 /* NSString+JXSize.m */; };
+		7AF456BC1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456BB1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.m */; };
 		7EC85313099945E851F43C10 /* libPods-JXExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C87085E6B1D02610148DF7 /* libPods-JXExtension.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,10 @@
 		7ACD81841F35A6BD00021894 /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		7ACD81851F35A6BD00021894 /* JXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXView.h; sourceTree = "<group>"; };
 		7ACD81861F35A6BD00021894 /* JXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXView.m; sourceTree = "<group>"; };
+		7AF456B71F4C38710068FD48 /* NSString+JXSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JXSize.h"; sourceTree = "<group>"; };
+		7AF456B81F4C38710068FD48 /* NSString+JXSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXSize.m"; sourceTree = "<group>"; };
+		7AF456BA1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLeftAlignmentFlowLayout.h; sourceTree = "<group>"; };
+		7AF456BB1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLeftAlignmentFlowLayout.m; sourceTree = "<group>"; };
 		A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		F1C87085E6B1D02610148DF7 /* libPods-JXExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -176,6 +182,8 @@
 				7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */,
 				7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */,
 				7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */,
+				7AF456B71F4C38710068FD48 /* NSString+JXSize.h */,
+				7AF456B81F4C38710068FD48 /* NSString+JXSize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -199,6 +207,8 @@
 				7ACD81861F35A6BD00021894 /* JXView.m */,
 				7A00AFAC1F4ADAD10049807A /* JXImageTextButton.h */,
 				7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */,
+				7AF456BA1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.h */,
+				7AF456BB1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +349,7 @@
 				7ACD818F1F35A6BD00021894 /* JXImageView.m in Sources */,
 				7ACD81921F35A6BD00021894 /* JXTextView.m in Sources */,
 				7ACD81881F35A6BD00021894 /* UIButton+JXCountDown.m in Sources */,
+				7AF456BC1F4C39580068FD48 /* JXLeftAlignmentFlowLayout.m in Sources */,
 				7ACD818E1F35A6BD00021894 /* JXButton.m in Sources */,
 				7ACD818C1F35A6BD00021894 /* UIView+JXDesign.m in Sources */,
 				7ACD80D91F3578C200021894 /* ViewController.m in Sources */,
@@ -349,6 +360,7 @@
 				7ACD81871F35A6BD00021894 /* NSString+JXDecimalCalculate.m in Sources */,
 				7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */,
 				7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */,
+				7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
 				7ACD818B1F35A6BD00021894 /* UIScrollView+JXExtension.m in Sources */,
 				7ACD818D1F35A6BD00021894 /* JXAlertContainerView.m in Sources */,
