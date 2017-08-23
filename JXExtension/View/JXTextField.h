@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol JXKeyInputTextFieldDelegate <NSObject>
+
+- (void)textFieldDidDeleteBackward:(UITextField *)textField;
+
+@end
+
 @interface JXTextField : UITextField
 
 @property (nonatomic) IBInspectable BOOL masksToBounds;
@@ -18,5 +24,7 @@
 @property (nonatomic) IBInspectable CGFloat rightInset;
 @property (nonatomic) IBInspectable UIColor *placeholderColor;
 @property (nonatomic) UIFont  *placehoderFont;
+
+@property (nonatomic, weak) IBOutlet id <JXKeyInputTextFieldDelegate> keyInputDelegate;
 
 @end

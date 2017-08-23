@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <JXKeyInputTextFieldDelegate>
 
 @end
 
@@ -49,6 +49,12 @@
     //    [sender jx_normalTitleWithTitle:@"normal倒计时" startTime:-10 waitPrefix:@"n前序" waitSuffix:@"后续" complete:^{
     //        NSLog(@"n结束");
     //    }];
+}
+
+#pragma mark - JXKeyInputTextFieldDelegate
+
+- (void)textFieldDidDeleteBackward:(UITextField *)textField {
+    NSLog(@"text:%@", textField.text);
 }
 
 - (void)didReceiveMemoryWarning {

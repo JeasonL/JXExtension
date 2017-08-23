@@ -20,6 +20,13 @@
     return [super editingRectForBounds:UIEdgeInsetsInsetRect(bounds, insets)];
 }
 
+- (void)deleteBackward {
+    [super deleteBackward];
+    if ([self.keyInputDelegate respondsToSelector:@selector(textFieldDidDeleteBackward:)]) {
+        [self.keyInputDelegate textFieldDidDeleteBackward:self];
+    }
+}
+
 #pragma mark - Property method
 
 - (void)setMasksToBounds:(BOOL)masksToBounds {
