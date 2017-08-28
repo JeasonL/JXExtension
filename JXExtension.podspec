@@ -14,16 +14,15 @@ Pod::Spec.new do |s|
 
   s.subspec 'Category' do |category|
     category.source_files = 'JXExtension/Category/*.{h,m}'
-    category.requires_arc = true
   end
 
   s.subspec 'View' do |view|
     view.source_files = 'JXExtension/View/*.{h,m}'
     view.dependency 'JXExtension/Category'
-    view.requires_arc = true
   end
 
   s.dependency 'SDVersion'
   s.requires_arc = true
+  s.ios.deployment_target = '7.0'
 
 end
