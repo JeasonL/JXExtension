@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "UIViewController+JXTransition.h"
+#import "JXPushAnimator.h"
 
 @interface ViewController () <JXKeyInputTextFieldDelegate>
 
@@ -14,8 +16,26 @@
 
 @implementation ViewController
 
++ (UINavigationController *)navigationController {
+    ViewController *viewController = [UIStoryboard storyboardWithName:@"Main" bundle:nil].instantiateInitialViewController;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    return navigationController;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (IBAction)closeAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)modalAction:(id)sender {
+    UINavigationController *nav = [ViewController navigationController];
+    [nav.navigationBar setBarTintColor:[UIColor redColor]];
+    (nav.viewControllers.firstObject).view.backgroundColor = [UIColor orangeColor];
+    JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
+    [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
 }
 
 - (IBAction)selectedButtonAction:(UIButton *)sender {

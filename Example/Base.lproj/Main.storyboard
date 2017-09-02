@@ -95,9 +95,22 @@
                             <constraint firstItem="8zg-C3-uK4" firstAttribute="centerX" secondItem="ohZ-ol-axA" secondAttribute="centerX" id="jhc-Dc-j92"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="oo9-NR-NQP">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="akP-PA-HrG">
+                            <connections>
+                                <action selector="closeAction:" destination="BYZ-38-t0r" id="vVM-Mb-S3G"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Modal" id="ENA-7A-r0b">
+                            <connections>
+                                <action selector="modalAction:" destination="BYZ-38-t0r" id="qOG-Gb-yDV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="201" y="143"/>
         </scene>
     </scenes>
     <resources>

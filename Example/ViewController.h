@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
++ (UINavigationController *)navigationController;
 
 @end
 

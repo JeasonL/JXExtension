@@ -10,6 +10,10 @@
 		7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */; };
 		7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */; };
 		7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */; };
+		7A6D8E391F5A99ED00825854 /* JXTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6D8E381F5A99ED00825854 /* JXTransitionAnimator.m */; };
+		7A6D8E3C1F5A9B1300825854 /* JXTransitionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6D8E3B1F5A9B1300825854 /* JXTransitionObject.m */; };
+		7A6D8E3F1F5AA0D000825854 /* JXPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6D8E3E1F5AA0D000825854 /* JXPushAnimator.m */; };
+		7A6D8E421F5AA2C100825854 /* UIViewController+JXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6D8E411F5AA2C100825854 /* UIViewController+JXTransition.m */; };
 		7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */; };
 		7ACD80D31F3578C200021894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D21F3578C200021894 /* main.m */; };
 		7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D51F3578C200021894 /* AppDelegate.m */; };
@@ -42,6 +46,14 @@
 		7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXFrame.m"; sourceTree = "<group>"; };
 		7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
 		7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
+		7A6D8E371F5A99ED00825854 /* JXTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTransitionAnimator.h; sourceTree = "<group>"; };
+		7A6D8E381F5A99ED00825854 /* JXTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTransitionAnimator.m; sourceTree = "<group>"; };
+		7A6D8E3A1F5A9B1300825854 /* JXTransitionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXTransitionObject.h; sourceTree = "<group>"; };
+		7A6D8E3B1F5A9B1300825854 /* JXTransitionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTransitionObject.m; sourceTree = "<group>"; };
+		7A6D8E3D1F5AA0D000825854 /* JXPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPushAnimator.h; sourceTree = "<group>"; };
+		7A6D8E3E1F5AA0D000825854 /* JXPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXPushAnimator.m; sourceTree = "<group>"; };
+		7A6D8E401F5AA2C100825854 /* UIViewController+JXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JXTransition.h"; sourceTree = "<group>"; };
+		7A6D8E411F5AA2C100825854 /* UIViewController+JXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXTransition.m"; sourceTree = "<group>"; };
 		7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JXExtension.h"; sourceTree = "<group>"; };
 		7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JXExtension.m"; sourceTree = "<group>"; };
 		7ACD80CE1F3578C200021894 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +152,14 @@
 				7ACD80DF1F3578C200021894 /* LaunchScreen.storyboard */,
 				7ACD80E21F3578C200021894 /* Info.plist */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
+				7A6D8E371F5A99ED00825854 /* JXTransitionAnimator.h */,
+				7A6D8E381F5A99ED00825854 /* JXTransitionAnimator.m */,
+				7A6D8E3D1F5AA0D000825854 /* JXPushAnimator.h */,
+				7A6D8E3E1F5AA0D000825854 /* JXPushAnimator.m */,
+				7A6D8E3A1F5A9B1300825854 /* JXTransitionObject.h */,
+				7A6D8E3B1F5A9B1300825854 /* JXTransitionObject.m */,
+				7A6D8E401F5AA2C100825854 /* UIViewController+JXTransition.h */,
+				7A6D8E411F5AA2C100825854 /* UIViewController+JXTransition.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -343,9 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6D8E3F1F5AA0D000825854 /* JXPushAnimator.m in Sources */,
 				7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */,
 				7ACD81931F35A6BD00021894 /* JXView.m in Sources */,
+				7A6D8E3C1F5A9B1300825854 /* JXTransitionObject.m in Sources */,
 				7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */,
+				7A6D8E391F5A99ED00825854 /* JXTransitionAnimator.m in Sources */,
+				7A6D8E421F5AA2C100825854 /* UIViewController+JXTransition.m in Sources */,
 				7ACD818F1F35A6BD00021894 /* JXImageView.m in Sources */,
 				7ACD81921F35A6BD00021894 /* JXTextView.m in Sources */,
 				7AF456BF1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m in Sources */,
