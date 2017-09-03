@@ -17,11 +17,11 @@
 @property (nonatomic, assign) NSTimeInterval backDuration;
 
 /**
- *  配置To过程动画,自定义转场动画应该复写该方法
+ *  配置To过程动画,自定义转场动画复写该方法
  */
 - (void)jx_setToAnimation:(id<UIViewControllerContextTransitioning>)transitionContext;
 /**
- *  配置back过程动画,自定义转场动画应该复写该方法
+ *  配置Back过程动画,自定义转场动画复写该方法
  */
 - (void)jx_setBackAnimation:(id<UIViewControllerContextTransitioning>)transitionContext;
 

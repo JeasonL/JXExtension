@@ -30,7 +30,6 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     _config ? _config(transitionContext) : nil;
-
 }
 
 @end
