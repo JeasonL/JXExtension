@@ -15,6 +15,7 @@
 		7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF41F5BB00A003A5B53 /* JXTransitionAnimator.m */; };
 		7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF61F5BB00A003A5B53 /* JXTransitionObject.m */; };
 		7AB1EAFC1F5BB00A003A5B53 /* UIViewController+JXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */; };
+		7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */; };
 		7ACD80D31F3578C200021894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D21F3578C200021894 /* main.m */; };
 		7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D51F3578C200021894 /* AppDelegate.m */; };
 		7ACD80D91F3578C200021894 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D81F3578C200021894 /* ViewController.m */; };
@@ -56,6 +57,8 @@
 		7AB1EAF61F5BB00A003A5B53 /* JXTransitionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTransitionObject.m; sourceTree = "<group>"; };
 		7AB1EAF71F5BB00A003A5B53 /* UIViewController+JXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JXTransition.h"; sourceTree = "<group>"; };
 		7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXTransition.m"; sourceTree = "<group>"; };
+		7AB2EE371F5E562900064333 /* JXSystemAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSystemAuthManager.h; sourceTree = "<group>"; };
+		7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSystemAuthManager.m; sourceTree = "<group>"; };
 		7ACD80CE1F3578C200021894 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACD80D21F3578C200021894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ACD80D41F3578C200021894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -136,6 +139,15 @@
 			path = Transition;
 			sourceTree = "<group>";
 		};
+		7AB2EE361F5E560100064333 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2EE371F5E562900064333 /* JXSystemAuthManager.h */,
+				7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		7ACD80C51F3578C200021894 = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +176,6 @@
 				7ACD80D81F3578C200021894 /* ViewController.m */,
 				7ACD80DA1F3578C200021894 /* Main.storyboard */,
 				7ACD80DD1F3578C200021894 /* Assets.xcassets */,
-				7ACD80DF1F3578C200021894 /* LaunchScreen.storyboard */,
-				7ACD80E21F3578C200021894 /* Info.plist */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
 			);
 			path = Example;
@@ -174,6 +184,8 @@
 		7ACD80D11F3578C200021894 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7ACD80DF1F3578C200021894 /* LaunchScreen.storyboard */,
+				7ACD80E21F3578C200021894 /* Info.plist */,
 				7ACD80D21F3578C200021894 /* main.m */,
 				7ACD80E81F3579C900021894 /* PrefixHeader.pch */,
 			);
@@ -184,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				7ACD81771F35A6BD00021894 /* JXExtension.h */,
+				7AB2EE361F5E560100064333 /* Manager */,
 				7AB1EAF01F5BB00A003A5B53 /* Transition */,
 				7ACD816A1F35A6BD00021894 /* Category */,
 				7ACD81781F35A6BD00021894 /* View */,
@@ -375,6 +388,7 @@
 				7ACD81931F35A6BD00021894 /* JXView.m in Sources */,
 				7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */,
 				7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */,
+				7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */,
 				7AB1EAF91F5BB00A003A5B53 /* JXPushAnimator.m in Sources */,
 				7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */,
 				7AB1EAFC1F5BB00A003A5B53 /* UIViewController+JXTransition.m in Sources */,
@@ -462,7 +476,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -505,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,6 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -533,6 +548,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";

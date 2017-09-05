@@ -7,10 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "UIViewController+JXTransition.h"
 #import "JXPushAnimator.h"
 
-@interface ViewController () <JXKeyInputTextFieldDelegate>
+@interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate>
 
 @end
 
@@ -24,6 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [JXSystemAuthManager jx_judgeLocationAuthStatusWithSuccess:^{
+        
+    } failure:^{
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"打开定位" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+        [alertView show];
+    }];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    [JXSystemAuthManager jx_openApplicationSetting];
 }
 
 - (IBAction)closeAction:(id)sender {

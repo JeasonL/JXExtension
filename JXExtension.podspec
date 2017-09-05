@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JXExtension"
-  s.version      = "0.3.0"
+  s.version      = "0.3.1"
   s.summary      = "About UIKit Extension."
   s.homepage     = "https://gitlab.com/JeasonLee/JXExtension"
   s.license      = "MIT"
@@ -23,6 +23,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'Transition' do |ss|
     ss.source_files = 'JXExtension/Transition/*.{h,m}'
+  end
+
+  s.subspec 'Manager' do |ss|
+    ss.source_files = 'JXExtension/Manager/*.{h,m}'
   end
 
   s.dependency 'SDVersion'
