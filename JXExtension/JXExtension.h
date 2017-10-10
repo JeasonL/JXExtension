@@ -29,6 +29,7 @@
 #import "UIAlertController+JXExtension.h"
 #import "UIView+JXFrame.h"
 #import "NSString+JXSize.h"
+#import "NSURL+JXParameters.h"
 
 //Manager
 #import "JXSystemAuthManager.h"
