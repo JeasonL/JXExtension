@@ -20,12 +20,20 @@
     [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:complete];
 }
 
+- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout progress:(void(^)(int seconds))progress complete:(void(^)())complete {
+    [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" progress:progress complete:complete];
+}
+
 - (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal complete:nil];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal progress:nil complete:nil];
 }
 
 - (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal complete:complete];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal progress:nil complete:complete];
+}
+
+- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix progress:(void(^)(int seconds))progress complete:(void(^)())complete {
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateNormal progress:progress complete:complete];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout {
@@ -36,17 +44,25 @@
     [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" complete:complete];
 }
 
+- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout progress:(void(^)(int seconds))progress complete:(void(^)())complete {
+    [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" progress:progress complete:complete];
+}
+
 - (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected complete:nil];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected progress:nil complete:nil];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete {
-    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected complete:complete];
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected progress:nil complete:complete];
+}
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix progress:(void(^)(int seconds))progress complete:(void(^)())complete {
+    [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix forState:UIControlStateSelected progress:progress complete:complete];
 }
 
 #pragma mark - Private Method
 
-- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix forState:(UIControlState)state complete:(void(^)())complete {
+- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix forState:(UIControlState)state progress:(void(^)(int seconds))progress complete:(void(^)())complete {
     if (timeout <= 0) return;
     __block NSInteger timeOut = timeout - 1; //倒计时时间
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -66,6 +82,7 @@
             int seconds = @(timeOut).intValue;
             NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
+                progress ? progress(seconds) : nil;
                 self.selected = YES;
                 //设置界面的按钮显示
                 [self setTitle:[NSString stringWithFormat:@"%@%@%@", waitPrefix, strTime, waitSuffix] forState:state];
