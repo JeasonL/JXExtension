@@ -10,6 +10,28 @@
 
 @implementation UIImage (JXExtension)
 
++ (UIImage *)jx_launchImage {
+    NSString *imageName;
+    switch ([SDiOSVersion deviceSize]) {
+        case Screen4inch:
+            imageName = @"LaunchImage-700-568h";
+            break;
+        case Screen4Dot7inch:
+            imageName = @"LaunchImage-800-667h";
+            break;
+        case Screen5Dot5inch:
+            imageName = @"LaunchImage-800-Portrait-736h";
+            break;
+        case Screen5Dot8inch:
+            imageName = @"LaunchImage-1100-2436h";
+            break;
+        default:
+            imageName = @"LaunchImage-700";
+            break;
+    }
+    return [UIImage imageNamed:imageName];
+}
+
 + (UIImage *)jx_imageWithView:(UIView *)view {
     if (!view) {
         return [[UIImage alloc] init];

@@ -11,6 +11,11 @@
 @interface UIImage (JXExtension)
 
 /**
+ 获取LaunchImage
+ */
++ (UIImage *)jx_launchImage;
+
+/**
  根据view生成图片
  */
 + (UIImage *)jx_imageWithView:(UIView *)view;
@@ -21,6 +26,7 @@
 + (UIImage *)jx_imageWithColor:(UIColor *)color;
 
 - (UIColor *)jx_colorAtPixel:(CGPoint)point;
+
 /**
  返回该图片是否有透明度通道
  */
