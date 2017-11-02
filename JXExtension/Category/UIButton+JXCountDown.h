@@ -10,125 +10,126 @@
 
 @interface UIButton (JXCountDown)
 
-/**
- UIControlStateNormal状态下倒计时
+#pragma mark - Normal
 
- @param title 按钮title
- @param timeout 超时时间
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout;
 
-/**
- UIControlStateNormal状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param complete 完成倒计时回调
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                       canClick:(BOOL)canClick;
 
-/**
- UIControlStateNormal状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param progress 进度回调
- @param complete 完成倒计时回调
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout progress:(void(^)(int seconds))progress complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateNormal状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                       canClick:(BOOL)canClick
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateNormal状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- @param complete 完成倒计时回调
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                       progress:(void(^)(int seconds))progress
+                       complete:(void(^)())complete;
 
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                       canClick:(BOOL)canClick
+                       progress:(void(^)(int seconds))progress
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateNormal状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- @param progress 进度回调
- @param complete 完成倒计时回调
- */
-- (void)jx_normalTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix progress:(void(^)(int seconds))progress complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                     waitPrefix:(NSString *)waitPrefix
+                     waitSuffix:(NSString *)waitSuffix;
 
-/**
- UIControlStateSelected状态下倒计时
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                     waitPrefix:(NSString *)waitPrefix
+                     waitSuffix:(NSString *)waitSuffix
+                       canClick:(BOOL)canClick;
 
- @param title 按钮title
- @param timeout 超时时间
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                     waitPrefix:(NSString *)waitPrefix
+                     waitSuffix:(NSString *)waitSuffix
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateSelected状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param complete 完成倒计时回调
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                     waitPrefix:(NSString *)waitPrefix
+                     waitSuffix:(NSString *)waitSuffix
+                       canClick:(BOOL)canClick
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateSelected状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param progress 进度回调
- @param complete 完成倒计时回调
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout progress:(void(^)(int seconds))progress complete:(void(^)())complete;
+- (void)jx_normalTitleWithTitle:(NSString *)title
+                      startTime:(NSInteger)timeout
+                     waitPrefix:(NSString *)waitPrefix
+                     waitSuffix:(NSString *)waitSuffix
+                       canClick:(BOOL)canClick
+                       progress:(void(^)(int seconds))progress
+                       complete:(void(^)())complete;
 
-/**
- UIControlStateSelected状态下倒计时
+#pragma mark - Selected
 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix;
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout;
 
-/**
- UIControlStateSelected状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- @param complete 完成倒计时回调
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix complete:(void(^)())complete;
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                         canClick:(BOOL)canClick;
 
-/**
- UIControlStateSelected状态下倒计时
- 
- @param title 按钮title
- @param timeout 超时时间
- @param waitPrefix 倒计时前序
- @param waitSuffix 倒计时后序
- @param progress 进度回调
- @param complete 完成倒计时回调
- */
-- (void)jx_selectedTitleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix progress:(void(^)(int seconds))progress complete:(void(^)())complete;
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                         canClick:(BOOL)canClick
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                         progress:(void(^)(int seconds))progress
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                         canClick:(BOOL)canClick
+                         progress:(void(^)(int seconds))progress
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                       waitPrefix:(NSString *)waitPrefix
+                       waitSuffix:(NSString *)waitSuffix;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                       waitPrefix:(NSString *)waitPrefix
+                       waitSuffix:(NSString *)waitSuffix
+                         canClick:(BOOL)canClick;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                       waitPrefix:(NSString *)waitPrefix
+                       waitSuffix:(NSString *)waitSuffix
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                       waitPrefix:(NSString *)waitPrefix
+                       waitSuffix:(NSString *)waitSuffix
+                         canClick:(BOOL)canClick
+                         complete:(void(^)())complete;
+
+- (void)jx_selectedTitleWithTitle:(NSString *)title
+                        startTime:(NSInteger)timeout
+                       waitPrefix:(NSString *)waitPrefix
+                       waitSuffix:(NSString *)waitSuffix
+                         canClick:(BOOL)canClick
+                         progress:(void(^)(int seconds))progress
+                         complete:(void(^)())complete;
 
 @end

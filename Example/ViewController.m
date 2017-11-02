@@ -23,12 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [JXSystemAuthManager jx_judgeLocationAuthStatusWithSuccess:^{
-        
-    } failure:^{
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"打开定位" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-        [alertView show];
-    }];
+//    [JXSystemAuthManager jx_judgeLocationAuthStatusWithSuccess:^{
+//
+//    } failure:^{
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"打开定位" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+//        [alertView show];
+//    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -59,7 +59,7 @@
     [alert setMessageColor:[UIColor greenColor]];
     [self presentViewController:alert animated:YES completion:nil];
     
-    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:10 progress:^(int seconds) {
+    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:10 canClick:YES progress:^(int seconds) {
         NSLog(@"sProgress:%@", @(seconds));
     } complete:^{
         NSLog(@"s结束");
@@ -69,9 +69,9 @@
     //        NSLog(@"s结束");
     //    }];
     //    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:15 waitPrefix:@"selected前序" waitSuffix:@"后序"];
-    //    [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:1 waitPrefix:@"s前序" waitSuffix:@"后续" complete:^{
-    //        NSLog(@"s结束");
-    //    }];
+//        [sender jx_selectedTitleWithTitle:@"selected倒计时" startTime:1 waitPrefix:@"s前序" waitSuffix:@"后续" complete:^{
+//            NSLog(@"s结束");
+//        }];
 }
 
 - (IBAction)normalButtonAction:(UIButton *)sender {
