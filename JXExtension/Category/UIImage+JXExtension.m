@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+JXExtension.h"
+#import <SDVersion/SDiOSVersion.h>
 
 @implementation UIImage (JXExtension)
 
