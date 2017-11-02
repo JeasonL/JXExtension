@@ -7,30 +7,20 @@
 //
 
 #import "UIImage+JXExtension.h"
-#import <SDVersion/SDiOSVersion.h>
 
 @implementation UIImage (JXExtension)
 
 + (UIImage *)jx_launchImage {
-    NSString *imageName;
-    switch ([SDiOSVersion deviceSize]) {
-        case Screen4inch:
-            imageName = @"LaunchImage-700-568h";
-            break;
-        case Screen4Dot7inch:
-            imageName = @"LaunchImage-800-667h";
-            break;
-        case Screen5Dot5inch:
-            imageName = @"LaunchImage-800-Portrait-736h";
-            break;
-        case Screen5Dot8inch:
-            imageName = @"LaunchImage-1100-2436h";
-            break;
-        default:
-            imageName = @"LaunchImage-700";
-            break;
+    NSString *launchImage;
+    CGSize viewSize = [UIScreen mainScreen].bounds.size;
+    NSString *viewOrientation = @"Portrait";
+    NSArray *imageDictionarys = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"UILaunchImages"];
+    for (NSDictionary *dictionary in imageDictionarys) {
+        CGSize imageSize = CGSizeFromString(dictionary[@"UILaunchImageSize"]);
+        if (CGSizeEqualToSize(imageSize, viewSize) && [viewOrientation isEqualToString:dictionary[@"UILaunchImageOrientation"]])
+            launchImage = dictionary[@"UILaunchImageName"];
     }
-    return [UIImage imageNamed:imageName];
+    return [UIImage imageNamed:launchImage];
 }
 
 + (UIImage *)jx_imageWithView:(UIView *)view {
