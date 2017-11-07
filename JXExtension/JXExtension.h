@@ -18,6 +18,7 @@
 #import "JXAlertContainerView.h"
 #import "JXImageTextButton.h"
 #import "JXCollectionViewLeftAlignmentFlowLayout.h"
+#import "JXBordersView.h"
 
 //Category
 #import "NSString+JXDecimalCalculate.h"

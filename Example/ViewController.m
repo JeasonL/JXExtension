@@ -8,8 +8,11 @@
 
 #import "ViewController.h"
 #import "JXPushAnimator.h"
+#import "JXBordersView.h"
 
 @interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate>
+
+@property (weak, nonatomic) IBOutlet JXBordersView *bordersView;
 
 @end
 
@@ -29,6 +32,8 @@
 //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"打开定位" delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
 //        [alertView show];
 //    }];
+    self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
+//    self.bordersView.borderSides = JXBorderSidesNone;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

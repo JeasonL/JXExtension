@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -82,6 +82,28 @@
                                     <outlet property="keyInputDelegate" destination="BYZ-38-t0r" id="BJ9-if-PY8"/>
                                 </connections>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2r-Aa-hF8" customClass="JXBordersView">
+                                <rect key="frame" x="67" y="50.5" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="4E6-uV-6AT"/>
+                                    <constraint firstAttribute="height" constant="128" id="Cxj-Eu-YCU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.9987005591" green="0.71785694359999996" blue="0.1025463566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -90,7 +112,9 @@
                             <constraint firstItem="QZU-vi-gJF" firstAttribute="top" secondItem="YP9-tl-12J" secondAttribute="bottom" constant="20" id="Qn4-BS-5XB"/>
                             <constraint firstItem="QZU-vi-gJF" firstAttribute="centerX" secondItem="YP9-tl-12J" secondAttribute="centerX" id="Ssn-CH-c64"/>
                             <constraint firstItem="ohZ-ol-axA" firstAttribute="top" secondItem="8zg-C3-uK4" secondAttribute="bottom" constant="20" id="UXH-z0-eVu"/>
+                            <constraint firstItem="L2r-Aa-hF8" firstAttribute="centerX" secondItem="8zg-C3-uK4" secondAttribute="centerX" id="Xvg-6T-g1G"/>
                             <constraint firstItem="YP9-tl-12J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YLs-Pq-hlV"/>
+                            <constraint firstItem="8zg-C3-uK4" firstAttribute="top" secondItem="L2r-Aa-hF8" secondAttribute="bottom" constant="30" id="YSp-4A-xjL"/>
                             <constraint firstItem="YP9-tl-12J" firstAttribute="top" secondItem="ohZ-ol-axA" secondAttribute="bottom" constant="30" id="j7i-VV-Rbn"/>
                             <constraint firstItem="8zg-C3-uK4" firstAttribute="centerX" secondItem="ohZ-ol-axA" secondAttribute="centerX" id="jhc-Dc-j92"/>
                         </constraints>
@@ -107,6 +131,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bordersView" destination="L2r-Aa-hF8" id="9zd-PN-dYR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
