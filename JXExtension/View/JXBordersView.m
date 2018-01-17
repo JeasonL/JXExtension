@@ -63,6 +63,31 @@ const JXBorderSides JXBorderSidesAll = JXBorderSidesTop | JXBorderSidesLeft | JX
     [self setNeedsDisplay];
 }
 
+- (void)setDashBorder:(BOOL)dashBorder {
+    _dashBorder = dashBorder;
+    [self setNeedsDisplay];
+}
+
+- (void)setDashPhase:(NSInteger)dashPhase {
+    _dashPhase = dashPhase;
+    [self setNeedsDisplay];
+}
+
+- (void)setDashLength:(CGFloat)dashLength {
+    _dashLength = dashLength;
+    [self setNeedsDisplay];
+}
+
+- (void)setDashSpacing:(CGFloat)dashSpacing {
+    _dashSpacing = dashSpacing;
+    [self setNeedsDisplay];
+}
+
+- (void)setDashCount:(NSInteger)dashCount {
+    _dashCount = dashCount;
+    [self setNeedsDisplay];
+}
+
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect {
@@ -89,6 +114,14 @@ const JXBorderSides JXBorderSidesAll = JXBorderSidesTop | JXBorderSidesLeft | JX
     //设置边框颜色与宽度
     CGContextSetStrokeColorWithColor(contenxt, self.borderColor.CGColor);
     CGContextSetLineWidth(contenxt, self.borderWidth);
+    //设置画虚线
+    if (self.dashBorder) {
+        // dashLength是每节虚线长度 dashSpacing是间隔
+        CGFloat lengths[] = {self.dashLength, self.dashSpacing};
+        // lengths数组的长度
+        NSInteger dashCount = self.dashCount ?: 2;
+        CGContextSetLineDash(contenxt, self.dashPhase, lengths, dashCount);
+    }
     //绘制边框
     [self addPathToContext:contenxt inRect:properRect respectBorders:YES];
     CGContextDrawPath(contenxt, kCGPathStroke);
@@ -150,9 +183,7 @@ const JXBorderSides JXBorderSidesAll = JXBorderSidesTop | JXBorderSidesLeft | JX
     if (self.roundedCorners & JXRoundedCornerBottomRight && self.borderSides & (JXBorderSidesBottom | JXBorderSidesRight)) {
         CGContextAddArcToPoint(contenxt, maxx, maxy, midx, maxy, self.cornerRadius);
         CGContextAddLineToPoint(contenxt, midx, maxy);
-        
     } else {
-        
         if (self.borderSides & JXBorderSidesRight || !respectBorders) {
             CGContextAddLineToPoint(contenxt, maxx, maxy);
         } else {

@@ -33,7 +33,7 @@
 //        [alertView show];
 //    }];
     self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
-//    self.bordersView.borderSides = JXBorderSidesNone;
+    self.bordersView.borderSides = JXBorderSidesAll;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

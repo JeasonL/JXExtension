@@ -41,4 +41,14 @@ extern const JXBorderSides JXBorderSidesAll;
 
 @property (nonatomic, strong) IBInspectable UIColor *fillColor;
 
+@property (nonatomic, assign) IBInspectable BOOL dashBorder;
+
+@property (nonatomic, assign) IBInspectable NSInteger dashPhase;
+
+@property (nonatomic, assign) IBInspectable CGFloat dashLength;
+
+@property (nonatomic, assign) IBInspectable CGFloat dashSpacing;
+
+@property (nonatomic, assign) IBInspectable NSInteger dashCount;
+
 @end
