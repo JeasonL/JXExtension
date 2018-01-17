@@ -25,21 +25,21 @@
 
 - (void)jx_normalTitleWithTitle:(NSString *)title
                       startTime:(NSInteger)timeout
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_normalTitleWithTitle:title startTime:timeout canClick:NO complete:complete];
 }
 
 - (void)jx_normalTitleWithTitle:(NSString *)title
                       startTime:(NSInteger)timeout
                        canClick:(BOOL)canClick
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_normalTitleWithTitle:title startTime:timeout canClick:canClick progress:nil complete:complete];
 }
 
 - (void)jx_normalTitleWithTitle:(NSString *)title
                       startTime:(NSInteger)timeout
                        progress:(void(^)(int seconds))progress
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_normalTitleWithTitle:title startTime:timeout canClick:NO progress:progress complete:complete];
 }
 
@@ -47,7 +47,7 @@
                       startTime:(NSInteger)timeout
                        canClick:(BOOL)canClick
                        progress:(void(^)(int seconds))progress
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_normalTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" canClick:canClick progress:progress complete:complete];
 }
 
@@ -70,7 +70,7 @@
                       startTime:(NSInteger)timeout
                      waitPrefix:(NSString *)waitPrefix
                      waitSuffix:(NSString *)waitSuffix
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:NO forState:UIControlStateNormal progress:nil complete:complete];
 }
 
@@ -79,7 +79,7 @@
                      waitPrefix:(NSString *)waitPrefix
                      waitSuffix:(NSString *)waitSuffix
                        canClick:(BOOL)canClick
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:canClick forState:UIControlStateNormal progress:nil complete:complete];
 }
 
@@ -89,7 +89,7 @@
                      waitSuffix:(NSString *)waitSuffix
                        canClick:(BOOL)canClick
                        progress:(void(^)(int seconds))progress
-                       complete:(void(^)())complete {
+                       complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:canClick forState:UIControlStateNormal progress:progress complete:complete];
 }
 
@@ -108,21 +108,21 @@
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title
                         startTime:(NSInteger)timeout
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_selectedTitleWithTitle:title startTime:timeout canClick:NO complete:complete];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title
                         startTime:(NSInteger)timeout
                          canClick:(BOOL)canClick
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_selectedTitleWithTitle:title startTime:timeout canClick:canClick progress:nil complete:complete];
 }
 
 - (void)jx_selectedTitleWithTitle:(NSString *)title
                         startTime:(NSInteger)timeout
                          progress:(void(^)(int seconds))progress
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_selectedTitleWithTitle:title startTime:timeout canClick:NO progress:progress complete:complete];
 }
 
@@ -130,7 +130,7 @@
                         startTime:(NSInteger)timeout
                          canClick:(BOOL)canClick
                          progress:(void(^)(int seconds))progress
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_selectedTitleWithTitle:title startTime:timeout waitPrefix:@"" waitSuffix:@"" canClick:canClick progress:progress complete:complete];
 }
 
@@ -153,7 +153,7 @@
                         startTime:(NSInteger)timeout
                        waitPrefix:(NSString *)waitPrefix
                        waitSuffix:(NSString *)waitSuffix
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:NO forState:UIControlStateSelected progress:nil complete:complete];
 }
 
@@ -162,7 +162,7 @@
                        waitPrefix:(NSString *)waitPrefix
                        waitSuffix:(NSString *)waitSuffix
                          canClick:(BOOL)canClick
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:canClick forState:UIControlStateSelected progress:nil complete:complete];
 }
 
@@ -172,13 +172,13 @@
                        waitSuffix:(NSString *)waitSuffix
                          canClick:(BOOL)canClick
                          progress:(void(^)(int seconds))progress
-                         complete:(void(^)())complete {
+                         complete:(void(^)(void))complete {
     [self jx_titleWithTitle:title startTime:timeout waitPrefix:waitPrefix waitSuffix:waitSuffix canClick:canClick forState:UIControlStateSelected progress:progress complete:complete];
 }
 
 #pragma mark - Private Method
 
-- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix canClick:(BOOL)canClick forState:(UIControlState)state progress:(void(^)(int seconds))progress complete:(void(^)())complete {
+- (void)jx_titleWithTitle:(NSString *)title startTime:(NSInteger)timeout waitPrefix:(NSString *)waitPrefix waitSuffix:(NSString *)waitSuffix canClick:(BOOL)canClick forState:(UIControlState)state progress:(void(^)(int seconds))progress complete:(void(^)(void))complete {
     if (timeout <= 0) return;
     __block NSInteger timeOut = timeout - 1; //倒计时时间
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
