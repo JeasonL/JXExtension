@@ -24,7 +24,11 @@
  根据color生成图片
  */
 + (UIImage *)jx_imageWithColor:(UIColor *)color;
++ (UIImage *)jx_imageWithColor:(UIColor *)color size:(CGSize)size;
 
+/**
+ 图片指定位置取颜色
+ */
 - (UIColor *)jx_colorAtPixel:(CGPoint)point;
 
 /**
