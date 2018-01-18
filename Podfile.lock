@@ -1,11 +1,11 @@
 PODS:
-  - SDVersion (4.3.1)
+  - SDVersion (4.3.2)
 
 DEPENDENCIES:
   - SDVersion
 
 SPEC CHECKSUMS:
-  SDVersion: f89668d817ccfee16a57fc279030635bd2ad8fae
+  SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
 
 PODFILE CHECKSUM: 6c7428bce8d6f4ccc56489c22cd176e34fd0679d
 

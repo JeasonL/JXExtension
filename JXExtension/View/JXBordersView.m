@@ -13,12 +13,17 @@ const JXBorderSides JXBorderSidesAll = JXBorderSidesTop | JXBorderSidesLeft | JX
 
 @implementation JXBordersView
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
+- (instancetype)init {
+    self = [super init];
     if (self) {
         [self setup];
     }
     return self;
+}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    [self setup];
 }
 
 - (void)setup {
