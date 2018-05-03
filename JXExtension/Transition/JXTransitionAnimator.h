@@ -25,4 +25,8 @@
  */
 - (void)jx_setBackAnimation:(id<UIViewControllerContextTransitioning>)transitionContext;
 
+- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext;
+- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext;
+
+
 @end

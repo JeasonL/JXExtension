@@ -8,11 +8,13 @@
 
 #import "JXTransitionAnimator.h"
 #import "JXTransitionObject.h"
+#import "JXInteractiveObject.h"
 
 @interface JXTransitionAnimator ()
 
 @property (nonatomic, strong) JXTransitionObject *toTransition;
 @property (nonatomic, strong) JXTransitionObject *backTransition;
+@property (nonatomic, strong) JXInteractiveObject *backInteractive;
 
 @end
 
@@ -35,6 +37,14 @@
     //子类重写
 }
 
+- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
+}
+
+- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
+    
+}
+
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -50,7 +60,7 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    return self.backInteractive;
 }
 
 #pragma mark - Property Method
@@ -71,6 +81,15 @@
         }];
     }
     return _backTransition;
+}
+
+- (JXInteractiveObject *)backInteractive {
+    if (!_backInteractive) {
+        _backInteractive = [[JXInteractiveObject alloc] initWithAnimationBlock:^(id<UIViewControllerContextTransitioning> transitionContext) {
+            [self jx_setBackInteractive:transitionContext];
+        }];
+    }
+    return _backInteractive;
 }
 
 @end

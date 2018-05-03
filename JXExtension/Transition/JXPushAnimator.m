@@ -8,6 +8,14 @@
 
 #import "JXPushAnimator.h"
 
+@interface JXPushAnimator ()
+
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, weak) id <UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic, assign) BOOL isInteracting;
+
+@end
+
 @implementation JXPushAnimator
 
 - (instancetype)init {
@@ -135,6 +143,62 @@
         }
         [transitionContext completeTransition:!wasCancel];
     }];
+}
+
+
+
+- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(toPanAction:)];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    [fromViewController.view addGestureRecognizer:panGesture];
+    //    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    self.viewController = fromViewController;
+}
+
+- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
+//    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(backPanAction:)];
+//    //    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+//    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+//    [toViewController.view addGestureRecognizer:panGesture];
+//    self.viewController = toViewController;
+//    self.transitionContext = transitionContext;
+}
+
+- (void)toPanAction:(UIPanGestureRecognizer*)gesture {
+    
+}
+
+- (void)backPanAction:(UIPanGestureRecognizer*)gesture {
+    UIView *containerView = gesture.view;
+    CGPoint translation = [gesture translationInView:containerView];
+    CGFloat percent = translation.x / containerView.bounds.size.width;
+    CGFloat velocityX = [gesture velocityInView:containerView].x;
+    BOOL isFinished;
+    if (velocityX <= 0) {
+        isFinished = NO;
+    } else if (velocityX > 100) {
+        isFinished = YES;
+    } else if (percent > 0.3) {
+        isFinished = YES;
+    } else {
+        isFinished = NO;
+    }
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        self.isInteracting = YES;
+        [self.viewController dismissViewControllerAnimated:YES completion:nil];
+    } else if (gesture.state == UIGestureRecognizerStateBegan) {
+        if (self.isInteracting) {
+            if (percent < 0) {
+                percent = 0;
+            }
+            [self.transitionContext updateInteractiveTransition:percent];
+        }
+    } else if (gesture.state == UIGestureRecognizerStateCancelled || gesture.state == UIGestureRecognizerStateEnded) {
+        if (self.isInteracting) {
+            isFinished ? [self.transitionContext finishInteractiveTransition] : [self.transitionContext cancelInteractiveTransition];
+            self.isInteracting = NO;
+        }
+    }
 }
 
 @end
