@@ -8,6 +8,8 @@
 
 #import "JXPushAnimator.h"
 
+static const CGFloat JXPushAnimatorOffset = 0.3 * -1;
+
 @implementation JXPushAnimator
 
 /**
@@ -31,16 +33,35 @@
     BOOL isPresent = (toViewController.presentingViewController == fromViewController);
     CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController];
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
+    CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
+    switch (self.animatorMode) {
+        case JXPushAnimatorModeRight: {
+            toX = toFrame.size.width;
+            fromX = toX * JXPushAnimatorOffset;
+        } break;
+        case JXPushAnimatorModeLeft: {
+            toX = -toFrame.size.width;
+            fromX = toX * JXPushAnimatorOffset;
+        } break;
+        case JXPushAnimatorModeTop: {
+            toY = -toFrame.size.height;
+            fromY = toY * JXPushAnimatorOffset;
+        } break;
+        case JXPushAnimatorModeBottom: {
+            toY = toFrame.size.height;
+            fromY = toY * JXPushAnimatorOffset;
+        } break;
+    }
     if (isPresent) {
         fromView.frame = fromFrame;
-        toView.frame = CGRectOffset(toFrame, toFrame.size.width, 0);
+        toView.frame = CGRectOffset(toFrame, toX, toY);
         [containerView addSubview:toView];
     }
     NSTimeInterval transitionDuration = self.toDuration;
     [UIView animateWithDuration:transitionDuration animations:^{
         if (isPresent) {
             toView.frame = toFrame;
-            fromView.frame = CGRectOffset(fromFrame, fromFrame.size.width * 0.3 * -1, 0);
+            fromView.frame = CGRectOffset(fromFrame, fromX, fromY);
         }
     } completion:^(BOOL finished) {
         BOOL wasCancelled = [transitionContext transitionWasCancelled];
@@ -70,16 +91,36 @@
     BOOL isDismiss = (fromViewController.presentingViewController == toViewController);
     CGRect fromFrame = [transitionContext initialFrameForViewController:fromViewController];
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
+    CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
+    switch (self.animatorMode) {
+        case JXPushAnimatorModeRight: {
+            fromX = toFrame.size.width;
+            toX = fromX * JXPushAnimatorOffset;
+        } break;
+        case JXPushAnimatorModeLeft: {
+            fromX = -toFrame.size.width;
+            toX = fromX * JXPushAnimatorOffset;
+        } break;
+        case JXPushAnimatorModeTop: {
+            fromY = -toFrame.size.height;
+            toY = fromY * JXPushAnimatorOffset;
+        }
+        case JXPushAnimatorModeBottom: {
+            fromY = toFrame.size.height;
+            toY = fromY * JXPushAnimatorOffset;
+        } break;
+        break;
+    }
     if (isDismiss) {
         fromView.frame = fromFrame;
-        toView.frame = CGRectOffset(toFrame, toFrame.size.width * 0.3 * -1, 0);
+        toView.frame = CGRectOffset(toFrame, toX, toY);
         [containerView insertSubview:toView belowSubview:fromView];
     }
     NSTimeInterval transitionDuration = self.backDuration;
     [UIView animateWithDuration:transitionDuration animations:^{
         if (isDismiss) {
             toView.frame = toFrame;
-            fromView.frame = CGRectOffset(fromFrame, fromFrame.size.width, 0);
+            fromView.frame = CGRectOffset(fromFrame, fromX, fromY);
         }
     } completion:^(BOOL finished) {
         BOOL wasCancel = [transitionContext transitionWasCancelled];

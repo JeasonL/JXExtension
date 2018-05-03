@@ -33,7 +33,7 @@
 //        [alertView show];
 //    }];
     self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
-    self.bordersView.borderSides = JXBorderSidesAll;
+    self.bordersView.borderSides = JXBorderSidesBottom;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -49,6 +49,7 @@
     [nav.navigationBar setBarTintColor:[UIColor redColor]];
     (nav.viewControllers.firstObject).view.backgroundColor = [UIColor orangeColor];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
+    pushAnimator.animatorMode = JXPushAnimatorModeLeft;
     [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
 }
 
