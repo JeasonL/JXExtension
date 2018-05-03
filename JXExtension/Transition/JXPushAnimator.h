@@ -20,6 +20,9 @@ typedef NS_ENUM(NSInteger, JXPushAnimatorMode) {
 
 @interface JXPushAnimator : JXTransitionAnimator
 
+//推出方式
 @property (nonatomic, assign) JXPushAnimatorMode animatorMode;
+//偏移量,默认:-0.3
+@property (nonatomic, assign) CGFloat offset;
 
 @end
