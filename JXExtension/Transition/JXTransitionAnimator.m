@@ -56,11 +56,11 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    return self.backInteractive.isInteractive ? self.backInteractive : nil;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return self.backInteractive;
+    return nil;
 }
 
 #pragma mark - Property Method
@@ -85,11 +85,14 @@
 
 - (JXInteractiveObject *)backInteractive {
     if (!_backInteractive) {
-        _backInteractive = [[JXInteractiveObject alloc] initWithAnimationBlock:^(id<UIViewControllerContextTransitioning> transitionContext) {
-            [self jx_setBackInteractive:transitionContext];
-        }];
+        _backInteractive = [[JXInteractiveObject alloc] initWithViewController:self.targetViewController];
     }
     return _backInteractive;
+}
+
+- (void)setTargetViewController:(UIViewController *)targetViewController {
+    _targetViewController = targetViewController;
+    [self backInteractive];
 }
 
 @end

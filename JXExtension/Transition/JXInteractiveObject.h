@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^JXTransitionAnimationConfig)(id<UIViewControllerContextTransitioning> transitionContext);
-
 @interface JXInteractiveObject : UIPercentDrivenInteractiveTransition
 
-- (instancetype)initWithAnimationBlock:(void(^)(id<UIViewControllerContextTransitioning> transitionContext))config;
+@property (nonatomic, assign, readonly) BOOL isInteractive;
+
+- (instancetype)initWithViewController:(UIViewController *)viewController;
 
 @end

@@ -16,6 +16,8 @@
 //back转场时间 默认0.3
 @property (nonatomic, assign) NSTimeInterval backDuration;
 
+@property (nonatomic, strong) UIViewController *targetViewController;
+
 /**
  *  配置To过程动画,自定义转场动画复写该方法
  */
