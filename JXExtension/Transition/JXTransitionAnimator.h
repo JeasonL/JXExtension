@@ -18,8 +18,6 @@
 //back转场时间 默认0.3
 @property (nonatomic, assign) NSTimeInterval backDuration;
 
-//@property (nonatomic, strong) UIViewController *targetViewController;
-
 @property (nonatomic, strong) JXInteractiveTransition *interactive;
 
 /**

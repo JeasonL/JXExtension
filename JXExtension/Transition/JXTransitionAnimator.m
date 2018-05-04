@@ -74,17 +74,4 @@
     return _backTransition;
 }
 
-//- (JXInteractiveTransition *)backInteractive {
-//    if (!_backInteractive) {
-//        _backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
-//        [_backInteractive addPanGestureForViewController:self.targetViewController];
-//    }
-//    return _backInteractive;
-//}
-//
-//- (void)setTargetViewController:(UIViewController *)targetViewController {
-//    _targetViewController = targetViewController;
-//    [self backInteractive];
-//}
-
 @end
