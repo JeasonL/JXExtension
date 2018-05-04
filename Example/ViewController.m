@@ -49,8 +49,7 @@
     [nav.navigationBar setBarTintColor:[UIColor redColor]];
     (nav.viewControllers.firstObject).view.backgroundColor = [UIColor orangeColor];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
-    pushAnimator.animatorMode = JXPushAnimatorModeRight;
-    pushAnimator.offset = 0;
+    pushAnimator.animatorMode = JXPushAnimatorModeLeft;
     [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
 }
 

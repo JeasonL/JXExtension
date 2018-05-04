@@ -8,13 +8,12 @@
 
 #import "JXTransitionAnimator.h"
 #import "JXTransitionObject.h"
-#import "JXInteractiveObject.h"
+#import "JXInteractiveTransition.h"
 
 @interface JXTransitionAnimator ()
 
 @property (nonatomic, strong) JXTransitionObject *toTransition;
 @property (nonatomic, strong) JXTransitionObject *backTransition;
-@property (nonatomic, strong) JXInteractiveObject *backInteractive;
 
 @end
 
@@ -37,14 +36,6 @@
     //子类重写
 }
 
-- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
-    
-}
-
-- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
-    
-}
-
 #pragma mark - UIViewControllerTransitioningDelegate
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
@@ -56,7 +47,7 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return self.backInteractive.isInteractive ? self.backInteractive : nil;
+    return self.interactive.isInteractive ? self.interactive : nil;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
@@ -83,16 +74,17 @@
     return _backTransition;
 }
 
-- (JXInteractiveObject *)backInteractive {
-    if (!_backInteractive) {
-        _backInteractive = [[JXInteractiveObject alloc] initWithViewController:self.targetViewController];
-    }
-    return _backInteractive;
-}
-
-- (void)setTargetViewController:(UIViewController *)targetViewController {
-    _targetViewController = targetViewController;
-    [self backInteractive];
-}
+//- (JXInteractiveTransition *)backInteractive {
+//    if (!_backInteractive) {
+//        _backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
+//        [_backInteractive addPanGestureForViewController:self.targetViewController];
+//    }
+//    return _backInteractive;
+//}
+//
+//- (void)setTargetViewController:(UIViewController *)targetViewController {
+//    _targetViewController = targetViewController;
+//    [self backInteractive];
+//}
 
 @end

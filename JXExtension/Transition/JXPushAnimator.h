@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, JXPushAnimatorMode) {
 
 //推出方式
 @property (nonatomic, assign) JXPushAnimatorMode animatorMode;
-//偏移量, 范围:-1至1, 默认:-0.3
+//偏移量, 范围:-1至1, 默认:0
 @property (nonatomic, assign) CGFloat offset;
 
 @end

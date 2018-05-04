@@ -7,6 +7,7 @@
 //
 
 #import "JXPushAnimator.h"
+#import "JXInteractiveTransition.h"
 
 @interface JXPushAnimator ()
 
@@ -21,9 +22,22 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-       _offset = -0.3;
+        
     }
     return self;
+}
+
+- (void)setAnimatorMode:(JXPushAnimatorMode)animatorMode {
+    _animatorMode = animatorMode;
+    if (animatorMode == JXPushAnimatorModeLeft) {
+        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
+    } else if (animatorMode == JXPushAnimatorModeRight) {
+        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionRight];
+    } else if (animatorMode == JXPushAnimatorModeBottom) {
+        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionBottom];
+    } else if (animatorMode == JXPushAnimatorModeTop) {
+        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionTop];
+    }
 }
 
 /**
@@ -143,62 +157,6 @@
         }
         [transitionContext completeTransition:!wasCancel];
     }];
-}
-
-
-
-- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
-//    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(toPanAction:)];
-//    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-//    [fromViewController.view addGestureRecognizer:panGesture];
-//    //    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-//    self.viewController = fromViewController;
-}
-
-- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext {
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(backPanAction:)];
-        UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-//    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    [fromViewController.view addGestureRecognizer:panGesture];
-    self.viewController = fromViewController;
-    self.transitionContext = transitionContext;
-}
-
-- (void)toPanAction:(UIPanGestureRecognizer*)gesture {
-    
-}
-
-- (void)backPanAction:(UIPanGestureRecognizer*)gesture {
-    UIView *containerView = self.viewController.view;
-    CGPoint translation = [gesture translationInView:containerView];
-    CGFloat percent = translation.x / containerView.bounds.size.width;
-//    CGFloat velocityX = [gesture velocityInView:containerView].x;
-//    BOOL isFinished;
-//    if (velocityX <= 0) {
-//        isFinished = NO;
-//    } else if (velocityX > 100) {
-//        isFinished = YES;
-//    } else if (percent > 0.3) {
-//        isFinished = YES;
-//    } else {
-//        isFinished = NO;
-//    }
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        self.isInteracting = YES;
-        [self.viewController dismissViewControllerAnimated:YES completion:nil];
-    } else if (gesture.state == UIGestureRecognizerStateChanged) {
-        if (self.isInteracting) {
-            if (percent < 0) {
-                percent = 0;
-            }
-            [self.transitionContext updateInteractiveTransition:percent];
-        }
-    } else if (gesture.state == UIGestureRecognizerStateCancelled || gesture.state == UIGestureRecognizerStateEnded) {
-        if (self.isInteracting) {
-            percent > 0.3 ? [self.transitionContext finishInteractiveTransition] : [self.transitionContext cancelInteractiveTransition];
-            self.isInteracting = NO;
-        }
-    }
 }
 
 @end

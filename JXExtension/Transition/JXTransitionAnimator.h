@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+@class JXInteractiveTransition;
+
 @interface JXTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate>
 
 //to转场时间 默认0.3
@@ -16,7 +18,9 @@
 //back转场时间 默认0.3
 @property (nonatomic, assign) NSTimeInterval backDuration;
 
-@property (nonatomic, strong) UIViewController *targetViewController;
+//@property (nonatomic, strong) UIViewController *targetViewController;
+
+@property (nonatomic, strong) JXInteractiveTransition *interactive;
 
 /**
  *  配置To过程动画,自定义转场动画复写该方法
@@ -26,9 +30,5 @@
  *  配置Back过程动画,自定义转场动画复写该方法
  */
 - (void)jx_setBackAnimation:(id<UIViewControllerContextTransitioning>)transitionContext;
-
-- (void)jx_setToInteractive:(id<UIViewControllerContextTransitioning>)transitionContext;
-- (void)jx_setBackInteractive:(id<UIViewControllerContextTransitioning>)transitionContext;
-
 
 @end
