@@ -54,6 +54,7 @@
 		7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JXParameters.m"; sourceTree = "<group>"; };
 		7A17267620A05D4E00CC9598 /* DismissViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissViewController.h; sourceTree = "<group>"; };
 		7A17267720A05D4E00CC9598 /* DismissViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DismissViewController.m; sourceTree = "<group>"; };
+		7A17267920A0678800CC9598 /* JXTransitionConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXTransitionConstant.h; sourceTree = "<group>"; };
 		7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
 		7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
 		7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JXExtension.h"; sourceTree = "<group>"; };
@@ -152,6 +153,7 @@
 				7AF73989209C70C7000815EE /* JXInteractiveTransition.m */,
 				7AB1EAF71F5BB00A003A5B53 /* UIViewController+JXTransition.h */,
 				7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */,
+				7A17267920A0678800CC9598 /* JXTransitionConstant.h */,
 			);
 			path = Transition;
 			sourceTree = "<group>";

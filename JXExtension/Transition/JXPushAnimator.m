@@ -26,20 +26,6 @@
     return self;
 }
 
-//- (void)setAnimatorMode:(JXPushAnimatorMode)animatorMode {
-//    _animatorMode = animatorMode;
-//    if (animatorMode == JXPushAnimatorModeLeft) {
-//        self.toInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent direction:JXInteractiveGestureDirectionRight];
-//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
-//    } else if (animatorMode == JXPushAnimatorModeRight) {
-//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionRight];
-//    } else if (animatorMode == JXPushAnimatorModeBottom) {
-//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionBottom];
-//    } else if (animatorMode == JXPushAnimatorModeTop) {
-//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionTop];
-//    }
-//}
-
 /**
  类似push动画效果
  */
@@ -63,19 +49,19 @@
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
     CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
     switch (self.animatorMode) {
-        case JXPushAnimatorModeRight: {
+        case JXAnimatorDirectionLeft: {
             toX = toFrame.size.width;
             fromX = toX * self.offset;
         } break;
-        case JXPushAnimatorModeLeft: {
+        case JXAnimatorDirectionRight: {
             toX = -toFrame.size.width;
             fromX = toX * self.offset;
         } break;
-        case JXPushAnimatorModeTop: {
+        case JXAnimatorDirectionBottom: {
             toY = -toFrame.size.height;
             fromY = toY * self.offset;
         } break;
-        case JXPushAnimatorModeBottom: {
+        case JXAnimatorDirectionTop: {
             toY = toFrame.size.height;
             fromY = toY * self.offset;
         } break;
@@ -121,19 +107,19 @@
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
     CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
     switch (self.animatorMode) {
-        case JXPushAnimatorModeRight: {
+        case JXAnimatorDirectionLeft: {
             fromX = fromFrame.size.width;
             toX = fromX * self.offset;
         } break;
-        case JXPushAnimatorModeLeft: {
+        case JXAnimatorDirectionRight: {
             fromX = -fromFrame.size.width;
             toX = fromX * self.offset;
         } break;
-        case JXPushAnimatorModeTop: {
+        case JXAnimatorDirectionBottom: {
             fromY = -fromFrame.size.height;
             toY = fromY * self.offset;
         } break;
-        case JXPushAnimatorModeBottom: {
+        case JXAnimatorDirectionTop: {
             fromY = fromFrame.size.height;
             toY = fromY * self.offset;
         } break;
