@@ -51,7 +51,7 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    return self.toInteractive.isInteractive ? self.toInteractive : nil;
 }
 
 #pragma mark - Property Method

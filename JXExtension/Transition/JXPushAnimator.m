@@ -26,18 +26,19 @@
     return self;
 }
 
-- (void)setAnimatorMode:(JXPushAnimatorMode)animatorMode {
-    _animatorMode = animatorMode;
-    if (animatorMode == JXPushAnimatorModeLeft) {
-        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
-    } else if (animatorMode == JXPushAnimatorModeRight) {
-        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionRight];
-    } else if (animatorMode == JXPushAnimatorModeBottom) {
-        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionBottom];
-    } else if (animatorMode == JXPushAnimatorModeTop) {
-        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionTop];
-    }
-}
+//- (void)setAnimatorMode:(JXPushAnimatorMode)animatorMode {
+//    _animatorMode = animatorMode;
+//    if (animatorMode == JXPushAnimatorModeLeft) {
+//        self.toInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent direction:JXInteractiveGestureDirectionRight];
+//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
+//    } else if (animatorMode == JXPushAnimatorModeRight) {
+//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionRight];
+//    } else if (animatorMode == JXPushAnimatorModeBottom) {
+//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionBottom];
+//    } else if (animatorMode == JXPushAnimatorModeTop) {
+//        self.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionTop];
+//    }
+//}
 
 /**
  类似push动画效果

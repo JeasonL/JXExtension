@@ -19,6 +19,7 @@
 @property (nonatomic, assign) NSTimeInterval backDuration;
 
 @property (nonatomic, strong) JXInteractiveTransition *interactive;
+@property (nonatomic, strong) JXInteractiveTransition *toInteractive;
 
 /**
  *  配置To过程动画,自定义转场动画复写该方法

@@ -18,6 +18,7 @@
 		7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF61F5BB00A003A5B53 /* JXTransitionObject.m */; };
 		7AB1EAFC1F5BB00A003A5B53 /* UIViewController+JXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */; };
 		7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */; };
+		7AC405D5209D861B004EE685 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC405D4209D861B004EE685 /* PresentViewController.m */; };
 		7ACD80D31F3578C200021894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D21F3578C200021894 /* main.m */; };
 		7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D51F3578C200021894 /* AppDelegate.m */; };
 		7ACD80D91F3578C200021894 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D81F3578C200021894 /* ViewController.m */; };
@@ -66,6 +67,8 @@
 		7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXTransition.m"; sourceTree = "<group>"; };
 		7AB2EE371F5E562900064333 /* JXSystemAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSystemAuthManager.h; sourceTree = "<group>"; };
 		7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSystemAuthManager.m; sourceTree = "<group>"; };
+		7AC405D3209D861B004EE685 /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
+		7AC405D4209D861B004EE685 /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
 		7ACD80CE1F3578C200021894 /* JXExtension.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXExtension.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ACD80D21F3578C200021894 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ACD80D41F3578C200021894 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				7ACD80D51F3578C200021894 /* AppDelegate.m */,
 				7ACD80D71F3578C200021894 /* ViewController.h */,
 				7ACD80D81F3578C200021894 /* ViewController.m */,
+				7AC405D3209D861B004EE685 /* PresentViewController.h */,
+				7AC405D4209D861B004EE685 /* PresentViewController.m */,
 				7ACD80DA1F3578C200021894 /* Main.storyboard */,
 				7ACD80DD1F3578C200021894 /* Assets.xcassets */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
@@ -406,6 +411,7 @@
 				7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */,
 				7ACD81931F35A6BD00021894 /* JXView.m in Sources */,
 				7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */,
+				7AC405D5209D861B004EE685 /* PresentViewController.m in Sources */,
 				7A0455E51F75056000E2F5A5 /* NSURL+JXParameters.m in Sources */,
 				7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */,
 				7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */,
