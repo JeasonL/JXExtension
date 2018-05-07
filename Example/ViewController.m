@@ -15,7 +15,6 @@
 @interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JXBordersView *bordersView;
-@property (strong, nonatomic) JXInteractiveTransition *toInteractive;
 
 @end
 
@@ -37,14 +36,6 @@
 //    }];
     self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
     self.bordersView.borderSides = JXBorderSidesBottom;
-    
-//    UINavigationController *nav = [ViewController navigationController];
-    self.toInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent direction:JXInteractiveGestureDirectionRight];
-    typeof(self)weakSelf = self;
-    [self.toInteractive setPresentConfigBlock:^{
-        [weakSelf present];
-    }];
-    [self.toInteractive addPanGestureForViewController:self];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -56,15 +47,8 @@
 }
 
 - (IBAction)modalAction:(id)sender {
-    [self present];
-}
-
-- (void)present {
-    UINavigationController *nav = [PresentViewController navigationController];
-    JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
-    pushAnimator.animatorMode = JXPushAnimatorModeLeft;
-    pushAnimator.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
-    [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
+   UINavigationController *nav = [PresentViewController navigationController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)selectedButtonAction:(UIButton *)sender {

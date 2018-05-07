@@ -7,8 +7,13 @@
 //
 
 #import "PresentViewController.h"
+#import "DismissViewController.h"
+#import "JXPushAnimator.h"
+#import "JXInteractiveTransition.h"
 
 @interface PresentViewController ()
+
+@property (strong, nonatomic) JXInteractiveTransition *toInteractive;
 
 @end
 
@@ -17,8 +22,6 @@
 + (UINavigationController *)navigationController {
     PresentViewController *viewController = [[PresentViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-    [navigationController.navigationBar setBarTintColor:[UIColor redColor]];
-    (navigationController.viewControllers.firstObject).view.backgroundColor = [UIColor orangeColor];
     return navigationController;
 }
 
@@ -26,21 +29,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Present";
+    self.view.backgroundColor = [UIColor orangeColor];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 40);
+    [button setTitle:self.title forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
+    self.toInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent direction:JXInteractiveGestureDirectionRight];
+    typeof(self)weakSelf = self;
+    [self.toInteractive setPresentConfigBlock:^{
+        [weakSelf present];
+    }];
+    [self.toInteractive addPanGestureForViewController:self];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)present {
+    UINavigationController *nav = [DismissViewController navigationController];
+    JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
+    pushAnimator.animatorMode = JXPushAnimatorModeLeft;
+    pushAnimator.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:JXInteractiveGestureDirectionLeft];
+    [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

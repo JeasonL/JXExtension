@@ -10,6 +10,7 @@
 		7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */; };
 		7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */; };
 		7A0455E51F75056000E2F5A5 /* NSURL+JXParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */; };
+		7A17267820A05D4E00CC9598 /* DismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A17267720A05D4E00CC9598 /* DismissViewController.m */; };
 		7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */; };
 		7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */; };
 		7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFD5391FB15E44002CBEE2 /* JXBordersView.m */; };
@@ -51,6 +52,8 @@
 		7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXFrame.m"; sourceTree = "<group>"; };
 		7A0455E31F75056000E2F5A5 /* NSURL+JXParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+JXParameters.h"; sourceTree = "<group>"; };
 		7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JXParameters.m"; sourceTree = "<group>"; };
+		7A17267620A05D4E00CC9598 /* DismissViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissViewController.h; sourceTree = "<group>"; };
+		7A17267720A05D4E00CC9598 /* DismissViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DismissViewController.m; sourceTree = "<group>"; };
 		7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
 		7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
 		7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JXExtension.h"; sourceTree = "<group>"; };
@@ -190,6 +193,8 @@
 				7ACD80D81F3578C200021894 /* ViewController.m */,
 				7AC405D3209D861B004EE685 /* PresentViewController.h */,
 				7AC405D4209D861B004EE685 /* PresentViewController.m */,
+				7A17267620A05D4E00CC9598 /* DismissViewController.h */,
+				7A17267720A05D4E00CC9598 /* DismissViewController.m */,
 				7ACD80DA1F3578C200021894 /* Main.storyboard */,
 				7ACD80DD1F3578C200021894 /* Assets.xcassets */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
@@ -414,6 +419,7 @@
 				7AC405D5209D861B004EE685 /* PresentViewController.m in Sources */,
 				7A0455E51F75056000E2F5A5 /* NSURL+JXParameters.m in Sources */,
 				7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */,
+				7A17267820A05D4E00CC9598 /* DismissViewController.m in Sources */,
 				7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */,
 				7AB1EAF91F5BB00A003A5B53 /* JXPushAnimator.m in Sources */,
 				7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */,
