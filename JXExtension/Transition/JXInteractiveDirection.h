@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JXTransitionConstant.h"
 
 @interface JXInteractiveDirection : NSObject
 
