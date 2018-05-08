@@ -14,7 +14,7 @@
 - (void)jx_presentViewController:(UIViewController *)viewController withAnimator:(JXTransitionAnimator *)animator completion:(void (^)(void))completion {
     if (!viewController) return;
     if (!animator) animator = [[JXTransitionAnimator alloc] init];
-//    [animator.interactive addPanGestureForViewController:viewController];
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
     viewController.transitioningDelegate = animator;
     [self presentViewController:viewController animated:YES completion:completion];
 }

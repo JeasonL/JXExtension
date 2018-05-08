@@ -9,11 +9,14 @@
 #ifndef JXTransitionConstant_h
 #define JXTransitionConstant_h
 
-typedef NS_ENUM(NSInteger, JXAnimatorDirection) {
-    JXAnimatorDirectionRight = 0,
-    JXAnimatorDirectionLeft,
-    JXAnimatorDirectionTop,
-    JXAnimatorDirectionBottom,
+typedef NS_OPTIONS(NSUInteger, JXAnimatorDirection) {
+    JXAnimatorDirectionNone   = 0,
+    JXAnimatorDirectionRight  = 1 << 0,
+    JXAnimatorDirectionLeft   = 1 << 1,
+    JXAnimatorDirectionTop    = 1 << 2,
+    JXAnimatorDirectionBottom = 1 << 3,
 };
+
+static const JXAnimatorDirection JXAnimatorDirectionAll = JXAnimatorDirectionRight | JXAnimatorDirectionLeft | JXAnimatorDirectionTop | JXAnimatorDirectionBottom;
 
 #endif /* JXTransitionConstant_h */

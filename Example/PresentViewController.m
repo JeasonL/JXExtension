@@ -41,17 +41,18 @@
 }
 
 - (void)present {
-    [self presentWithDirection:JXAnimatorDirectionLeft];
+    [self presentWithDirection:[JXInteractiveDirection directionWithTo:JXAnimatorDirectionTop back:JXAnimatorDirectionBottom]];
 }
 
-- (void)presentWithDirection:(JXAnimatorDirection)direction {
+- (void)presentWithDirection:(JXInteractiveDirection *)direction {
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
-    pushAnimator.animatorMode = direction;
+    pushAnimator.animatorMode = direction.toDirection;
     pushAnimator.toInteractive = self.interactive;
     pushAnimator.backInteractive = ({
         JXInteractiveTransition *backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss];
         [backInteractive addPanGestureForViewController:nav];
+        backInteractive.direction = direction.backDirection;
         backInteractive;
     });
     [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
@@ -61,9 +62,10 @@
     if (!_interactive) {
         _interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent];
         typeof(self)weakSelf = self;
-        [_interactive setPresentConfigBlock:^(JXAnimatorDirection direction) {
+        [_interactive setPresentConfigBlock:^(JXInteractiveDirection *direction) {
             [weakSelf presentWithDirection:direction];
         }];
+        _interactive.direction = JXAnimatorDirectionAll;
     }
     return _interactive;
 }

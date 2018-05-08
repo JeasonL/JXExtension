@@ -40,7 +40,7 @@
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
         fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
         toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }else{
+    } else {
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
@@ -66,6 +66,7 @@
             toY = toFrame.size.height;
             fromY = toY * self.offset;
         } break;
+        default: break;
     }
     if (isPresent) {
         fromView.frame = fromFrame;
@@ -98,7 +99,7 @@
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
         fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
         toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }else{
+    } else {
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
@@ -124,7 +125,7 @@
             fromY = fromFrame.size.height;
             toY = fromY * self.offset;
         } break;
-        break;
+        default: break;
     }
     if (isDismiss) {
         fromView.frame = fromFrame;
