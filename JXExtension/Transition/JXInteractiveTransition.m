@@ -8,22 +8,24 @@
 
 #import "JXInteractiveTransition.h"
 
-@implementation JXInteractiveDirection
+static const CGFloat JXInteractiveTransitionMinPercent = 0.3;
 
-+ (JXInteractiveDirection *)directionWithTo:(JXAnimatorDirection)to back:(JXAnimatorDirection)back {
-    JXInteractiveDirection *direction = [[JXInteractiveDirection alloc] init];
-    direction.toDirection = to;
-    direction.backDirection = back;
-    return direction;
-}
-
-@end
+typedef struct {
+    unsigned int willBegin :      1;
+    unsigned int isUpdating :     1;
+    unsigned int willBeginTimer : 1;
+    unsigned int willEnd :        1;
+} JXDelegateFlag;
 
 @interface JXInteractiveTransition ()
 
 @property (nonatomic, assign, readwrite) BOOL isInteractive;
 @property (nonatomic, weak) UIViewController *viewController;
 @property (nonatomic, assign) JXInteractiveType type;
+@property (nonatomic, assign) JXDelegateFlag delegateFlag;
+@property (nonatomic, assign) CGFloat percent;
+@property (nonatomic, strong) CADisplayLink *timer;
+@property (nonatomic, assign) CGFloat timeDis;
 
 @end
 
@@ -33,7 +35,7 @@
     self = [super init];
     if (self) {
         _type = type;
-        _minPersent = 0.3;
+        _minPersent = JXInteractiveTransitionMinPercent;
     }
     return self;
 }
@@ -80,8 +82,12 @@
     if (!(self.direction & toDirection) || (toDirection & JXAnimatorDirectionNone)) {
         return;
     }
+    self.percent = persent;
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:{
+            if (_delegateFlag.willBegin) {
+                [self.delegate jx_interactiveTransitionWillBegin:self];
+            }
         } break;
         case UIGestureRecognizerStateChanged:{
             //手势开始的时候标记手势状态，并开始相应的事件
@@ -97,20 +103,121 @@
                 }
             }
             //手势过程中，通过updateInteractiveTransition设置返回过程进行的百分比
-            [self updateInteractiveTransition:persent];
+            [self _jx_updatingWithPercent:persent];
         } break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:{
-            //手势完成后结束标记并且判断移动距离是否过半，过则finishInteractiveTransition完成转场操作，否者取消转场操作
-            self.isInteractive = NO;
-            if (persent > self.minPersent) {
-                [self finishInteractiveTransition];
-            }else{
-                [self cancelInteractiveTransition];
+            //判断是否需要timer
+            if (!_timerEable) {
+                _percent >= self.minPersent ? [self _jx_finish] : [self _jx_cancle];
+                return;
             }
+            //判断此时是否已经转场完成，大于1或者小于0
+            BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:persent];
+            if (canEnd) return;
+            //开启timer
+            [self _jx_setEndAnimationTimerWithPercent:persent];
+            break;
         } break;
         default: break;
     }
+}
+
+#pragma mark - Private Method
+
+- (BOOL)_jx_canEndInteractiveTransitionWithPercent:(CGFloat)percent {
+    BOOL can = NO;
+    if (percent >= 1) {
+        [self _jx_finish];
+        can = YES;
+    }
+    if (percent <= 0) {
+        [self _jx_cancle];
+        can = YES;
+    }
+    return can;
+}
+
+- (void)_jx_updatingWithPercent:(CGFloat)percent {
+    [self updateInteractiveTransition:percent];
+    if (_delegateFlag.isUpdating) {
+        [_delegate jx_interactiveTransition:self isUpdating:_percent];
+    }
+}
+
+- (void)_jx_finish {
+    if (_delegateFlag.willEnd) {
+        [_delegate jx_interactiveTransition:self willEndWithSuccessFlag:YES percent:_percent];
+    }
+    [self finishInteractiveTransition];
+    _percent = 0.0;
+    _isInteractive = NO;
+}
+
+- (void)_jx_cancle {
+    if (_delegateFlag.willEnd) {
+        [_delegate jx_interactiveTransition:self willEndWithSuccessFlag:NO percent:_percent];
+    }
+    [self cancelInteractiveTransition];
+    _percent = 0.0;
+    _isInteractive = NO;
+}
+
+//设置开启timer
+- (void)_jx_setEndAnimationTimerWithPercent:(CGFloat)percent {
+    _percent = percent;
+    //根据失败还是成功设置刷新间隔
+    if (percent > JXInteractiveTransitionMinPercent) {
+        _timeDis = (1 - percent) / ((1 - percent) * 60);
+    }else{
+        _timeDis = percent / (percent * 60);
+    }
+    if (_delegateFlag.willBeginTimer) {
+        [_delegate jx_interactiveTransitionWillBeginTimerAnimation:self];
+    }
+    //开启timer
+    [self _jx_startTimer];
+}
+
+- (void)_jx_startTimer {
+    if (_timer) {
+        return;
+    }
+    _timer = [CADisplayLink displayLinkWithTarget:self selector:@selector(_jx_timerEvent)];
+    [_timer addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+}
+
+- (void)_jx_stopTimer {
+    if (!_timer) {
+        return;
+    }
+    [_timer invalidate];
+    _timer = nil;
+}
+
+//timer事件
+- (void)_jx_timerEvent {
+    if (_percent > 0.5) {
+        _percent += _timeDis;
+    }else{
+        _percent -= _timeDis;
+    }
+    //通过timer不断刷新转场进度
+    [self _jx_updatingWithPercent:_percent];
+    BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:_percent];
+    if (canEnd) {
+        [self _jx_stopTimer];
+    }
+}
+
+#pragma mark - Property Method
+
+- (void)setDelegate:(id<JXInteractiveTransitionDelegate>)delegate{
+    _delegate = delegate;
+    _delegateFlag.willBegin = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransitionWillBegin:)];
+    _delegateFlag.isUpdating = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransition:isUpdating:)];
+    _delegateFlag.willBeginTimer = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransitionWillBeginTimerAnimation:)];
+    _delegateFlag.willEnd = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransition:willEndWithSuccessFlag:percent:)];
 }
 
 @end

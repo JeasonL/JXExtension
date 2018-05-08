@@ -11,9 +11,8 @@
 
 @interface JXPushAnimator ()
 
-@property (nonatomic, strong) UIViewController *viewController;
 @property (nonatomic, weak) id <UIViewControllerContextTransitioning> transitionContext;
-@property (nonatomic, assign) BOOL isInteracting;
+@property (nonatomic, strong) UIView *containerView;
 
 @end
 
@@ -35,6 +34,7 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     //转场的容器图，动画完成之后会消失
     UIView *containerView = transitionContext.containerView;
+    self.containerView = containerView;
     UIView *fromView;
     UIView *toView;
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
@@ -94,6 +94,7 @@
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     //转场的容器图，动画完成之后会消失
     UIView *containerView = transitionContext.containerView;
+    self.containerView = containerView;
     UIView *fromView;
     UIView *toView;
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
@@ -145,6 +146,16 @@
         }
         [transitionContext completeTransition:!wasCancel];
     }];
+}
+
+#pragma mark - JXInteractiveTransitionDelegate
+
+- (void)jx_interactiveTransitionWillBegin:(JXInteractiveTransition *)interactiveTransition {
+    self.containerView.userInteractionEnabled = NO;
+}
+
+- (void)jx_interactiveTransition:(JXInteractiveTransition *)interactiveTransition willEndWithSuccessFlag:(BOOL)flag percent:(CGFloat)percent {
+    self.containerView.userInteractionEnabled = YES;
 }
 
 @end

@@ -78,4 +78,16 @@
     return _backTransition;
 }
 
+- (void)setToInteractive:(JXInteractiveTransition *)toInteractive {
+    _toInteractive = toInteractive;
+    toInteractive.delegate = self;
+}
+
+- (void)setBackInteractive:(JXInteractiveTransition *)backInteractive {
+    _backInteractive = backInteractive;
+    backInteractive.delegate = self;
+}
+
+
+
 @end

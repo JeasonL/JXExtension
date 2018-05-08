@@ -8,29 +8,39 @@
 
 #import <UIKit/UIKit.h>
 #import "JXTransitionConstant.h"
+#import "JXInteractiveDirection.h"
 
-//手势控制哪种转场
+@class JXInteractiveTransition, JXInteractiveDirection;
+
+//手势控制转场方式
 typedef NS_ENUM(NSUInteger, JXInteractiveType) {
     JXInteractiveTypePresent = 0,
     JXInteractiveTypeDismiss,
 };
 
-@interface JXInteractiveDirection : NSObject
+typedef void(^JXInteractiveGestureDirectionBlock)(JXInteractiveDirection *direction);
 
-@property (nonatomic, assign) JXAnimatorDirection toDirection; //正方向
-@property (nonatomic, assign) JXAnimatorDirection backDirection; //反方向
-
-+ (JXInteractiveDirection *)directionWithTo:(JXAnimatorDirection)to back:(JXAnimatorDirection)back;
+@protocol JXInteractiveTransitionDelegate <NSObject>
+// 手势转场时的代理事件，animator默认为为其手势的代理，复写对应的代理事件可处理一些手势失败闪烁的情况
+@optional
+//手势转场即将开始时调用
+- (void)jx_interactiveTransitionWillBegin:(JXInteractiveTransition *)interactiveTransition;
+//手势转场中调用
+- (void)jx_interactiveTransition:(JXInteractiveTransition *)interactiveTransition isUpdating:(CGFloat)percent;
+//如果开始了转场手势timer，会在松开手指，timer开始的时候调用
+- (void)jx_interactiveTransitionWillBeginTimerAnimation:(JXInteractiveTransition *)interactiveTransition;
+//手势转场结束的时候调用
+- (void)jx_interactiveTransition:(JXInteractiveTransition *)interactiveTransition willEndWithSuccessFlag:(BOOL)flag percent:(CGFloat)percent;
 
 @end
-
-typedef void(^JXInteractiveGestureDirectionBlock)(JXInteractiveDirection *direction);
 
 @interface JXInteractiveTransition : UIPercentDrivenInteractiveTransition
 
 @property (nonatomic, assign, readonly) BOOL isInteractive; //记录是否开始手势
 @property (nonatomic, assign) CGFloat minPersent; //转场需要的最小百分比, 默认0.3
-@property (nonatomic, assign) JXAnimatorDirection direction;
+@property (nonatomic, assign) BOOL timerEable; //定时器开关，手势交互过程中松手增加定时器动画
+@property (nonatomic, assign) JXAnimatorDirection direction; //手势交互方向
+@property (nonatomic, weak) id <JXInteractiveTransitionDelegate> delegate;
 @property (nonatomic, copy) JXInteractiveGestureDirectionBlock presentConfigBlock;
 
 - (instancetype)initWithType:(JXInteractiveType)type;

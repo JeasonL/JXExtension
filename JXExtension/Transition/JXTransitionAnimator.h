@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "JXInteractiveTransition.h"
+#import "JXTransitionConstant.h"
 
-@class JXInteractiveTransition;
-
-@interface JXTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate>
+@interface JXTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate, JXInteractiveTransitionDelegate>
 
 //to转场时间 默认0.3
 @property (nonatomic, assign) NSTimeInterval toDuration;
