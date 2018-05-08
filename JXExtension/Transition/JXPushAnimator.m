@@ -7,13 +7,22 @@
 //
 
 #import "JXPushAnimator.h"
+#import "JXInteractiveTransition.h"
+
+@interface JXPushAnimator ()
+
+@property (nonatomic, strong) UIViewController *viewController;
+@property (nonatomic, weak) id <UIViewControllerContextTransitioning> transitionContext;
+@property (nonatomic, assign) BOOL isInteracting;
+
+@end
 
 @implementation JXPushAnimator
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-       _offset = -0.3;
+        
     }
     return self;
 }
@@ -31,7 +40,7 @@
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
         fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
         toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }else{
+    } else {
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
@@ -41,22 +50,23 @@
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
     CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
     switch (self.animatorMode) {
-        case JXPushAnimatorModeRight: {
+        case JXAnimatorDirectionLeft: {
             toX = toFrame.size.width;
             fromX = toX * self.offset;
         } break;
-        case JXPushAnimatorModeLeft: {
+        case JXAnimatorDirectionRight: {
             toX = -toFrame.size.width;
             fromX = toX * self.offset;
         } break;
-        case JXPushAnimatorModeTop: {
+        case JXAnimatorDirectionBottom: {
             toY = -toFrame.size.height;
             fromY = toY * self.offset;
         } break;
-        case JXPushAnimatorModeBottom: {
+        case JXAnimatorDirectionTop: {
             toY = toFrame.size.height;
             fromY = toY * self.offset;
         } break;
+        default: break;
     }
     if (isPresent) {
         fromView.frame = fromFrame;
@@ -89,7 +99,7 @@
     if ([transitionContext respondsToSelector:@selector(viewForKey:)]) {
         fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
         toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-    }else{
+    } else {
         fromView = fromViewController.view;
         toView = toViewController.view;
     }
@@ -99,23 +109,23 @@
     CGRect toFrame = [transitionContext finalFrameForViewController:toViewController];
     CGFloat toX = 0, toY = 0, fromX = 0, fromY = 0;
     switch (self.animatorMode) {
-        case JXPushAnimatorModeRight: {
+        case JXAnimatorDirectionLeft: {
             fromX = fromFrame.size.width;
             toX = fromX * self.offset;
         } break;
-        case JXPushAnimatorModeLeft: {
+        case JXAnimatorDirectionRight: {
             fromX = -fromFrame.size.width;
             toX = fromX * self.offset;
         } break;
-        case JXPushAnimatorModeTop: {
+        case JXAnimatorDirectionBottom: {
             fromY = -fromFrame.size.height;
             toY = fromY * self.offset;
         } break;
-        case JXPushAnimatorModeBottom: {
+        case JXAnimatorDirectionTop: {
             fromY = fromFrame.size.height;
             toY = fromY * self.offset;
         } break;
-        break;
+        default: break;
     }
     if (isDismiss) {
         fromView.frame = fromFrame;

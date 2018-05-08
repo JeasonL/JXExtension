@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "PresentViewController.h"
 #import "JXPushAnimator.h"
+#import "JXInteractiveTransition.h"
 #import "JXBordersView.h"
 
 @interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate>
@@ -45,13 +47,8 @@
 }
 
 - (IBAction)modalAction:(id)sender {
-    UINavigationController *nav = [ViewController navigationController];
-    [nav.navigationBar setBarTintColor:[UIColor redColor]];
-    (nav.viewControllers.firstObject).view.backgroundColor = [UIColor orangeColor];
-    JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
-    pushAnimator.animatorMode = JXPushAnimatorModeRight;
-    pushAnimator.offset = 0;
-    [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
+   UINavigationController *nav = [PresentViewController navigationController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)selectedButtonAction:(UIButton *)sender {

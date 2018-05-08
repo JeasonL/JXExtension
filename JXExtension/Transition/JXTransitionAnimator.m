@@ -8,6 +8,7 @@
 
 #import "JXTransitionAnimator.h"
 #import "JXTransitionObject.h"
+#import "JXInteractiveTransition.h"
 
 @interface JXTransitionAnimator ()
 
@@ -37,6 +38,10 @@
 
 #pragma mark - UIViewControllerTransitioningDelegate
 
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
+    return self.presentationControllerBlock ? self.presentationControllerBlock(presented, presenting) : nil;
+}
+
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     return self.toTransition;
 }
@@ -46,11 +51,11 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    return self.backInteractive.isInteractive ? self.backInteractive : nil;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return nil;
+    return self.toInteractive.isInteractive ? self.toInteractive : nil;
 }
 
 #pragma mark - Property Method
