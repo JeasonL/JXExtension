@@ -47,7 +47,7 @@
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator {
-    return self.interactive.isInteractive ? self.interactive : nil;
+    return self.backInteractive.isInteractive ? self.backInteractive : nil;
 }
 
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForPresentation:(id<UIViewControllerAnimatedTransitioning>)animator {

@@ -13,7 +13,7 @@
 
 @interface PresentViewController ()
 
-@property (strong, nonatomic) JXInteractiveTransition *leftInteractive;
+@property (strong, nonatomic) JXInteractiveTransition *interactive;
 
 @end
 
@@ -31,44 +31,41 @@
     self.title = @"Present";
     self.view.backgroundColor = [UIColor orangeColor];
     
-//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.frame = CGRectMake(100, 100, 100, 40);
-//    [button setTitle:self.title forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 100, 100, 40);
+    [button setTitle:self.title forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
-
-    [self.leftInteractive addPanGestureForViewController:self];
+    [self.interactive addPanGestureForViewController:self];
 }
 
-- (JXInteractiveTransition *)leftInteractive {
-    if (!_leftInteractive) {
-        _leftInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent direction:JXAnimatorDirectionRight];
-        typeof(self)weakSelf = self;
-        [_leftInteractive setDirectionBlock:^(JXAnimatorDirection direction) {
-            [weakSelf presentWithDirection:direction];
-        }];
-    }
-    return _leftInteractive;
+- (void)present {
+    [self presentWithDirection:JXAnimatorDirectionLeft];
 }
 
 - (void)presentWithDirection:(JXAnimatorDirection)direction {
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
     pushAnimator.animatorMode = direction;
-    JXAnimatorDirection flipDirection;
-    if (direction == JXAnimatorDirectionLeft) {
-        flipDirection = JXAnimatorDirectionRight;
-    } else if (direction == JXAnimatorDirectionRight) {
-        flipDirection = JXAnimatorDirectionLeft;
-    } else if (direction == JXAnimatorDirectionTop) {
-        flipDirection = JXAnimatorDirectionBottom;
-    } else {
-        flipDirection = JXAnimatorDirectionTop;
-    }
-    pushAnimator.interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss direction:flipDirection];
-    pushAnimator.toInteractive = self.leftInteractive;
+    pushAnimator.toInteractive = self.interactive;
+    pushAnimator.backInteractive = ({
+        JXInteractiveTransition *backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss];
+        [backInteractive addPanGestureForViewController:nav];
+        backInteractive;
+    });
     [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
+}
+
+- (JXInteractiveTransition *)interactive {
+    if (!_interactive) {
+        _interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent];
+        typeof(self)weakSelf = self;
+        [_interactive setPresentConfigBlock:^(JXAnimatorDirection direction) {
+            [weakSelf presentWithDirection:direction];
+        }];
+    }
+    return _interactive;
 }
 
 @end
