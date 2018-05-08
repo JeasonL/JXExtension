@@ -10,6 +10,7 @@
 #import "DismissViewController.h"
 #import "JXPushAnimator.h"
 #import "JXInteractiveTransition.h"
+#import "DemoPresentationController.h"
 
 @interface PresentViewController ()
 
@@ -47,6 +48,9 @@
 - (void)presentWithDirection:(JXInteractiveDirection *)direction {
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
+    [pushAnimator setPresentationControllerBlock:^UIPresentationController *(UIViewController *presented, UIViewController *presenting) {
+        return [[DemoPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    }];
     pushAnimator.animatorMode = direction.toDirection;
     pushAnimator.toInteractive = self.interactive;
     pushAnimator.backInteractive = ({

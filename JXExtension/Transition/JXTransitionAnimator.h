@@ -21,6 +21,8 @@
 @property (nonatomic, strong) JXInteractiveTransition *toInteractive;
 @property (nonatomic, strong) JXInteractiveTransition *backInteractive;
 
+@property (nonatomic, copy) UIPresentationController *(^presentationControllerBlock)(UIViewController *presented, UIViewController *presenting);
+
 /**
  *  配置To过程动画,自定义转场动画复写该方法
  */

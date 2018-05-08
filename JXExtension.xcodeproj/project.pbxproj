@@ -14,6 +14,7 @@
 		7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */; };
 		7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */; };
 		7A8BC42420A146D7005DB555 /* JXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BC42220A146D7005DB555 /* JXInteractiveTransition.m */; };
+		7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BC42E20A17FAE005DB555 /* DemoPresentationController.m */; };
 		7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAFD5391FB15E44002CBEE2 /* JXBordersView.m */; };
 		7AB1EAF91F5BB00A003A5B53 /* JXPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF21F5BB00A003A5B53 /* JXPushAnimator.m */; };
 		7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF41F5BB00A003A5B53 /* JXTransitionAnimator.m */; };
@@ -61,6 +62,8 @@
 		7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+JXExtension.m"; sourceTree = "<group>"; };
 		7A8BC42220A146D7005DB555 /* JXInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXInteractiveTransition.m; sourceTree = "<group>"; };
 		7A8BC42320A146D7005DB555 /* JXInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXInteractiveTransition.h; sourceTree = "<group>"; };
+		7A8BC42D20A17FAE005DB555 /* DemoPresentationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoPresentationController.h; sourceTree = "<group>"; };
+		7A8BC42E20A17FAE005DB555 /* DemoPresentationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoPresentationController.m; sourceTree = "<group>"; };
 		7AAFD5391FB15E44002CBEE2 /* JXBordersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBordersView.m; sourceTree = "<group>"; };
 		7AAFD53A1FB15E44002CBEE2 /* JXBordersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBordersView.h; sourceTree = "<group>"; };
 		7AB1EAF11F5BB00A003A5B53 /* JXPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXPushAnimator.h; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				7AC405D4209D861B004EE685 /* PresentViewController.m */,
 				7A17267620A05D4E00CC9598 /* DismissViewController.h */,
 				7A17267720A05D4E00CC9598 /* DismissViewController.m */,
+				7A8BC42D20A17FAE005DB555 /* DemoPresentationController.h */,
+				7A8BC42E20A17FAE005DB555 /* DemoPresentationController.m */,
 				7ACD80DA1F3578C200021894 /* Main.storyboard */,
 				7ACD80DD1F3578C200021894 /* Assets.xcassets */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
@@ -443,6 +448,7 @@
 				7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */,
 				7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */,
 				7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */,
+				7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
 				7ACD818B1F35A6BD00021894 /* UIScrollView+JXExtension.m in Sources */,
 				7ACD818D1F35A6BD00021894 /* JXAlertContainerView.m in Sources */,

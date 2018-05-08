@@ -38,6 +38,10 @@
 
 #pragma mark - UIViewControllerTransitioningDelegate
 
+- (UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source {
+    return self.presentationControllerBlock ? self.presentationControllerBlock(presented, presenting) : nil;
+}
+
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     return self.toTransition;
 }

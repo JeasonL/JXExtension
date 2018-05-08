@@ -82,10 +82,8 @@
     }
     switch (panGesture.state) {
         case UIGestureRecognizerStateBegan:{
-            NSLog(@"GestureBegan");
         } break;
         case UIGestureRecognizerStateChanged:{
-            NSLog(@"GestureChanged");
             //手势开始的时候标记手势状态，并开始相应的事件
             if (!self.isInteractive) {
                 self.isInteractive = YES;
@@ -103,7 +101,6 @@
         } break;
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:{
-            NSLog(@"GestureEnded");
             //手势完成后结束标记并且判断移动距离是否过半，过则finishInteractiveTransition完成转场操作，否者取消转场操作
             self.isInteractive = NO;
             if (persent > self.minPersent) {
