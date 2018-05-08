@@ -72,11 +72,11 @@ typedef struct {
         if (translation.y < 0) { //向上滑动
             toDirection = JXAnimatorDirectionTop;
             backDirection = JXAnimatorDirectionBottom;
-            persent = -translation.y / viewSize.width;
+            persent = -translation.y / viewSize.height;
         } else { //向下滑动
             toDirection = JXAnimatorDirectionBottom;
             backDirection = JXAnimatorDirectionTop;
-            persent = translation.y / viewSize.width;
+            persent = translation.y / viewSize.height;
         }
     }
     if (!(self.direction & toDirection) || (toDirection & JXAnimatorDirectionNone)) {
@@ -167,7 +167,7 @@ typedef struct {
 - (void)_jx_setEndAnimationTimerWithPercent:(CGFloat)percent {
     _percent = percent;
     //根据失败还是成功设置刷新间隔
-    if (percent > JXInteractiveTransitionMinPercent) {
+    if (percent > _minPersent) {
         _timeDis = (1 - percent) / ((1 - percent) * 60);
     }else{
         _timeDis = percent / (percent * 60);
@@ -197,7 +197,7 @@ typedef struct {
 
 //timer事件
 - (void)_jx_timerEvent {
-    if (_percent > 0.5) {
+    if (_percent > _minPersent) {
         _percent += _timeDis;
     }else{
         _percent -= _timeDis;

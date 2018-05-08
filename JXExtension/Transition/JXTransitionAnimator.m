@@ -8,7 +8,6 @@
 
 #import "JXTransitionAnimator.h"
 #import "JXTransitionObject.h"
-#import "JXInteractiveTransition.h"
 
 @interface JXTransitionAnimator ()
 

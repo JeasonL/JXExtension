@@ -60,7 +60,7 @@
         backInteractive.timerEable = YES;
         backInteractive;
     });
-    [self jx_presentViewController:nav withAnimator:pushAnimator completion:nil];
+    [self jx_presentViewController:nav animator:pushAnimator completion:nil];
 }
 
 - (JXInteractiveTransition *)interactive {

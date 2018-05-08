@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JXTransitionConstant.h"
 #import "JXTransitionAnimator.h"
 
 @interface UIViewController (JXTransition)
@@ -18,6 +19,6 @@
  *  @param animator       转场animator
  *  @param completion     完成后回调
  */
-- (void)jx_presentViewController:(UIViewController *)viewController withAnimator:(JXTransitionAnimator *)animator completion:(void (^)(void))completion;
+- (void)jx_presentViewController:(UIViewController *)viewController animator:(JXTransitionAnimator *)animator completion:(void (^)(void))completion;
 
 @end

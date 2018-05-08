@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "JXInteractiveTransition.h"
-#import "JXTransitionConstant.h"
 
 @interface JXTransitionAnimator : NSObject <UIViewControllerTransitioningDelegate, JXInteractiveTransitionDelegate>
 

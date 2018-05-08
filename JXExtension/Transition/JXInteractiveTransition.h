@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JXTransitionConstant.h"
 #import "JXInteractiveDirection.h"
 
 @class JXInteractiveTransition, JXInteractiveDirection;

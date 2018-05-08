@@ -7,7 +7,6 @@
 //
 
 #import "JXTransitionAnimator.h"
-#import "JXTransitionConstant.h"
 
 @interface JXPushAnimator : JXTransitionAnimator
 
