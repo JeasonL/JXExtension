@@ -14,6 +14,7 @@
     if (!viewController) return;
     if (!animator) animator = [[JXTransitionAnimator alloc] init];
     viewController.modalPresentationStyle = UIModalPresentationCustom;
+    viewController.modalPresentationCapturesStatusBarAppearance = YES;
     viewController.transitioningDelegate = animator;
     [self presentViewController:viewController animated:YES completion:completion];
 }
