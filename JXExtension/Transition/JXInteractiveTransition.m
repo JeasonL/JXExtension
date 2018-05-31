@@ -7,6 +7,7 @@
 //
 
 #import "JXInteractiveTransition.h"
+#import "JXDirectionPanGestureRecognizer.h"
 
 static const CGFloat JXInteractiveTransitionMinPercent = 0.3;
 
@@ -21,6 +22,7 @@ typedef struct {
 
 @property (nonatomic, assign, readwrite) BOOL isInteractive;
 @property (nonatomic, weak) UIViewController *viewController;
+@property (nonatomic, strong) JXDirectionPanGestureRecognizer *panGesture;
 @property (nonatomic, assign) JXInteractiveType type;
 @property (nonatomic, assign) JXDelegateFlag delegateFlag;
 @property (nonatomic, assign) CGFloat percent;
@@ -41,89 +43,87 @@ typedef struct {
 }
 
 - (void)addPanGestureForViewController:(UIViewController *)viewController {
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
+    self.panGesture = [[JXDirectionPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
     self.viewController = viewController;
-    [viewController.view addGestureRecognizer:pan];
+    [viewController.view addGestureRecognizer:self.panGesture];
 }
 
-- (void)panGestureAction:(UIPanGestureRecognizer *)panGesture {
-    CGFloat persent = 0;
-    JXAnimatorDirection toDirection;
-    JXAnimatorDirection backDirection;
-    CGPoint translation = [panGesture translationInView:panGesture.view];
-    CGSize viewSize = panGesture.view.frame.size;
-    CGFloat absX = fabs(translation.x);
-    CGFloat absY = fabs(translation.y);
-    if (MAX(absX, absY) < 20) { // 设置滑动有效距离
-        [self cancelInteractiveTransition];
+- (void)panGestureAction:(JXDirectionPanGestureRecognizer *)panGesture {
+    JXAnimatorDirection toDirection = panGesture.direction;
+    JXAnimatorDirection backDirection = [self _oppositeDirection:toDirection];
+    if (!(self.direction & toDirection) || (toDirection == JXAnimatorDirectionNone)) {
+//        //不是设定的方向 或 滑动没有方向
+        self.panGesture.direction = JXAnimatorDirectionNone;
         return;
     }
-    if (absX > absY) { //水平方向
-        if (translation.x < 0) { //向左滑动
-            toDirection = JXAnimatorDirectionLeft;
-            backDirection = JXAnimatorDirectionRight;
-            persent = -translation.x / viewSize.width;
-        } else { //向右滑动
-            toDirection = JXAnimatorDirectionRight;
-            backDirection = JXAnimatorDirectionLeft;
-            persent = translation.x / viewSize.width;
-        }
-    } else { //垂直方向
-        if (translation.y < 0) { //向上滑动
-            toDirection = JXAnimatorDirectionTop;
-            backDirection = JXAnimatorDirectionBottom;
-            persent = -translation.y / viewSize.height;
-        } else { //向下滑动
-            toDirection = JXAnimatorDirectionBottom;
-            backDirection = JXAnimatorDirectionTop;
-            persent = translation.y / viewSize.height;
-        }
-    }
-    if (!(self.direction & toDirection) || (toDirection & JXAnimatorDirectionNone)) {
-        return;
-    }
-    self.percent = persent;
     switch (panGesture.state) {
-        case UIGestureRecognizerStateBegan:{
+        case UIGestureRecognizerStateBegan: {
             if (_delegateFlag.willBegin) {
-                [self.delegate jx_interactiveTransitionWillBegin:self];
+                [_delegate jx_interactiveTransitionWillBegin:self];
             }
-        } break;
-        case UIGestureRecognizerStateChanged:{
-            //手势开始的时候标记手势状态，并开始相应的事件
-            if (!self.isInteractive) {
-                self.isInteractive = YES;
-                switch (self.type) {
-                    case JXInteractiveTypePresent:{
-                        self.presentConfigBlock ? self.presentConfigBlock([JXInteractiveDirection directionWithTo:toDirection back:backDirection]) : nil;
-                    } break;
-                    case JXInteractiveTypeDismiss:{
-                        [self.viewController dismissViewControllerAnimated:YES completion:nil];
-                    } break;
-                }
+            self.isInteractive = YES;
+            switch (self.type) {
+                case JXInteractiveTypePresent:{
+                    self.presentConfigBlock ? self.presentConfigBlock([JXInteractiveDirection directionWithTo:toDirection back:backDirection]) : nil;
+                } break;
+                case JXInteractiveTypeDismiss:{
+                    [self.viewController dismissViewControllerAnimated:YES completion:nil];
+                } break;
             }
-            //手势过程中，通过updateInteractiveTransition设置返回过程进行的百分比
-            [self _jx_updatingWithPercent:persent];
+            [self _jx_caculateMovePercentForGesture:panGesture];
         } break;
-        case UIGestureRecognizerStateEnded:
-        case UIGestureRecognizerStateCancelled:{
+        case UIGestureRecognizerStateChanged: {
+            [self _jx_caculateMovePercentForGesture:panGesture];
+            [self _jx_updatingWithPercent:_percent];
+        } break;
+        case UIGestureRecognizerStateEnded: {
             //判断是否需要timer
             if (!_timerEable) {
-                _percent >= self.minPersent ? [self _jx_finish] : [self _jx_cancle];
+                self.percent >= 0.5 ? [self _jx_finish] : [self _jx_cancle];
                 return;
             }
             //判断此时是否已经转场完成，大于1或者小于0
-            BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:persent];
+            BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:self.percent];
             if (canEnd) return;
             //开启timer
-            [self _jx_setEndAnimationTimerWithPercent:persent];
-            break;
+            [self _jx_setEndAnimationTimerWithPercent:_percent];
         } break;
-        default: break;
+        default:break;
     }
 }
 
 #pragma mark - Private Method
+
+- (void)_jx_caculateMovePercentForGesture:(JXDirectionPanGestureRecognizer *)panGesture {
+    static CGFloat baseValue = 0.0f;
+    if (self.panRatioBaseValue > 0) {
+        baseValue = self.panRatioBaseValue;
+    } else {
+        CGSize viewSize = panGesture.view.frame.size;
+        if (panGesture.direction == JXAnimatorDirectionBottom || panGesture.direction == JXAnimatorDirectionTop) {
+            baseValue = viewSize.height;
+        } else {
+            baseValue = viewSize.width;
+        }
+    }
+    CGPoint translation = [panGesture translationInView:panGesture.view];
+    switch (panGesture.direction) {
+        case JXAnimatorDirectionLeft:{
+            self.percent += -translation.x / baseValue;
+        } break;
+        case JXAnimatorDirectionRight:{
+            self.percent += translation.x / baseValue;
+        } break;
+        case JXAnimatorDirectionTop:{
+            self.percent += -translation.y / baseValue;
+        } break;
+        case JXAnimatorDirectionBottom:{
+            self.percent += translation.y / baseValue;
+        } break;
+        default: break;
+    }
+    [panGesture setTranslation:CGPointZero inView:panGesture.view];
+}
 
 - (BOOL)_jx_canEndInteractiveTransitionWithPercent:(CGFloat)percent {
     BOOL can = NO;
@@ -150,8 +150,9 @@ typedef struct {
         [_delegate jx_interactiveTransition:self willEndWithSuccessFlag:YES percent:_percent];
     }
     [self finishInteractiveTransition];
-    _percent = 0.0;
-    _isInteractive = NO;
+    self.percent = 0.0;
+    self.isInteractive = NO;
+    self.panGesture.direction = JXAnimatorDirectionNone;
 }
 
 - (void)_jx_cancle {
@@ -159,8 +160,9 @@ typedef struct {
         [_delegate jx_interactiveTransition:self willEndWithSuccessFlag:NO percent:_percent];
     }
     [self cancelInteractiveTransition];
-    _percent = 0.0;
-    _isInteractive = NO;
+    self.percent = 0.0;
+    self.isInteractive = NO;
+    self.panGesture.direction = JXAnimatorDirectionNone;
 }
 
 //设置开启timer
@@ -168,9 +170,9 @@ typedef struct {
     _percent = percent;
     //根据失败还是成功设置刷新间隔
     if (percent > _minPersent) {
-        _timeDis = (1 - percent) / ((1 - percent) * 60);
-    }else{
-        _timeDis = percent / (percent * 60);
+        _timeDis = (1 - percent) / ((1 - percent) * 30);
+    } else {
+        _timeDis = percent / (percent * 30);
     }
     if (_delegateFlag.willBeginTimer) {
         [_delegate jx_interactiveTransitionWillBeginTimerAnimation:self];
@@ -207,6 +209,22 @@ typedef struct {
     BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:_percent];
     if (canEnd) {
         [self _jx_stopTimer];
+    }
+}
+
+//反向手势
+- (JXAnimatorDirection)_oppositeDirection:(JXAnimatorDirection)direction {
+    switch (direction) {
+        case JXAnimatorDirectionLeft:
+            return JXAnimatorDirectionRight;
+        case JXAnimatorDirectionRight:
+            return JXAnimatorDirectionLeft;
+        case JXAnimatorDirectionTop:
+            return JXAnimatorDirectionBottom;
+        case JXAnimatorDirectionBottom:
+            return JXAnimatorDirectionTop;
+        default:
+            return JXAnimatorDirectionNone;
     }
 }
 

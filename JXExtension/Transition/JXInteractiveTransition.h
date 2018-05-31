@@ -37,6 +37,7 @@ typedef void(^JXInteractiveGestureDirectionBlock)(JXInteractiveDirection *direct
 
 @property (nonatomic, assign, readonly) BOOL isInteractive; //记录是否开始手势
 @property (nonatomic, assign) CGFloat minPersent; //转场需要的最小百分比, 默认0.3
+@property (nonatomic, assign) CGFloat panRatioBaseValue; //修改此值可改变滑动手势的速率
 @property (nonatomic, assign) BOOL timerEable; //定时器开关，手势交互过程中松手增加定时器动画
 @property (nonatomic, assign) JXAnimatorDirection direction; //手势交互方向
 @property (nonatomic, weak) id <JXInteractiveTransitionDelegate> delegate;

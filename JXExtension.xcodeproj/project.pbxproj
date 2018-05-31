@@ -41,6 +41,7 @@
 		7ACD81911F35A6BD00021894 /* JXTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81821F35A6BD00021894 /* JXTextField.m */; };
 		7ACD81921F35A6BD00021894 /* JXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81841F35A6BD00021894 /* JXTextView.m */; };
 		7ACD81931F35A6BD00021894 /* JXView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81861F35A6BD00021894 /* JXView.m */; };
+		7AEB377320BFD31D0040A48C /* JXDirectionPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEB377220BFD31C0040A48C /* JXDirectionPanGestureRecognizer.m */; };
 		7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456B81F4C38710068FD48 /* NSString+JXSize.m */; };
 		7AF456BF1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456BE1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m */; };
 		7EC85313099945E851F43C10 /* libPods-JXExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C87085E6B1D02610148DF7 /* libPods-JXExtension.a */; };
@@ -117,6 +118,8 @@
 		7ACD81841F35A6BD00021894 /* JXTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTextView.m; sourceTree = "<group>"; };
 		7ACD81851F35A6BD00021894 /* JXView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXView.h; sourceTree = "<group>"; };
 		7ACD81861F35A6BD00021894 /* JXView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXView.m; sourceTree = "<group>"; };
+		7AEB377120BFD31C0040A48C /* JXDirectionPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDirectionPanGestureRecognizer.h; sourceTree = "<group>"; };
+		7AEB377220BFD31C0040A48C /* JXDirectionPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDirectionPanGestureRecognizer.m; sourceTree = "<group>"; };
 		7AF456B71F4C38710068FD48 /* NSString+JXSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JXSize.h"; sourceTree = "<group>"; };
 		7AF456B81F4C38710068FD48 /* NSString+JXSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXSize.m"; sourceTree = "<group>"; };
 		7AF456BD1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCollectionViewLeftAlignmentFlowLayout.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				7AB1EAF71F5BB00A003A5B53 /* UIViewController+JXTransition.h */,
 				7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */,
 				7A17267920A0678800CC9598 /* JXTransitionConstant.h */,
+				7AEB377120BFD31C0040A48C /* JXDirectionPanGestureRecognizer.h */,
+				7AEB377220BFD31C0040A48C /* JXDirectionPanGestureRecognizer.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				7ACD81871F35A6BD00021894 /* NSString+JXDecimalCalculate.m in Sources */,
 				7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */,
 				7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */,
+				7AEB377320BFD31D0040A48C /* JXDirectionPanGestureRecognizer.m in Sources */,
 				7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */,
 				7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */,
 				7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */,

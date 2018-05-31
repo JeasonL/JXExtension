@@ -70,7 +70,7 @@
         [_interactive setPresentConfigBlock:^(JXInteractiveDirection *direction) {
             [weakSelf presentWithDirection:direction];
         }];
-        _interactive.direction = JXAnimatorDirectionAll;
+        _interactive.direction =  JXAnimatorDirectionRight | JXAnimatorDirectionLeft | JXAnimatorDirectionBottom;
         _interactive.timerEable = YES;
     }
     return _interactive;
