@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import "JXTransitionConstant.h"
 
 @interface JXDirectionPanGestureRecognizer : UIPanGestureRecognizer
 

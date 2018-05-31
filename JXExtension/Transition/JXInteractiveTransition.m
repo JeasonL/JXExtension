@@ -52,7 +52,7 @@ typedef struct {
     JXAnimatorDirection toDirection = panGesture.direction;
     JXAnimatorDirection backDirection = [self _oppositeDirection:toDirection];
     if (!(self.direction & toDirection) || (toDirection == JXAnimatorDirectionNone)) {
-//        //不是设定的方向 或 滑动没有方向
+        //不是设定的方向 或 滑动没有方向
         self.panGesture.direction = JXAnimatorDirectionNone;
         return;
     }
@@ -88,7 +88,7 @@ typedef struct {
             //开启timer
             [self _jx_setEndAnimationTimerWithPercent:_percent];
         } break;
-        default:break;
+        default: break;
     }
 }
 
