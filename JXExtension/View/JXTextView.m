@@ -72,7 +72,6 @@
 - (void)setPlaceholder:(NSString *)placeholder {
     _placeholder = placeholder.copy;
     self.placeHolderLabel.text = placeholder;
-    [self.placeHolderLabel sizeToFit];
 }
 
 - (UIColor *)placeholderColor {
@@ -85,7 +84,6 @@
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;
     self.placeHolderLabel.textColor = placeholderColor;
-    [self.placeHolderLabel sizeToFit];
 }
 
 - (UILabel *)placeHolderLabel {
@@ -98,12 +96,15 @@
         _placeHolderLabel.textColor = self.placeholderColor;
         _placeHolderLabel.alpha = 0;
         _placeHolderLabel.numberOfLines = 0;
-        [_placeHolderLabel setFrame:CGRectMake(insets.left + 5, insets.top, CGRectGetWidth(self.bounds) - (insets.left + insets.right + 10), CGRectGetHeight(_placeHolderLabel.frame))];
+        _placeHolderLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:_placeHolderLabel];
         [self sendSubviewToBack:_placeHolderLabel];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:insets.left + 5]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:insets.right + 5]];
+        CGFloat width = CGRectGetWidth(self.bounds) - (insets.left + insets.right + 10);
+        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:insets.left + 5];
+        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top];
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1 constant:width];
+        NSArray *constraintArray = @[leftConstraint, topConstraint, widthConstraint];
+        [self addConstraints:constraintArray];
     }
     return _placeHolderLabel;
 }
