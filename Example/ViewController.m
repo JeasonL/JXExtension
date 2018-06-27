@@ -12,7 +12,7 @@
 #import "JXInteractiveTransition.h"
 #import "JXBordersView.h"
 
-@interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate>
+@interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JXBordersView *bordersView;
 
@@ -103,6 +103,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidChange:(UITextView *)textView {
+    [textView jx_limitTextWithMaxLength:50];
 }
 
 @end

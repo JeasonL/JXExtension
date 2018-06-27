@@ -97,10 +97,13 @@
         _placeHolderLabel.backgroundColor = [UIColor clearColor];
         _placeHolderLabel.textColor = self.placeholderColor;
         _placeHolderLabel.alpha = 0;
-        //        _placeHolderLabel.numberOfLines = 0;
+        _placeHolderLabel.numberOfLines = 0;
         [_placeHolderLabel setFrame:CGRectMake(insets.left + 5, insets.top, CGRectGetWidth(self.bounds) - (insets.left + insets.right + 10), CGRectGetHeight(_placeHolderLabel.frame))];
         [self addSubview:_placeHolderLabel];
         [self sendSubviewToBack:_placeHolderLabel];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:insets.left + 5]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:insets.right + 5]];
     }
     return _placeHolderLabel;
 }

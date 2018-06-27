@@ -31,6 +31,8 @@
 #import "UIView+JXFrame.h"
 #import "NSString+JXSize.h"
 #import "NSURL+JXParameters.h"
+#import "UITextView+JXLimitText.h"
+#import "UITextField+JXLimitText.h"
 
 //Manager
 #import "JXSystemAuthManager.h"
