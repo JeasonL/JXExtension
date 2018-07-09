@@ -74,7 +74,7 @@ typedef struct {
         } break;
         case UIGestureRecognizerStateChanged: {
             [self _jx_caculateMovePercentForGesture:panGesture];
-            [self _jx_updatingWithPercent:_percent];
+            [self _jx_updating];
         } break;
         case UIGestureRecognizerStateEnded: {
             //判断是否需要timer
@@ -138,10 +138,16 @@ typedef struct {
     return can;
 }
 
-- (void)_jx_updatingWithPercent:(CGFloat)percent {
-    [self updateInteractiveTransition:percent];
+- (void)_jx_updating {
+    CGFloat percent = _percent;
+    if (percent < 0) {
+        percent = 0;
+    } else if (percent > 1) {
+        percent = 1;
+    }
+    [self updateInteractiveTransition:percent < 0 ? CGFLOAT_MIN : percent];
     if (_delegateFlag.isUpdating) {
-        [_delegate jx_interactiveTransition:self isUpdating:_percent];
+        [_delegate jx_interactiveTransition:self isUpdating:percent];
     }
 }
 
@@ -205,7 +211,7 @@ typedef struct {
         _percent -= _timeDis;
     }
     //通过timer不断刷新转场进度
-    [self _jx_updatingWithPercent:_percent];
+    [self _jx_updating];
     BOOL canEnd = [self _jx_canEndInteractiveTransitionWithPercent:_percent];
     if (canEnd) {
         [self _jx_stopTimer];
@@ -230,7 +236,7 @@ typedef struct {
 
 #pragma mark - Property Method
 
-- (void)setDelegate:(id<JXInteractiveTransitionDelegate>)delegate{
+- (void)setDelegate:(id<JXInteractiveTransitionDelegate>)delegate {
     _delegate = delegate;
     _delegateFlag.willBegin = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransitionWillBegin:)];
     _delegateFlag.isUpdating = delegate && [delegate respondsToSelector:@selector(jx_interactiveTransition:isUpdating:)];

@@ -18,6 +18,7 @@
 
 //即将出现调用
 - (void)presentationTransitionWillBegin{
+    NSLog(@"1️⃣PresentationWillBegin");
     //添加半透明背景 View 到视图中
     UIView *transtioningView = [[UIView alloc] init];
     transtioningView.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:1.0 alpha:0.5];
@@ -44,6 +45,7 @@
 
 //出现调用
 - (void)presentationTransitionDidEnd:(BOOL)completed{
+    NSLog(@"2️⃣PresentationDidEnd");
     // 如果呈现没有完成，那就移除背景 View
     if (!completed){
         [self.transtioningView removeFromSuperview];
@@ -52,6 +54,7 @@
 
 //即将销毁调用
 - (void)dismissalTransitionWillBegin{
+    NSLog(@"3️⃣dismissalWillBegin");
     // 与过渡效果一起执行背景 View 的淡入效果
     [self.presentingViewController.transitionCoordinator animateAlongsideTransitionInView:self.transtioningView animation:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
         self.transtioningView.alpha = 0.0;
@@ -63,6 +66,7 @@
 
 //销毁调用
 - (void)dismissalTransitionDidEnd:(BOOL)completed{
+    NSLog(@"4️⃣dismissalDidEnd");
     if (completed) {
         //一旦要自定义动画，必须自己手动移除控制器
         [self.presentedView removeFromSuperview];

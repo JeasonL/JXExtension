@@ -49,6 +49,7 @@
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
     [pushAnimator setPresentationControllerBlock:^UIPresentationController *(UIViewController *presented, UIViewController *presenting) {
+        NSLog(@"⚠️PresentationBlock");
         return [[DemoPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     }];
     pushAnimator.animatorMode = direction.toDirection;
@@ -68,6 +69,7 @@
         _interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent];
         typeof(self)weakSelf = self;
         [_interactive setPresentConfigBlock:^(JXInteractiveDirection *direction) {
+            NSLog(@"⚠️PresentConfigBlock");
             [weakSelf presentWithDirection:direction];
         }];
         _interactive.direction =  JXAnimatorDirectionRight | JXAnimatorDirectionLeft | JXAnimatorDirectionBottom;
