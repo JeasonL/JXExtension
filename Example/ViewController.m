@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PresentViewController.h"
+#import "TableViewController.h"
 #import "JXPushAnimator.h"
 #import "JXInteractiveTransition.h"
 #import "JXBordersView.h"
@@ -92,6 +93,11 @@
     //    [sender jx_normalTitleWithTitle:@"normal倒计时" startTime:-10 waitPrefix:@"n前序" waitSuffix:@"后续" complete:^{
     //        NSLog(@"n结束");
     //    }];
+}
+
+- (IBAction)stopScrollAction:(id)sender {
+    TableViewController *viewController = [[TableViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - JXKeyInputTextFieldDelegate

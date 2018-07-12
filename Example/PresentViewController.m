@@ -58,6 +58,7 @@
         JXInteractiveTransition *backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss];
         [backInteractive addPanGestureForViewController:nav];
         backInteractive.direction = direction.backDirection;
+        backInteractive.minPersent = 0.05;
         backInteractive.timerEable = YES;
         backInteractive;
     });
@@ -73,6 +74,7 @@
             [weakSelf presentWithDirection:direction];
         }];
         _interactive.direction =  JXAnimatorDirectionRight | JXAnimatorDirectionLeft | JXAnimatorDirectionBottom;
+        _interactive.minPersent = 0.05;
         _interactive.timerEable = YES;
     }
     return _interactive;

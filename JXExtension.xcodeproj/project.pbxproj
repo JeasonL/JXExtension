@@ -13,6 +13,8 @@
 		7A17267820A05D4E00CC9598 /* DismissViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A17267720A05D4E00CC9598 /* DismissViewController.m */; };
 		7A21021B20E3BCDB009A4AF0 /* UITextView+JXLimitText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21021A20E3BCDB009A4AF0 /* UITextView+JXLimitText.m */; };
 		7A21021E20E3BD06009A4AF0 /* UITextField+JXLimitText.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A21021D20E3BD06009A4AF0 /* UITextField+JXLimitText.m */; };
+		7A327F8720F72903000C2A0D /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A327F8620F72903000C2A0D /* TableViewController.m */; };
+		7A327F8A20F72D52000C2A0D /* UIScrollView+JXScrollStop.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A327F8920F72D52000C2A0D /* UIScrollView+JXScrollStop.m */; };
 		7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */; };
 		7A7493CE1F47E82000C9C798 /* UIAlertController+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */; };
 		7A8BC42420A146D7005DB555 /* JXInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BC42220A146D7005DB555 /* JXInteractiveTransition.m */; };
@@ -64,6 +66,10 @@
 		7A21021A20E3BCDB009A4AF0 /* UITextView+JXLimitText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JXLimitText.m"; sourceTree = "<group>"; };
 		7A21021C20E3BD06009A4AF0 /* UITextField+JXLimitText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+JXLimitText.h"; sourceTree = "<group>"; };
 		7A21021D20E3BD06009A4AF0 /* UITextField+JXLimitText.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JXLimitText.m"; sourceTree = "<group>"; };
+		7A327F8520F72903000C2A0D /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		7A327F8620F72903000C2A0D /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		7A327F8820F72D52000C2A0D /* UIScrollView+JXScrollStop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JXScrollStop.h"; sourceTree = "<group>"; };
+		7A327F8920F72D52000C2A0D /* UIScrollView+JXScrollStop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JXScrollStop.m"; sourceTree = "<group>"; };
 		7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXExtension.h"; sourceTree = "<group>"; };
 		7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXExtension.m"; sourceTree = "<group>"; };
 		7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+JXExtension.h"; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 				7A17267720A05D4E00CC9598 /* DismissViewController.m */,
 				7A8BC42D20A17FAE005DB555 /* DemoPresentationController.h */,
 				7A8BC42E20A17FAE005DB555 /* DemoPresentationController.m */,
+				7A327F8520F72903000C2A0D /* TableViewController.h */,
+				7A327F8620F72903000C2A0D /* TableViewController.m */,
 				7ACD80DA1F3578C200021894 /* Main.storyboard */,
 				7ACD80DD1F3578C200021894 /* Assets.xcassets */,
 				7ACD80D11F3578C200021894 /* Supporting Files */,
@@ -253,6 +261,12 @@
 			children = (
 				7ACD816B1F35A6BD00021894 /* NSString+JXDecimalCalculate.h */,
 				7ACD816C1F35A6BD00021894 /* NSString+JXDecimalCalculate.m */,
+				7AF456B71F4C38710068FD48 /* NSString+JXSize.h */,
+				7AF456B81F4C38710068FD48 /* NSString+JXSize.m */,
+				7A0455E31F75056000E2F5A5 /* NSURL+JXParameters.h */,
+				7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */,
+				7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */,
+				7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */,
 				7ACD816D1F35A6BD00021894 /* UIButton+JXCountDown.h */,
 				7ACD816E1F35A6BD00021894 /* UIButton+JXCountDown.m */,
 				7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */,
@@ -261,20 +275,16 @@
 				7ACD81721F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m */,
 				7ACD81731F35A6BD00021894 /* UIScrollView+JXExtension.h */,
 				7ACD81741F35A6BD00021894 /* UIScrollView+JXExtension.m */,
-				7ACD81751F35A6BD00021894 /* UIView+JXDesign.h */,
-				7ACD81761F35A6BD00021894 /* UIView+JXDesign.m */,
-				7A7493CC1F47E82000C9C798 /* UIAlertController+JXExtension.h */,
-				7A7493CD1F47E82000C9C798 /* UIAlertController+JXExtension.m */,
-				7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */,
-				7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */,
-				7AF456B71F4C38710068FD48 /* NSString+JXSize.h */,
-				7AF456B81F4C38710068FD48 /* NSString+JXSize.m */,
-				7A0455E31F75056000E2F5A5 /* NSURL+JXParameters.h */,
-				7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */,
-				7A21021920E3BCDB009A4AF0 /* UITextView+JXLimitText.h */,
-				7A21021A20E3BCDB009A4AF0 /* UITextView+JXLimitText.m */,
+				7A327F8820F72D52000C2A0D /* UIScrollView+JXScrollStop.h */,
+				7A327F8920F72D52000C2A0D /* UIScrollView+JXScrollStop.m */,
 				7A21021C20E3BD06009A4AF0 /* UITextField+JXLimitText.h */,
 				7A21021D20E3BD06009A4AF0 /* UITextField+JXLimitText.m */,
+				7A21021920E3BCDB009A4AF0 /* UITextView+JXLimitText.h */,
+				7A21021A20E3BCDB009A4AF0 /* UITextView+JXLimitText.m */,
+				7ACD81751F35A6BD00021894 /* UIView+JXDesign.h */,
+				7ACD81761F35A6BD00021894 /* UIView+JXDesign.m */,
+				7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */,
+				7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -450,6 +460,7 @@
 				7A8BC42420A146D7005DB555 /* JXInteractiveTransition.m in Sources */,
 				7A17267820A05D4E00CC9598 /* DismissViewController.m in Sources */,
 				7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */,
+				7A327F8A20F72D52000C2A0D /* UIScrollView+JXScrollStop.m in Sources */,
 				7AB1EAF91F5BB00A003A5B53 /* JXPushAnimator.m in Sources */,
 				7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */,
 				7A21021E20E3BD06009A4AF0 /* UITextField+JXLimitText.m in Sources */,
@@ -474,6 +485,7 @@
 				7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */,
 				7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
+				7A327F8720F72903000C2A0D /* TableViewController.m in Sources */,
 				7ACD818B1F35A6BD00021894 /* UIScrollView+JXExtension.m in Sources */,
 				7ACD818D1F35A6BD00021894 /* JXAlertContainerView.m in Sources */,
 			);
