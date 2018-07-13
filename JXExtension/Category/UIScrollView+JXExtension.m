@@ -51,19 +51,19 @@
 }
 
 - (CGPoint)jx_topContentOffset {
-    return CGPointMake(0.0f, -self.contentInset.top);
+    return CGPointMake(self.contentOffset.x, -self.contentInset.top);
 }
 
 - (CGPoint)jx_bottomContentOffset {
-    return CGPointMake(0.0f, self.contentSize.height + self.contentInset.bottom - self.bounds.size.height);
+    return CGPointMake(self.contentOffset.x, self.contentSize.height + self.contentInset.bottom - self.bounds.size.height);
 }
 
 - (CGPoint)jx_leftContentOffset {
-    return CGPointMake(-self.contentInset.left, 0.0f);
+    return CGPointMake(-self.contentInset.left, self.contentOffset.y);
 }
 
 - (CGPoint)jx_rightContentOffset {
-    return CGPointMake(self.contentSize.width + self.contentInset.right - self.bounds.size.width, 0.0f);
+    return CGPointMake(self.contentSize.width + self.contentInset.right - self.bounds.size.width, self.contentOffset.y);
 }
 
 - (JXScrollDirection)jx_scrollDirection {
