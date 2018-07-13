@@ -21,4 +21,22 @@
  */
 - (void)jx_presentViewController:(UIViewController *)viewController animator:(JXTransitionAnimator *)animator completion:(void (^)(void))completion;
 
+/**
+ 注册转场手势
+
+ @param direction 手势方向
+ @param minPersent 最少滑动比例
+ @param transitonBlock 过渡回调
+ */
+- (void)jx_registerToInteractiveTransitionWithDirection:(JXAnimatorDirection)direction minPersent:(CGFloat)minPersent transitonBlock:(JXInteractiveGestureDirectionBlock)transitonBlock;
+
+/**
+ 注册转场手势
+ 
+ @param direction 手势方向
+ @param minPersent 最少滑动比例
+ @param transitonBlock 过渡回调
+ */
+- (void)jx_registerBackInteractiveTransitionWithDirection:(JXAnimatorDirection)direction minPersent:(CGFloat)minPersent transitonBlock:(JXInteractiveGestureDirectionBlock)transitonBlock;
+
 @end

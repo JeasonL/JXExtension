@@ -20,6 +20,10 @@
     return navigationController;
 }
 
+- (void)dealloc {
+    NSLog(@"Dismiss销毁了");
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Dismiss";
@@ -30,6 +34,11 @@
     [button setTitle:self.title forState:UIControlStateNormal];
     [button addTarget:self action:@selector(dismiss) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    typeof (self) weakSelf = self;
+    [self jx_registerBackInteractiveTransitionWithDirection:JXAnimatorDirectionNone minPersent:0.05 transitonBlock:^(JXInteractiveDirection *direction) {
+        [weakSelf dismiss];
+    }];
 }
 
 - (void)dismiss {

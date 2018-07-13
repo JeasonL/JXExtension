@@ -8,6 +8,7 @@
 
 #import "JXInteractiveTransition.h"
 #import "JXDirectionPanGestureRecognizer.h"
+#import <objc/runtime.h>
 
 static const CGFloat JXInteractiveTransitionMinPercent = 0.3;
 
@@ -42,16 +43,15 @@ typedef struct {
     return self;
 }
 
-- (void)addPanGestureForViewController:(UIViewController *)viewController {
+- (void)addPanGestureForView:(UIView *)view {
     self.panGesture = [[JXDirectionPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
-    self.viewController = viewController;
-    [viewController.view addGestureRecognizer:self.panGesture];
+    [view addGestureRecognizer:self.panGesture];
 }
 
 - (void)panGestureAction:(JXDirectionPanGestureRecognizer *)panGesture {
     JXAnimatorDirection toDirection = panGesture.direction;
     JXAnimatorDirection backDirection = [self _oppositeDirection:toDirection];
-    if (!(self.direction & toDirection) || (toDirection == JXAnimatorDirectionNone)) {
+    if (!(self.enadleDirection & toDirection) || (toDirection == JXAnimatorDirectionNone)) {
         //不是设定的方向 或 滑动没有方向
         self.panGesture.direction = JXAnimatorDirectionNone;
         return;
@@ -61,15 +61,9 @@ typedef struct {
             if (_delegateFlag.willBegin) {
                 [_delegate jx_interactiveTransitionWillBegin:self];
             }
+            _direction = [JXInteractiveDirection directionWithTo:toDirection back:backDirection];
             self.isInteractive = YES;
-            switch (self.type) {
-                case JXInteractiveTypePresent:{
-                    self.presentConfigBlock ? self.presentConfigBlock([JXInteractiveDirection directionWithTo:toDirection back:backDirection]) : nil;
-                } break;
-                case JXInteractiveTypeDismiss:{
-                    [self.viewController dismissViewControllerAnimated:YES completion:nil];
-                } break;
-            }
+            self.configBlock ? self.configBlock(_direction) : nil;
             [self _jx_caculateMovePercentForGesture:panGesture];
         } break;
         case UIGestureRecognizerStateChanged: {

@@ -15,6 +15,7 @@
 @interface PresentViewController ()
 
 @property (strong, nonatomic) JXInteractiveTransition *interactive;
+@property (strong, nonatomic) DemoPresentationController *presentationController;
 
 @end
 
@@ -38,46 +39,25 @@
     [button addTarget:self action:@selector(present) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    [self.interactive addPanGestureForViewController:self];
+    typeof(self)weakSelf = self;
+    [self jx_registerToInteractiveTransitionWithDirection:JXAnimatorDirectionAll minPersent:0.05 transitonBlock:^(JXInteractiveDirection *direction) {
+        [weakSelf presentWithDirection:direction.toDirection];
+    }];
 }
 
-- (void)present {
-    [self presentWithDirection:[JXInteractiveDirection directionWithTo:JXAnimatorDirectionTop back:JXAnimatorDirectionBottom]];
-}
-
-- (void)presentWithDirection:(JXInteractiveDirection *)direction {
+- (void)presentWithDirection:(JXAnimatorDirection)direction {
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
     [pushAnimator setPresentationControllerBlock:^UIPresentationController *(UIViewController *presented, UIViewController *presenting) {
         NSLog(@"⚠️PresentationBlock");
         return [[DemoPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     }];
-    pushAnimator.animatorMode = direction.toDirection;
-    pushAnimator.toInteractive = self.interactive;
-    pushAnimator.backInteractive = ({
-        JXInteractiveTransition *backInteractive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypeDismiss];
-        [backInteractive addPanGestureForViewController:nav];
-        backInteractive.direction = direction.backDirection;
-        backInteractive.minPersent = 0.05;
-        backInteractive.timerEable = YES;
-        backInteractive;
-    });
+    pushAnimator.animatorMode = direction;
     [self jx_presentViewController:nav animator:pushAnimator completion:nil];
 }
 
-- (JXInteractiveTransition *)interactive {
-    if (!_interactive) {
-        _interactive = [[JXInteractiveTransition alloc] initWithType:JXInteractiveTypePresent];
-        typeof(self)weakSelf = self;
-        [_interactive setPresentConfigBlock:^(JXInteractiveDirection *direction) {
-            NSLog(@"⚠️PresentConfigBlock");
-            [weakSelf presentWithDirection:direction];
-        }];
-        _interactive.direction =  JXAnimatorDirectionRight | JXAnimatorDirectionLeft | JXAnimatorDirectionBottom;
-        _interactive.minPersent = 0.05;
-        _interactive.timerEable = YES;
-    }
-    return _interactive;
+- (void)present {
+    [self presentWithDirection:JXAnimatorDirectionLeft];
 }
 
 @end
