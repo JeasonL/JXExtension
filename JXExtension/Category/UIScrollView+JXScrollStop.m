@@ -59,6 +59,7 @@ static void *kJXScrollStopBlockKey;
 }
 
 - (void)jx_scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    [self jx_scrollViewDidEndScrollingAnimation:scrollView];
     BOOL scrollToScrollStop = !scrollView.tracking && !scrollView.dragging && !scrollView.decelerating;
     if (scrollToScrollStop) {
         [scrollView jx_scrollStop:scrollView];
