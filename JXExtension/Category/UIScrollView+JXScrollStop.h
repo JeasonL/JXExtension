@@ -12,6 +12,9 @@ typedef void(^JXScrollStopBlock)(void);
 
 @interface UIScrollView (JXScrollStop)
 
-@property(nonatomic, copy) JXScrollStopBlock jx_scrollStopBlock;
+//是否允许hook方法
+@property (nonatomic, assign) BOOL jx_needHook;
+//滑动停止回调
+@property (nonatomic, copy) JXScrollStopBlock jx_scrollStopBlock;
 
 @end
