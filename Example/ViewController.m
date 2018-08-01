@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PresentViewController.h"
+#import "ParentViewController.h"
 #import "TableViewController.h"
 #import "JXPushAnimator.h"
 #import "JXInteractiveTransition.h"
@@ -45,6 +46,11 @@
 
 - (IBAction)closeAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)parent:(id)sender {
+    ParentViewController *viewController = [[ParentViewController alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (IBAction)modalAction:(id)sender {

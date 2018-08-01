@@ -56,9 +56,9 @@
 
 //销毁调用
 - (void)dismissalTransitionDidEnd:(BOOL)completed {
-    [self.effectView removeFromSuperview];
     if (completed) {
         //一旦要自定义动画，必须自己手动移除控制器
+        [self.effectView removeFromSuperview];
         [self.presentedView removeFromSuperview];
     }
 }

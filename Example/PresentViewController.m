@@ -49,7 +49,6 @@
     UINavigationController *nav = [DismissViewController navigationController];
     JXPushAnimator *pushAnimator = [[JXPushAnimator alloc] init];
     [pushAnimator setPresentationControllerBlock:^UIPresentationController *(UIViewController *presented, UIViewController *presenting) {
-        NSLog(@"⚠️PresentationBlock");
         return [[DemoPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     }];
     pushAnimator.animatorMode = direction;

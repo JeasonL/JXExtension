@@ -27,7 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Dismiss";
-    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height - 200)];
+    view.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:view];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(100, 100, 100, 40);
