@@ -45,6 +45,7 @@ typedef struct {
 
 - (void)addPanGestureForView:(UIView *)view {
     self.panGesture = [[JXDirectionPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
+    self.panGesture.disableScope = self.disableScope;
     [view addGestureRecognizer:self.panGesture];
 }
 

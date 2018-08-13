@@ -35,6 +35,7 @@ typedef void(^JXInteractiveGestureDirectionBlock)(JXInteractiveDirection *direct
 
 @interface JXInteractiveTransition : UIPercentDrivenInteractiveTransition
 
+@property (nonatomic, assign) CGRect disableScope; //禁止响应区域
 @property (nonatomic, assign, readonly) BOOL isInteractive; //记录是否开始手势
 @property (nonatomic, assign) CGFloat minPersent; //转场需要的最小百分比, 默认0.3
 @property (nonatomic, assign) CGFloat panRatioBaseValue; //修改此值可改变滑动手势的速率

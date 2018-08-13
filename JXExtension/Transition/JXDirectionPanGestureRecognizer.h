@@ -12,7 +12,7 @@
 
 @interface JXDirectionPanGestureRecognizer : UIPanGestureRecognizer
 
-//手势滑动的方向
-@property (nonatomic, assign) JXAnimatorDirection direction;
+@property (nonatomic, assign) JXAnimatorDirection direction; //手势滑动的方向
+@property (nonatomic, assign) CGRect disableScope; //禁止响应区域
 
 @end
