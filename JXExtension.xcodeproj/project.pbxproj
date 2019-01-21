@@ -24,7 +24,6 @@
 		7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF41F5BB00A003A5B53 /* JXTransitionAnimator.m */; };
 		7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF61F5BB00A003A5B53 /* JXTransitionObject.m */; };
 		7AB1EAFC1F5BB00A003A5B53 /* UIViewController+JXTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */; };
-		7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */; };
 		7AC405D5209D861B004EE685 /* PresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC405D4209D861B004EE685 /* PresentViewController.m */; };
 		7ACA344120A19EB6004B1565 /* JXInteractiveDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACA344020A19EB6004B1565 /* JXInteractiveDirection.m */; };
 		7ACD80D31F3578C200021894 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD80D21F3578C200021894 /* main.m */; };
@@ -49,6 +48,9 @@
 		7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456B81F4C38710068FD48 /* NSString+JXSize.m */; };
 		7AF456BF1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF456BE1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m */; };
 		7EC85313099945E851F43C10 /* libPods-JXExtension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1C87085E6B1D02610148DF7 /* libPods-JXExtension.a */; };
+		9C2BC13B21F56975004A0DE4 /* UIView+JXClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BC13A21F56975004A0DE4 /* UIView+JXClass.m */; };
+		9C2BC13E21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BC13D21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m */; };
+		9C2BC14121F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2BC14021F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,8 +90,6 @@
 		7AB1EAF61F5BB00A003A5B53 /* JXTransitionObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXTransitionObject.m; sourceTree = "<group>"; };
 		7AB1EAF71F5BB00A003A5B53 /* UIViewController+JXTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JXTransition.h"; sourceTree = "<group>"; };
 		7AB1EAF81F5BB00A003A5B53 /* UIViewController+JXTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JXTransition.m"; sourceTree = "<group>"; };
-		7AB2EE371F5E562900064333 /* JXSystemAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSystemAuthManager.h; sourceTree = "<group>"; };
-		7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSystemAuthManager.m; sourceTree = "<group>"; };
 		7AC405D3209D861B004EE685 /* PresentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresentViewController.h; sourceTree = "<group>"; };
 		7AC405D4209D861B004EE685 /* PresentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PresentViewController.m; sourceTree = "<group>"; };
 		7ACA343F20A19EB6004B1565 /* JXInteractiveDirection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXInteractiveDirection.h; sourceTree = "<group>"; };
@@ -136,6 +136,12 @@
 		7AF456B81F4C38710068FD48 /* NSString+JXSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXSize.m"; sourceTree = "<group>"; };
 		7AF456BD1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCollectionViewLeftAlignmentFlowLayout.h; sourceTree = "<group>"; };
 		7AF456BE1F4C3BB70068FD48 /* JXCollectionViewLeftAlignmentFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCollectionViewLeftAlignmentFlowLayout.m; sourceTree = "<group>"; };
+		9C2BC13921F56975004A0DE4 /* UIView+JXClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXClass.h"; sourceTree = "<group>"; };
+		9C2BC13A21F56975004A0DE4 /* UIView+JXClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXClass.m"; sourceTree = "<group>"; };
+		9C2BC13C21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+JXSafeAccess.h"; sourceTree = "<group>"; };
+		9C2BC13D21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+JXSafeAccess.m"; sourceTree = "<group>"; };
+		9C2BC13F21F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+JXSafeAccess.h"; sourceTree = "<group>"; };
+		9C2BC14021F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+JXSafeAccess.m"; sourceTree = "<group>"; };
 		A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		F1C87085E6B1D02610148DF7 /* libPods-JXExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXExtension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -181,15 +187,6 @@
 				7AEB377220BFD31C0040A48C /* JXDirectionPanGestureRecognizer.m */,
 			);
 			path = Transition;
-			sourceTree = "<group>";
-		};
-		7AB2EE361F5E560100064333 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				7AB2EE371F5E562900064333 /* JXSystemAuthManager.h */,
-				7AB2EE381F5E562900064333 /* JXSystemAuthManager.m */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		7ACD80C51F3578C200021894 = {
@@ -248,7 +245,6 @@
 			isa = PBXGroup;
 			children = (
 				7ACD81771F35A6BD00021894 /* JXExtension.h */,
-				7AB2EE361F5E560100064333 /* Manager */,
 				7AB1EAF01F5BB00A003A5B53 /* Transition */,
 				7ACD816A1F35A6BD00021894 /* Category */,
 				7ACD81781F35A6BD00021894 /* View */,
@@ -285,6 +281,12 @@
 				7ACD81761F35A6BD00021894 /* UIView+JXDesign.m */,
 				7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */,
 				7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */,
+				9C2BC13921F56975004A0DE4 /* UIView+JXClass.h */,
+				9C2BC13A21F56975004A0DE4 /* UIView+JXClass.m */,
+				9C2BC13C21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.h */,
+				9C2BC13D21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m */,
+				9C2BC13F21F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.h */,
+				9C2BC14021F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -335,8 +337,6 @@
 				7ACD80CA1F3578C200021894 /* Sources */,
 				7ACD80CB1F3578C200021894 /* Frameworks */,
 				7ACD80CC1F3578C200021894 /* Resources */,
-				68B2E4C5369BFE549DCDD549 /* [CP] Embed Pods Frameworks */,
-				E43ED5703C6555C4ACD7F9B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,7 +358,6 @@
 				TargetAttributes = {
 					7ACD80CD1F3578C200021894 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 5QEQAN99L9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -395,36 +394,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		68B2E4C5369BFE549DCDD549 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E43ED5703C6555C4ACD7F9B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		FD0A96013192AB4552F82182 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,8 +419,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2BC14121F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m in Sources */,
 				7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */,
 				7ACD81931F35A6BD00021894 /* JXView.m in Sources */,
+				9C2BC13E21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m in Sources */,
 				7A21021B20E3BCDB009A4AF0 /* UITextView+JXLimitText.m in Sources */,
 				7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */,
 				7AC405D5209D861B004EE685 /* PresentViewController.m in Sources */,
@@ -459,7 +430,6 @@
 				7AB1EAFB1F5BB00A003A5B53 /* JXTransitionObject.m in Sources */,
 				7A8BC42420A146D7005DB555 /* JXInteractiveTransition.m in Sources */,
 				7A17267820A05D4E00CC9598 /* DismissViewController.m in Sources */,
-				7AB2EE391F5E562900064333 /* JXSystemAuthManager.m in Sources */,
 				7A327F8A20F72D52000C2A0D /* UIScrollView+JXScrollStop.m in Sources */,
 				7AB1EAF91F5BB00A003A5B53 /* JXPushAnimator.m in Sources */,
 				7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */,
@@ -482,6 +452,7 @@
 				7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */,
 				7AEB377320BFD31D0040A48C /* JXDirectionPanGestureRecognizer.m in Sources */,
 				7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */,
+				9C2BC13B21F56975004A0DE4 /* UIView+JXClass.m in Sources */,
 				7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */,
 				7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
@@ -610,7 +581,7 @@
 			baseConfigurationReference = A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5QEQAN99L9;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -625,7 +596,7 @@
 			baseConfigurationReference = 4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5QEQAN99L9;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
