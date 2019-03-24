@@ -34,7 +34,6 @@
 		7ACD80E11F3578C200021894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ACD80DF1F3578C200021894 /* LaunchScreen.storyboard */; };
 		7ACD81871F35A6BD00021894 /* NSString+JXDecimalCalculate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD816C1F35A6BD00021894 /* NSString+JXDecimalCalculate.m */; };
 		7ACD81881F35A6BD00021894 /* UIButton+JXCountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD816E1F35A6BD00021894 /* UIButton+JXCountDown.m */; };
-		7ACD818A1F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81721F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m */; };
 		7ACD818B1F35A6BD00021894 /* UIScrollView+JXExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81741F35A6BD00021894 /* UIScrollView+JXExtension.m */; };
 		7ACD818C1F35A6BD00021894 /* UIView+JXDesign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD81761F35A6BD00021894 /* UIView+JXDesign.m */; };
 		7ACD818D1F35A6BD00021894 /* JXAlertContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD817A1F35A6BD00021894 /* JXAlertContainerView.m */; };
@@ -109,8 +108,6 @@
 		7ACD816C1F35A6BD00021894 /* NSString+JXDecimalCalculate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JXDecimalCalculate.m"; sourceTree = "<group>"; };
 		7ACD816D1F35A6BD00021894 /* UIButton+JXCountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+JXCountDown.h"; sourceTree = "<group>"; };
 		7ACD816E1F35A6BD00021894 /* UIButton+JXCountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+JXCountDown.m"; sourceTree = "<group>"; };
-		7ACD81711F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JXEmptyDataSet.h"; sourceTree = "<group>"; };
-		7ACD81721F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JXEmptyDataSet.m"; sourceTree = "<group>"; };
 		7ACD81731F35A6BD00021894 /* UIScrollView+JXExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+JXExtension.h"; sourceTree = "<group>"; };
 		7ACD81741F35A6BD00021894 /* UIScrollView+JXExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+JXExtension.m"; sourceTree = "<group>"; };
 		7ACD81751F35A6BD00021894 /* UIView+JXDesign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXDesign.h"; sourceTree = "<group>"; };
@@ -267,8 +264,6 @@
 				7ACD816E1F35A6BD00021894 /* UIButton+JXCountDown.m */,
 				7A6333D41F3D8AFE00E377CA /* UIImage+JXExtension.h */,
 				7A6333D51F3D8AFE00E377CA /* UIImage+JXExtension.m */,
-				7ACD81711F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.h */,
-				7ACD81721F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m */,
 				7ACD81731F35A6BD00021894 /* UIScrollView+JXExtension.h */,
 				7ACD81741F35A6BD00021894 /* UIScrollView+JXExtension.m */,
 				7A327F8820F72D52000C2A0D /* UIScrollView+JXScrollStop.h */,
@@ -444,7 +439,6 @@
 				7ACD80D91F3578C200021894 /* ViewController.m in Sources */,
 				7ACD81901F35A6BD00021894 /* JXLabel.m in Sources */,
 				7ACA344120A19EB6004B1565 /* JXInteractiveDirection.m in Sources */,
-				7ACD818A1F35A6BD00021894 /* UIScrollView+JXEmptyDataSet.m in Sources */,
 				7ACD80D61F3578C200021894 /* AppDelegate.m in Sources */,
 				7ACD81911F35A6BD00021894 /* JXTextField.m in Sources */,
 				7ACD81871F35A6BD00021894 /* NSString+JXDecimalCalculate.m in Sources */,
