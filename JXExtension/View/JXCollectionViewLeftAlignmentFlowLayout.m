@@ -62,7 +62,7 @@
     }
     
     CGRect frame = currentItemAttributes.frame;
-    frame.origin.x = lastFrameRightPoint + self.minimumLineSpacing;
+    frame.origin.x = lastFrameRightPoint + self.minimumInteritemSpacing;
     currentItemAttributes.frame = frame;
     return currentItemAttributes;
 }

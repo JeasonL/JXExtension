@@ -21,6 +21,8 @@
 #import "JXBordersView.h"
 
 //Category
+
+#import "NSDate+JXExtension.h"
 #import "NSString+JXDecimalCalculate.h"
 #import "NSString+JXSize.h"
 #import "NSMutableArray+JXSafeAccess.h"
@@ -29,6 +31,7 @@
 #import "UIAlertController+JXExtension.h"
 #import "UIButton+JXCountDown.h"
 #import "UIImage+JXExtension.h"
+#import "UIScrollView+JXEmptyDataSet.h"
 #import "UIScrollView+JXExtension.h"
 #import "UIScrollView+JXScrollStop.h"
 #import "UITextView+JXLimitText.h"

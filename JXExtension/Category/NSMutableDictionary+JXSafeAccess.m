@@ -16,4 +16,12 @@
     }
 }
 
+- (void)jx_safeSetObject:(id)object forKey:(id <NSCopying>)key placeholder:(id)placeholder {
+    if (object) {
+        [self setObject:object forKey:key];
+    } else {
+        [self jx_safeSetObject:placeholder forKey:key];
+    }
+}
+
 @end

@@ -53,6 +53,18 @@
     return image;
 }
 
+- (UIImage *)jx_imageChangeColor:(UIColor *)color {
+    UIGraphicsBeginImageContextWithOptions(self.size, NO, [UIScreen mainScreen].scale);
+    [color setFill];
+    CGRect bounds = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIRectFill(bounds);
+    [self drawInRect:bounds blendMode:kCGBlendModeOverlay alpha:1.0f];
+    [self drawInRect:bounds blendMode:kCGBlendModeDestinationIn alpha:1.0f];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
 - (UIColor *)jx_colorAtPixel:(CGPoint)point {
     // Cancel if point is outside image coordinates
     if (!CGRectContainsPoint(CGRectMake(0.0, 0.0, self.size.width, self.size.height), point)) {

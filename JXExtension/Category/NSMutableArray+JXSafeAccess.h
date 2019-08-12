@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)jx_safeAddObject:(id)object;
 - (void)jx_safeInsertObject:(id)object atIndex:(NSUInteger)index;
+- (void)jx_safeAddObject:(id)anObject placeholder:(id)placeholder;
 
 @end
 

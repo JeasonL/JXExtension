@@ -22,4 +22,20 @@
     }
 }
 
+- (void)jx_safeAddObject:(id)anObject placeholder:(id)placeholder {
+    if (anObject) {
+        [self addObject:anObject];
+    } else {
+        [self jx_safeAddObject:placeholder];
+    }
+}
+
+- (void)jx_safeInsertObject:(id)object atIndex:(NSUInteger)index placeholder:(id)placeholder {
+    if (object) {
+        [self insertObject:object atIndex:index];
+    } else {
+        [self jx_safeInsertObject:placeholder atIndex:index];
+    }
+}
+
 @end

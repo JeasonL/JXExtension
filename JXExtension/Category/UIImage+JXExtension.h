@@ -27,6 +27,11 @@
 + (UIImage *)jx_imageWithColor:(UIColor *)color size:(CGSize)size;
 
 /**
+ 变换图片颜色
+ */
+- (UIImage *)jx_imageChangeColor:(UIColor *)color;
+
+/**
  图片指定位置取颜色
  */
 - (UIColor *)jx_colorAtPixel:(CGPoint)point;
