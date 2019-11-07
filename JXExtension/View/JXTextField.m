@@ -41,12 +41,20 @@
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;
-    [self setValue:placeholderColor forKeyPath:@"_placeholderLabel.textColor"];
+    if (self.placeholder.length) {
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:[self.attributedPlaceholder attributesAtIndex:0 effectiveRange:NULL]];
+        [attributes setObject:placeholderColor forKey:NSForegroundColorAttributeName];
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attributes];
+    }
 }
 
 - (void)setPlacehoderFont:(UIFont *)placehoderFont {
     _placehoderFont = placehoderFont;
-    [self setValue:placehoderFont forKeyPath:@"_placeholderLabel.font"];
+    if (self.placeholder.length) {
+        NSMutableDictionary *attributes = [NSMutableDictionary dictionaryWithDictionary:[self.attributedPlaceholder attributesAtIndex:0 effectiveRange:NULL]];
+        [attributes setObject:placehoderFont forKey:NSFontAttributeName];
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:attributes];
+    }
 }
 
 @end

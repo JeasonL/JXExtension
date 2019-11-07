@@ -16,6 +16,7 @@
 @interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet JXBordersView *bordersView;
+@property (weak, nonatomic) IBOutlet JXTextField *textField;
 
 @end
 
@@ -31,6 +32,9 @@
     [super viewDidLoad];
     self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
     self.bordersView.borderSides = JXBorderSidesBottom;
+    
+    self.textField.placehoderFont = [UIFont systemFontOfSize:18.0];
+    self.textField.placeholderColor = [UIColor greenColor];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

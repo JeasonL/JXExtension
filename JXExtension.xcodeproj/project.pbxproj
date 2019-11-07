@@ -363,6 +363,7 @@
 				TargetAttributes = {
 					7ACD80CD1F3578C200021894 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 85UUFC9YM9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -588,7 +589,7 @@
 			baseConfigurationReference = A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -603,7 +604,7 @@
 			baseConfigurationReference = 4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
