@@ -68,7 +68,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zg-C3-uK4" customClass="JXTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zg-C3-uK4" customClass="JXTextField">
                                 <rect key="frame" x="87.5" y="204.5" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="qHM-Of-YR2"/>
@@ -121,7 +121,7 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Nu-rB-bvh" customClass="JXTextView">
                                 <rect key="frame" x="67.5" y="410.5" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Fgc-V5-yxJ"/>
                                     <constraint firstAttribute="height" constant="128" id="qHd-Q2-eH8"/>
@@ -185,6 +185,8 @@
                     <connections>
                         <outlet property="bordersView" destination="L2r-Aa-hF8" id="9zd-PN-dYR"/>
                         <outlet property="textField" destination="8zg-C3-uK4" id="soP-Xi-Pto"/>
+                        <outlet property="textView" destination="2Nu-rB-bvh" id="li1-hC-py3"/>
+                        <outlet property="textViewHeight" destination="qHd-Q2-eH8" id="eZ6-Ij-uC1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

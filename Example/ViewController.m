@@ -17,6 +17,8 @@
 
 @property (weak, nonatomic) IBOutlet JXBordersView *bordersView;
 @property (weak, nonatomic) IBOutlet JXTextField *textField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
+@property (weak, nonatomic) IBOutlet JXTextView *textView;
 
 @end
 
@@ -28,13 +30,26 @@
     return navigationController;
 }
 
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
+    [self.view endEditing:YES];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.bordersView.roundedCorners = JXRoundedCornerTopLeft | JXRoundedCornerTopRight;
     self.bordersView.borderSides = JXBorderSidesBottom;
     
-    self.textField.placehoderFont = [UIFont systemFontOfSize:18.0];
+    self.textField.placeholderFont = [UIFont systemFontOfSize:18.0];
     self.textField.placeholderColor = [UIColor greenColor];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.textField.placeholder = @"请输入!!";
+    });
+    
+    __weak typeof(self) weakSelf = self;
+    [self.textView setChangeBlcok:^(NSString *text, CGFloat height) {
+        weakSelf.textViewHeight.constant = height;
+    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -112,7 +127,7 @@
 #pragma mark - UITextViewDelegate
 
 - (void)textViewDidChange:(UITextView *)textView {
-    [textView jx_limitTextWithMaxLength:50];
+//    [textView jx_limitTextWithMaxLength:50];
 }
 
 @end
