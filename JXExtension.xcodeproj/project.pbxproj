@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		613435612452DA6200CC11DA /* UIView+JXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */; };
 		7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */; };
 		7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */; };
 		7A0455E51F75056000E2F5A5 /* NSURL+JXParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */; };
@@ -56,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.release.xcconfig"; sourceTree = "<group>"; };
+		6134355F2452DA6200CC11DA /* UIView+JXCornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXCornerRadius.h"; sourceTree = "<group>"; };
+		613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXCornerRadius.m"; sourceTree = "<group>"; };
 		7A00AFAC1F4ADAD10049807A /* JXImageTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageTextButton.h; sourceTree = "<group>"; };
 		7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageTextButton.m; sourceTree = "<group>"; };
 		7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXFrame.h"; sourceTree = "<group>"; };
@@ -292,6 +295,8 @@
 				9C2BC14021F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m */,
 				9CA3D8C3230162D000B14E96 /* NSDate+JXExtension.h */,
 				9CA3D8C4230162D000B14E96 /* NSDate+JXExtension.m */,
+				6134355F2452DA6200CC11DA /* UIView+JXCornerRadius.h */,
+				613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 				7AEB377320BFD31D0040A48C /* JXDirectionPanGestureRecognizer.m in Sources */,
 				7AF456B91F4C38710068FD48 /* NSString+JXSize.m in Sources */,
 				9C2BC13B21F56975004A0DE4 /* UIView+JXClass.m in Sources */,
+				613435612452DA6200CC11DA /* UIView+JXCornerRadius.m in Sources */,
 				7AAFD53B1FB15E45002CBEE2 /* JXBordersView.m in Sources */,
 				7A8BC42F20A17FAE005DB555 /* DemoPresentationController.m in Sources */,
 				7ACD80D31F3578C200021894 /* main.m in Sources */,
@@ -589,13 +595,13 @@
 			baseConfigurationReference = A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 201912271125;
+				CURRENT_PROJECT_VERSION = 202004241720;
 				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -606,13 +612,13 @@
 			baseConfigurationReference = 4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 201912271125;
+				CURRENT_PROJECT_VERSION = 202004241720;
 				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.4.3;
+				MARKETING_VERSION = 0.4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

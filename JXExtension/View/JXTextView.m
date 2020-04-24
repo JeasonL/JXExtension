@@ -53,6 +53,21 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
+- (void)setupPlaceHolder {
+    if (!self.placeHolderLabel.superview) {
+        [self.superview layoutIfNeeded];
+        UIEdgeInsets textInsets = self.textContainerInset;
+        UIEdgeInsets contentInset = self.contentInset;
+        [self addSubview:self.placeHolderLabel];
+        [self sendSubviewToBack:self.placeHolderLabel];
+        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:textInsets.left + contentInset.left + 5];
+        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationLessThanOrEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:textInsets.top + contentInset.top];
+        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1 constant:CGRectGetWidth(self.bounds) - (textInsets.left + contentInset.left + 5) - (textInsets.right + contentInset.right  + 5)];
+        NSArray *constraintArray = @[leftConstraint, topConstraint, widthConstraint];
+        [self addConstraints:constraintArray];
+    }
+}
+
 #pragma mark - Event Response
 
 - (void)textChanged:(NSNotification *)notification {
@@ -99,6 +114,7 @@
 
 - (void)setPlaceholder:(NSString *)placeholder {
     _placeholder = placeholder.copy;
+    [self setupPlaceHolder];
     self.placeHolderLabel.text = placeholder;
 }
 
@@ -111,12 +127,12 @@
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor {
     _placeholderColor = placeholderColor;
+    [self setupPlaceHolder];
     self.placeHolderLabel.textColor = placeholderColor;
 }
 
 - (UILabel *)placeHolderLabel {
-    UIEdgeInsets insets = self.textContainerInset;
-    if (_placeHolderLabel == nil && self.placeholder.length > 0) {
+    if (!_placeHolderLabel) {
         _placeHolderLabel = [[UILabel alloc] init];
         _placeHolderLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _placeHolderLabel.font = self.font;
@@ -125,14 +141,6 @@
         _placeHolderLabel.alpha = 0;
         _placeHolderLabel.numberOfLines = 0;
         _placeHolderLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        [self addSubview:_placeHolderLabel];
-        [self sendSubviewToBack:_placeHolderLabel];
-        CGFloat width = CGRectGetWidth(self.bounds) - (insets.left + insets.right + 10);
-        NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:insets.left + 5];
-        NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:insets.top];
-        NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:_placeHolderLabel attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeWidth multiplier:1 constant:width];
-        NSArray *constraintArray = @[leftConstraint, topConstraint, widthConstraint];
-        [self addConstraints:constraintArray];
     }
     return _placeHolderLabel;
 }

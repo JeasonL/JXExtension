@@ -37,6 +37,7 @@
 #import "UITextView+JXLimitText.h"
 #import "UITextField+JXLimitText.h"
 #import "UIView+JXClass.h"
+#import "UIView+JXCornerRadius.h"
 #import "UIView+JXDesign.h"
 #import "UIView+JXFrame.h"
 
