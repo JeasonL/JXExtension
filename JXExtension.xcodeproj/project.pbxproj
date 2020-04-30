@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		613435612452DA6200CC11DA /* UIView+JXCornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */; };
+		616F8F00245ABE0A00251024 /* UIImage+JXImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 616F8EFF245ABE0A00251024 /* UIImage+JXImageEffects.m */; };
 		7A00AFAE1F4ADAD10049807A /* JXImageTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */; };
 		7A00AFB11F4ADB980049807A /* UIView+JXFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A00AFB01F4ADB980049807A /* UIView+JXFrame.m */; };
 		7A0455E51F75056000E2F5A5 /* NSURL+JXParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0455E41F75056000E2F5A5 /* NSURL+JXParameters.m */; };
@@ -59,6 +60,8 @@
 		4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXExtension/Pods-JXExtension.release.xcconfig"; sourceTree = "<group>"; };
 		6134355F2452DA6200CC11DA /* UIView+JXCornerRadius.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+JXCornerRadius.h"; sourceTree = "<group>"; };
 		613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+JXCornerRadius.m"; sourceTree = "<group>"; };
+		616F8EFE245ABE0A00251024 /* UIImage+JXImageEffects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+JXImageEffects.h"; sourceTree = "<group>"; };
+		616F8EFF245ABE0A00251024 /* UIImage+JXImageEffects.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JXImageEffects.m"; sourceTree = "<group>"; };
 		7A00AFAC1F4ADAD10049807A /* JXImageTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXImageTextButton.h; sourceTree = "<group>"; };
 		7A00AFAD1F4ADAD10049807A /* JXImageTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXImageTextButton.m; sourceTree = "<group>"; };
 		7A00AFAF1F4ADB980049807A /* UIView+JXFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JXFrame.h"; sourceTree = "<group>"; };
@@ -297,6 +300,8 @@
 				9CA3D8C4230162D000B14E96 /* NSDate+JXExtension.m */,
 				6134355F2452DA6200CC11DA /* UIView+JXCornerRadius.h */,
 				613435602452DA6200CC11DA /* UIView+JXCornerRadius.m */,
+				616F8EFE245ABE0A00251024 /* UIImage+JXImageEffects.h */,
+				616F8EFF245ABE0A00251024 /* UIImage+JXImageEffects.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				9C2BC14121F56B6C004A0DE4 /* NSMutableArray+JXSafeAccess.m in Sources */,
 				7A6333D61F3D8AFE00E377CA /* UIImage+JXExtension.m in Sources */,
 				7ACD81931F35A6BD00021894 /* JXView.m in Sources */,
+				616F8F00245ABE0A00251024 /* UIImage+JXImageEffects.m in Sources */,
 				9C2BC13E21F56B22004A0DE4 /* NSMutableDictionary+JXSafeAccess.m in Sources */,
 				7A21021B20E3BCDB009A4AF0 /* UITextView+JXLimitText.m in Sources */,
 				7AB1EAFA1F5BB00A003A5B53 /* JXTransitionAnimator.m in Sources */,
@@ -595,13 +601,13 @@
 			baseConfigurationReference = A8BA4D96B49A2EC9A6489EFA /* Pods-JXExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 202004241720;
+				CURRENT_PROJECT_VERSION = 202004301610;
 				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -612,13 +618,13 @@
 			baseConfigurationReference = 4F3AC3E221FBD6014A3F64FE /* Pods-JXExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 202004241720;
+				CURRENT_PROJECT_VERSION = 202004301610;
 				DEVELOPMENT_TEAM = 85UUFC9YM9;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Example/PrefixHeader.pch";
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.5;
 				PRODUCT_BUNDLE_IDENTIFIER = Jeason.Lee.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

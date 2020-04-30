@@ -31,6 +31,7 @@
 #import "UIAlertController+JXExtension.h"
 #import "UIButton+JXCountDown.h"
 #import "UIImage+JXExtension.h"
+#import "UIImage+JXImageEffects.h"
 #import "UIScrollView+JXEmptyDataSet.h"
 #import "UIScrollView+JXExtension.h"
 #import "UIScrollView+JXScrollStop.h"
