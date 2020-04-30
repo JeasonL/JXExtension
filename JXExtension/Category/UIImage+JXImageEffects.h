@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)jx_imageByApplyingLightEffectToImage:(UIImage *)inputImage;
 + (UIImage *)jx_imageByApplyingExtraLightEffectToImage:(UIImage *)inputImage;
 + (UIImage *)jx_imageByApplyingDarkEffectToImage:(UIImage *)inputImage;
-+ (UIImage *)imageByApplyingTintEffectWithColor:(UIColor *)tintColor toImage:(UIImage *)inputImage;
++ (UIImage *)jx_imageByApplyingTintEffectWithColor:(UIColor *)tintColor toImage:(UIImage *)inputImage;
 
 //| ----------------------------------------------------------------------------
 //! Applies a blur, tint color, and saturation adjustment to @a inputImage,
