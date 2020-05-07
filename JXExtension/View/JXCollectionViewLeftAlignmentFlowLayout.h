@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UICollectionViewLayoutAttributes (LeftAlignment)
-
-- (void)jx_leftAlignmentFrameWithSectionInset:(UIEdgeInsets)sectionInset;
+@protocol JXCollectionViewDelegateLeftAlignmentLayout <UICollectionViewDelegateFlowLayout>
 
 @end
 
