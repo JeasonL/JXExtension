@@ -11,17 +11,17 @@
 @protocol JXEmptyDataSetDataSource <NSObject>
 
 @required
-- (UIView *)emptyDataSetViewForScrollView:(UIScrollView *)scrollView;
+- (UIView *)jx_emptyDataSetViewForScrollView:(UIScrollView *)scrollView;
 
 @optional
-- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView;
-- (CGFloat)heightForEmptyDataSet:(UIScrollView *)scrollView;
+- (CGFloat)jx_verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView;
+- (CGFloat)jx_heightForEmptyDataSet:(UIScrollView *)scrollView;
 
 @end
 
 @interface UIScrollView (JXEmptyDataSet)
 
-@property (nonatomic, weak) IBOutlet id <JXEmptyDataSetDataSource> emptyDataSetDataSource;
+@property (nonatomic, weak) IBOutlet id <JXEmptyDataSetDataSource> jx_emptyDataSetDataSource;
 
 - (void)jx_reloadEmptyDataSet;
 - (void)jx_removeEmptyDataSet;
