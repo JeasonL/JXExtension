@@ -17,6 +17,10 @@
 - (CGFloat)jx_verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView;
 - (CGFloat)jx_heightForEmptyDataSet:(UIScrollView *)scrollView;
 
+- (UIView *)emptyDataSetViewForScrollView:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Please use jx_emptyDataSetViewForScrollView");
+- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Please use jx_verticalOffsetForEmptyDataSet");
+- (CGFloat)heightForEmptyDataSet:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Please use jx_heightForEmptyDataSet");
+
 @end
 
 @interface UIScrollView (JXEmptyDataSet)
