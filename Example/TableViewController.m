@@ -8,7 +8,7 @@
 
 #import "TableViewController.h"
 
-@interface TableViewController ()
+@interface TableViewController () <JXEmptyDataSetDataSource>
 
 @end
 
@@ -17,13 +17,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"StopScroll";
+    self.tableView.jx_emptyDataSetDataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     [self.tableView setJx_scrollStopBlock:^{
         NSLog(@"⚠️滑动停止了");
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:50 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:50 inSection:0] atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+//    });
+}
+
+#pragma mark - JXEmptyDataSetDataSource
+
+- (UIView *)jx_emptyDataSetViewForScrollView:(UIScrollView *)scrollView {
+    UIView *view = [[UIView alloc] init];
+    view.backgroundColor = [UIColor orangeColor];
+    return view;
+}
+
+- (CGFloat)jx_verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView {
+    return 100;
+}
+
+- (CGFloat)jx_heightForEmptyDataSet:(UIScrollView *)scrollView {
+    return 200;
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -43,7 +60,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

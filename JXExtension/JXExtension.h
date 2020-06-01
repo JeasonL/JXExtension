@@ -30,6 +30,7 @@
 #import "NSURL+JXParameters.h"
 #import "UIAlertController+JXExtension.h"
 #import "UIButton+JXCountDown.h"
+#import "UIButton+JXHotSpot.h"
 #import "UIImage+JXExtension.h"
 #import "UIImage+JXImageEffects.h"
 #import "UIScrollView+JXEmptyDataSet.h"

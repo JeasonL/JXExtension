@@ -4,5 +4,6 @@ target ‘JXExtension’ do
 
 #pod 'JXExtension'
 pod 'SDVersion'
+pod 'Masonry'
 
 end

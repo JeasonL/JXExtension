@@ -12,6 +12,7 @@
 #import "JXPushAnimator.h"
 #import "JXInteractiveTransition.h"
 #import "JXBordersView.h"
+#import <Masonry.h>
 
 @interface ViewController () <JXKeyInputTextFieldDelegate, UIAlertViewDelegate, UITextViewDelegate>
 
@@ -19,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet JXTextField *textField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewHeight;
 @property (weak, nonatomic) IBOutlet JXTextView *textView;
+@property (weak, nonatomic) IBOutlet JXButton *timeButton;
+
+@property (strong, nonatomic) JXTextView *codeTextView;
 
 @end
 
@@ -33,6 +37,19 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     [self.view endEditing:YES];
+}
+
+- (JXTextView *)codeTextView {
+    if (!_codeTextView) {
+        _codeTextView = [[JXTextView alloc] init];
+        _codeTextView.backgroundColor = [UIColor lightGrayColor];
+        _codeTextView.font = [UIFont systemFontOfSize:15.0];
+        _codeTextView.textContainerInset = UIEdgeInsetsMake(0, 20, 0, 20);
+        _codeTextView.placeholder =  @"请输入!!请输入!!请输入!!请输入!!请输入!!请输入!!请输入!!请输入!!";
+        _codeTextView.placeholderColor = [UIColor redColor];
+        
+    }
+    return _codeTextView;
 }
 
 - (void)viewDidLoad {
@@ -50,6 +67,28 @@
     [self.textView setChangeBlcok:^(NSString *text, CGFloat height) {
         weakSelf.textViewHeight.constant = height;
     }];
+    
+
+    
+    UIView *view = [[UIView alloc] init];
+    [self.view addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@100.0);
+            make.left.equalTo(@15);
+            make.right.equalTo(@-15.0);
+            make.height.equalTo(@100.0);
+    }];
+    
+
+    [view jx_cornerRadiusWithRoundingCorners:(UIRectCornerBottomLeft | UIRectCornerTopLeft) radius:20.0 borderColor:[UIColor redColor] borderWidth:2.0];
+    
+    [view addSubview:self.codeTextView];
+      [self.codeTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+          make.left.top.equalTo(@15);
+          make.right.bottom.equalTo(@-15.0);
+      }];
+    
+    self.timeButton.jx_hotSpotEdgeInsets = UIEdgeInsetsMake(5, 20.0, 5, 20.0);
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
