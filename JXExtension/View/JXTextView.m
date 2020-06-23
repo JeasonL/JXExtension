@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) UILabel *placeHolderLabel;
 
-@property (nonatomic, assign) CGFloat maxHeight;
 @property (nonatomic, assign) CGFloat currentHeight;
 
 @end
@@ -85,7 +84,7 @@
         height = height + self.textContainerInset.top + self.textContainerInset.bottom;
         if (self.currentHeight != height) {
             self.currentHeight = height;
-            self.scrollEnabled = height > self.maxHeight && self.maxHeight > 0;
+            self.scrollEnabled = height > self.jx_maxHeight && self.jx_maxHeight > 0;
             if (!self.scrollEnabled) {
                 self.changeBlcok(self.text, height);
             }

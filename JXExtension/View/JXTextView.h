@@ -19,7 +19,7 @@ typedef void(^JXTextHeightDidChangeBlock)(NSString *text, CGFloat height);
 @property (nonatomic, strong) IBInspectable UIColor *placeholderColor;
 
 @property (nonatomic, copy) JXTextHeightDidChangeBlock changeBlcok;
-@property (nonatomic, assign) NSUInteger maxNumberOfLines;
+@property (nonatomic, assign) CGFloat jx_maxHeight;
 @property (nonatomic, assign) BOOL isFixed;
 
 @end
