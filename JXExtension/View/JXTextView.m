@@ -70,15 +70,13 @@
 #pragma mark - Event Response
 
 - (void)textChanged:(NSNotification *)notification {
-    if (self.placeholder.length == 0) {
-        return;
-    }
-    if (self.text.length == 0) {
-        [self.placeHolderLabel setAlpha:1];
-    } else {
-        [self.placeHolderLabel setAlpha:0];
-    }
-    
+    if (self.placeholder.length != 0) {
+        if (self.text.length == 0) {
+            [self.placeHolderLabel setAlpha:1];
+        } else {
+            [self.placeHolderLabel setAlpha:0];
+        }
+    }    
     if (self.changeBlcok) {
         CGFloat height = ceil([self.text boundingRectWithSize:CGSizeMake(self.bounds.size.width - 10, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName : self.font} context:nil].size.height);
         height = height + self.textContainerInset.top + self.textContainerInset.bottom;
